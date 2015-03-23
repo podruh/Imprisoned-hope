@@ -1,0 +1,32 @@
+######Story - in development######
+Imprisoned Hope
+
+Sluneèní svit. Pamatujete si? Já ne.
+Je to první vìc, na kterou zapomenete, kdy jste roky uvìznìnı v jedné místnosti bez oken a jen s jedinou árovkou. Chcete vìdìt proè? Poslouchejte vytrvale a pozornì.
+
+//chlap je uvìznìnı v cele jen s jedním svìtlem, ádná okna. Zaène vyprávìt o tom jak se tam dostal.
+Je poslední z rasy nesmrtelnıch, kteøí se objevili 220 let pøed tím, ne zavøeli hrdinu. Na zemi byli ale mnohem déle, skrıvali se pøed doktory protoe vìdìli, ze by na nich dìlali pokusy atd. A v roce 2035 objevili Amerièané v provincii, také známou jako Izrael, silnì zabezpeèenı úkryt. V domnìní, ze jde o zbytkovou populaci pùvodních obyvatelù Izraele, vrazili dovnitø a spatøli do té doby neznámou architektonickou podívanou. Jeskynì zevnitø vùbec nepøipomínala obydlí Izrealskıch uprchlíkù. 
+
+
+Celı váš svìt se smrskne na místnost ètyøi krát ètyøi metry a slunce imitující šedesátkovou árovku.
+
+
+
+######Hrdina, ability atd.######
+Jméno: urèí si hráè nebo pøedurèené
+Vrozené schopnosti: 
+-nestárne
+.
+.
+.
+.
+//pøidal bych další "napøirozené schopnosti" které budou na zaèátku hry na nule, jeliko nemìl jak je procvièovat
+
+
+######Prùbìh hry######
+nìjakı intro do pøíbìhu, bud se prostì vyhodí text, nebo nìjaká animace apod. - dìlal bych jako poslední
+zhasnutí árovky => nastane nestandartní situace, kdy nepùjde árovka vymìnit automaticky => hrdinovi se podaøí utéct 
+nastává hlavní úkol, dostat se ven ze zaøízení
+-nìco jako stealth, monost obejít ochranku nebo ji zabít
+-ochranka mùe spustit alarm
+-zaøízení má nìkolik levelù apod.

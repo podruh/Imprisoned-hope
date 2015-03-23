@@ -7,3 +7,12 @@ C:\Users\Filip\Desktop\Imprisoned Hope\Imprisoned Hope\Imprisoned Hope\obj\Debug
 C:\Users\Filip\Desktop\Imprisoned Hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.csproj.GenerateResource.Cache
 C:\Users\Filip\Desktop\Imprisoned Hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.exe
 C:\Users\Filip\Desktop\Imprisoned Hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.pdb
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\bin\Debug\Imprisoned Hope.exe.config
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.exe
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.pdb
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\bin\Debug\Imprisoned Hope.exe
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\bin\Debug\Imprisoned Hope.pdb
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.csprojResolveAssemblyReference.cache
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned_Hope.Form1.resources
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned_Hope.Properties.Resources.resources
+E:\Projekty\Imprisoned-hope\Imprisoned-hope\Imprisoned Hope\Imprisoned Hope\obj\Debug\Imprisoned Hope.csproj.GenerateResource.Cache
