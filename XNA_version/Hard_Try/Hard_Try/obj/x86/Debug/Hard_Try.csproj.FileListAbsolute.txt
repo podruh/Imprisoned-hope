@@ -1,0 +1,12 @@
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Content\Exit.xnb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Content\back.xnb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Content\Load Game.xnb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Content\New Game.xnb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Content\Options.xnb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Imprisoned Hope.exe
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\bin\x86\Debug\Imprisoned Hope.pdb
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Hard_Try.csprojResolveAssemblyReference.cache
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned Hope.exe
+E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned Hope.pdb

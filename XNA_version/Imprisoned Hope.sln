@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hard_Try", "Hard_Try\Hard_Try\Hard_Try.csproj", "{7AFC3527-D223-4E9E-B931-43EAC405C6F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hard_TryContent", "Hard_Try\Hard_TryContent\Hard_TryContent.contentproj", "{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Debug|x86.ActiveCfg = Debug|x86
+		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Debug|x86.Build.0 = Debug|x86
+		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Release|x86.ActiveCfg = Release|x86
+		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Release|x86.Build.0 = Release|x86
+		{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}.Debug|x86.ActiveCfg = Debug|x86
+		{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
