@@ -19,15 +19,17 @@ namespace Hard_Try
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Texture2D background, exit, loadGame, options,newGame,iconMouse;
-        private List<Texture2D> menuTextury = new List<Texture2D>();        
-        private List<Sprite> MenuItems = new List<Sprite>();
+        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary, menuBack;
+        private List<Texture2D> mainMenuTextury = new List<Texture2D>(); 
+        private List<Texture2D> optMenuTextury = new List<Texture2D>();
+        private List<Sprite> mainMenuItems = new List<Sprite>(); 
+        private List<Sprite> optMenuItems = new List<Sprite>();
         public SpriteFont FontCourierNew;
         private int sirka = 1280;
         private int vyska = 720;
         public MouseState mys;
-        private bool dopravaPohyb;
-        float menuSpeed = 0.9f;       
+        private bool dopravaPohyb, dolevaPohyb;
+        float menuSpeed = 1.5f;       
 
         public Game1()
         {
@@ -46,7 +48,7 @@ namespace Hard_Try
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            IsMouseVisible = true;
+            IsMouseVisible = false;
             
             base.Initialize();
         }
@@ -61,21 +63,32 @@ namespace Hard_Try
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            background = Content.Load<Texture2D>("back_menu");
-            menuTextury.Add(newGame = Content.Load<Texture2D>("New Game"));
-            menuTextury.Add(loadGame = Content.Load<Texture2D>("Load Game"));
-            menuTextury.Add(options = Content.Load<Texture2D>("Options"));
-            menuTextury.Add(exit = Content.Load<Texture2D>("Exit"));
+            menuBackground = Content.Load<Texture2D>("back_menu");
+            #region Naèítání textur patøících do listù
+            mainMenuTextury.Add(menuNewgame = Content.Load<Texture2D>("New Game"));
+            mainMenuTextury.Add(menuLoadgame = Content.Load<Texture2D>("Load Game"));
+            mainMenuTextury.Add(menuOptions = Content.Load<Texture2D>("Options"));
+            mainMenuTextury.Add(menuExit = Content.Load<Texture2D>("Exit"));
+            optMenuTextury.Add(menuTemporary = Content.Load<Texture2D>("Temporary"));
+            optMenuTextury.Add(menuBack = Content.Load<Texture2D>("Back"));
+            #endregion
             iconMouse = Content.Load<Texture2D>("iconMouse");
 
             FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
-            int y = 450;
-            for (int i = 0; i < menuTextury.Count;i++ )
+            #region øazení textur menu do ItemListù
+            int yMain = 450, yOpt = vyska + 1; //základní vertikální pozice menu
+            for (int i = 0; i < mainMenuTextury.Count; i++)// Naètení obsahu hlavního jmenu do listu hlavního jmenu. y = oddìlení položek vertikálnì.
             {
-                MenuItems.Add(new Sprite(menuTextury[i], new Rectangle(sirka - menuTextury[i].Width - 20, y, menuTextury[i].Width, menuTextury[i].Height), Color.White));
-                y = y + 60;
+                mainMenuItems.Add(new Sprite(mainMenuTextury[i], new Rectangle(sirka - mainMenuTextury[i].Width - 20, yMain, mainMenuTextury[i].Width, mainMenuTextury[i].Height), Color.White));
+                yMain += 60;
             }
+            for (int i = 0; i < optMenuTextury.Count; i++)
+            {
+                optMenuItems.Add(new Sprite(optMenuTextury[i], new Rectangle(sirka - optMenuTextury[i].Width - 20, yOpt, optMenuTextury[i].Width, optMenuTextury[i].Height), Color.White));
+                yOpt += 60;
+            }
+            #endregion
         }
 
         /// <summary>
@@ -102,34 +115,15 @@ namespace Hard_Try
 
             //naète myš
             mys = Mouse.GetState();
-
             PohybMenu(gameTime);
+            if (mainMenuItems[3].Rectangle.Contains(new Point(mys.X, mys.Y)) && mys.LeftButton == ButtonState.Pressed)
+            {
+                this.Exit();
+            }
             base.Update(gameTime);
         }
 
-        private void PohybMenu(GameTime gameTime)
-        {
-            //options
-
-            if (MenuItems[2].Rectangle.Contains(new Point(mys.X, mys.Y)) && (mys.LeftButton == ButtonState.Pressed))
-            {
-                dopravaPohyb = true;
-            }
-            if (MenuItems[1].Position.X > sirka)
-            {
-                dopravaPohyb = false;
-            }
-            //pohyb menu
-            if (dopravaPohyb)
-            {
-                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                foreach (Sprite s in MenuItems)
-                {
-                    s.Position.X += (float)(menuSpeed * elapsed);
-                    s.Rectangle.X = (int)s.Position.X;
-                }
-            }
-        }
+        
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -141,18 +135,74 @@ namespace Hard_Try
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(background, new Rectangle(0, 0, background.Width, background.Height), Color.White);
-            spriteBatch.Draw(iconMouse, new Rectangle(mys.X, mys.Y, iconMouse.Width, iconMouse.Height), Color.White);
+            spriteBatch.Draw(menuBackground, new Rectangle(0, 0, menuBackground.Width, menuBackground.Height), Color.White);
             
-            foreach (Sprite s in MenuItems)
+            
+            foreach (Sprite s in mainMenuItems)
             {
                 s.Draw(graphics, spriteBatch);
             }
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.001", new Vector2(0, 0), Color.White);
+            foreach (Sprite s in optMenuItems)
+            {
+                s.Draw(graphics, spriteBatch);
+            }
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.002", new Vector2(0, 0), Color.White);
+            
+            
+            spriteBatch.Draw(iconMouse, new Rectangle(mys.X-15, mys.Y-10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
 
-
             base.Draw(gameTime);
+        }
+        private void PohybMenu(GameTime gameTime)
+        {
+            //options
+
+            if (mainMenuItems[2].Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed)
+            {
+                dopravaPohyb = true;
+            }
+            if (mainMenuItems[1].Position.X > sirka)
+            {
+                dopravaPohyb = false;
+            }
+            if (optMenuItems[1].Rectangle.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
+            {
+                dolevaPohyb = true;
+            }
+            if (mainMenuItems[1].Position.X < vyska - 20)
+            {
+                dolevaPohyb = false;
+            }
+            //pohyb menu
+            if (dopravaPohyb)
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                foreach (Sprite s in mainMenuItems)
+                {
+                    s.Position.X += (float)(menuSpeed * elapsed);
+                    s.Rectangle.X = (int)s.Position.X;
+                }
+                foreach (Sprite s in optMenuItems) //posunutí options menu nahoru
+                {
+                    s.Position.Y -= (float)(menuSpeed * elapsed);
+                    s.Rectangle.Y = (int)s.Position.Y;
+                }
+            }
+            if (dolevaPohyb)
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                foreach (Sprite s in mainMenuItems)
+                {
+                    s.Position.X -= (float)(menuSpeed * elapsed);
+                    s.Rectangle.X = (int)s.Position.X;
+                }
+                foreach (Sprite s in optMenuItems)
+                {
+                    s.Position.Y += (float)(menuSpeed * elapsed);;
+                    s.Rectangle.Y = (int)s.Position.Y;
+                }
+            }
         }
     }
 }
