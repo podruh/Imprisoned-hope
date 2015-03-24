@@ -1,2 +1,3 @@
 E:\Projekty\Hard_Try\Hard_Try\Hard_TryContent\obj\x86\Debug\Hard_TryContent.contentprojResolveAssemblyReference.cache
 C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_TryContent\obj\x86\Debug\Hard_TryContent.contentprojResolveAssemblyReference.cache
+E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_TryContent\obj\x86\Debug\Hard_TryContent.contentprojResolveAssemblyReference.cache

@@ -19,17 +19,21 @@ namespace Hard_Try
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Texture2D background, exit, loadGame, options,newGame;
-        List<Texture2D> menuTextury = new List<Texture2D>();        
-        List<Sprite> MenuItems = new List<Sprite>();
-
+        private Texture2D background, exit, loadGame, options,newGame;
+        private List<Texture2D> menuTextury = new List<Texture2D>();        
+        private List<Sprite> MenuItems = new List<Sprite>();
+        public SpriteFont FontCourierNew;
+        private int sirka = 1280;
+        private int vyska = 720;
+        public MouseState mys;
+        private bool dopravaPohyb;
         float menuSpeed = 0.15f;       
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = sirka;
+            graphics.PreferredBackBufferHeight = vyska;
             Content.RootDirectory = "Content";
         }
 
@@ -42,7 +46,7 @@ namespace Hard_Try
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-           
+            IsMouseVisible = true;
             
             base.Initialize();
         }
@@ -58,22 +62,17 @@ namespace Hard_Try
 
             // TODO: use this.Content to load your game content here
             background = Content.Load<Texture2D>("back_menu");
-            exit = Content.Load<Texture2D>("Exit");
-            loadGame = Content.Load<Texture2D>("Load Game");
-            newGame = Content.Load<Texture2D>("New Game");
-            options = Content.Load<Texture2D>("Options");
-           
+            menuTextury.Add(newGame = Content.Load<Texture2D>("New Game"));
+            menuTextury.Add(loadGame = Content.Load<Texture2D>("Load Game"));
+            menuTextury.Add(options = Content.Load<Texture2D>("Options"));
+            menuTextury.Add(exit = Content.Load<Texture2D>("Exit"));
 
-            menuTextury.Add(newGame);
-            menuTextury.Add(loadGame);
-            menuTextury.Add(options);
-            menuTextury.Add(exit);
-
+            FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
             int y = 20;
             for (int i = 0; i < menuTextury.Count;i++ )
             {
-                MenuItems.Add(new Sprite(menuTextury[i], new Rectangle(GraphicsDeviceManager.DefaultBackBufferWidth - menuTextury[i].Width - 20, y, menuTextury[i].Width, menuTextury[i].Height), Color.White));
+                MenuItems.Add(new Sprite(menuTextury[i], new Rectangle(sirka - menuTextury[i].Width - 20, y, menuTextury[i].Width, menuTextury[i].Height), Color.White));
                 y = y + 60;
             }
         }
@@ -100,16 +99,35 @@ namespace Hard_Try
 
             // TODO: Add your update logic here
 
-            //pohyb menu
-            double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-            foreach (Sprite s in MenuItems)
-            {
-                s.Position.X += (float)(menuSpeed * elapsed * Math.Cos(MathHelper.Pi));
-                s.Rectangle.X = (int)s.Position.X;
-            }
+            //naète myš
+            mys = Mouse.GetState();
 
-
+            PohybMenu(gameTime);
             base.Update(gameTime);
+        }
+
+        private void PohybMenu(GameTime gameTime)
+        {
+            //options
+
+            if (MenuItems[2].Rectangle.Contains(new Point(mys.X, mys.Y)) && (mys.LeftButton == ButtonState.Pressed))
+            {
+                dopravaPohyb = true;
+            }
+            if (MenuItems[1].Position.X > sirka)
+            {
+                dopravaPohyb = false;
+            }
+            //pohyb menu
+            if (dopravaPohyb)
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                foreach (Sprite s in MenuItems)
+                {
+                    s.Position.X += (float)(menuSpeed * elapsed);
+                    s.Rectangle.X = (int)s.Position.X;
+                }
+            }
         }
 
         /// <summary>
@@ -128,7 +146,7 @@ namespace Hard_Try
             {
                 s.Draw(graphics, spriteBatch);
             }
-                              
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.001", new Vector2(0, 0), Color.White);
             spriteBatch.End();
 
 

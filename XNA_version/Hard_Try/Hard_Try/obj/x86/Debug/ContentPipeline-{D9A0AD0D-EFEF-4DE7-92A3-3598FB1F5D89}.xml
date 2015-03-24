@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Exit.xnb</Output>
-      <Time>2015-03-24T18:12:46.7263772+01:00</Time>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Exit.xnb</Output>
+      <Time>2015-03-23T17:51:24.3925923+01:00</Time>
     </Item>
     <Item>
       <Source>Load Game.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Load Game.xnb</Output>
-      <Time>2015-03-24T18:12:46.7463784+01:00</Time>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Load Game.xnb</Output>
+      <Time>2015-03-23T17:51:24.4072411+01:00</Time>
     </Item>
     <Item>
       <Source>New Game.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\New Game.xnb</Output>
-      <Time>2015-03-24T18:12:46.7633793+01:00</Time>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\New Game.xnb</Output>
+      <Time>2015-03-23T17:51:24.4082161+01:00</Time>
     </Item>
     <Item>
       <Source>Options.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Options.xnb</Output>
-      <Time>2015-03-24T18:12:46.7793802+01:00</Time>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Options.xnb</Output>
+      <Time>2015-03-23T17:51:24.4101689+01:00</Time>
     </Item>
     <Item>
       <Source>Temporary.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb</Output>
-      <Time>2015-03-24T18:12:46.8013815+01:00</Time>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb</Output>
+      <Time>2015-03-23T17:51:24.4121046+01:00</Time>
     </Item>
     <Item>
       <Source>back_menu.jpg</Source>
@@ -52,8 +52,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\back_menu.xnb</Output>
-      <Time>2015-03-24T18:17:52.274943+01:00</Time>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\back_menu.xnb</Output>
+      <Time>2015-03-24T18:20:55.3354999+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonty\font_courier_new.spritefont</Source>
+      <Name>Fonty\courier_new</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Fonty\courier_new.xnb</Output>
+      <Time>2015-03-24T18:39:24.0456723+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -62,10 +71,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_TryContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_TryContent\</RootDirectory>
+      <LoggerRootDirectory>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Projekty\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -94,7 +103,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-03-21T15:23:57.5013895+01:00</Value>
+        <Value>2015-03-21T17:57:44.9245058+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
