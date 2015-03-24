@@ -35,11 +35,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="imageedit_2_9998475305.jpg">
-      <Name>back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Load Game.png">
       <Name>Load Game</Name>
       <Importer>TextureImporter</Importer>
@@ -57,6 +52,13 @@
     </Compile>
     <Compile Include="Temporary.png">
       <Name>Temporary</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="back_menu.jpg">
+      <Name>back_menu</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

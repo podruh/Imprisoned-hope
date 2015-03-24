@@ -10,3 +10,15 @@ E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Hard_Try.csprojResolveAssem
 E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned Hope.exe
 E:\Projekty\Hard_Try\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned Hope.pdb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Exit.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Load Game.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\New Game.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Options.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Imprisoned Hope.exe
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Imprisoned Hope.pdb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\obj\x86\Debug\Hard_Try.csprojResolveAssemblyReference.cache
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned Hope.exe
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned Hope.pdb
+C:\Users\Filip\Desktop\Imprisoned-hope\XNA_version\Hard_Try\Hard_Try\bin\x86\Debug\Content\back_menu.xnb

@@ -28,8 +28,8 @@ namespace Hard_Try
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 796;
-            graphics.PreferredBackBufferHeight = 562;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
         }
 
@@ -57,7 +57,7 @@ namespace Hard_Try
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            background = Content.Load<Texture2D>("back");
+            background = Content.Load<Texture2D>("back_menu");
             exit = Content.Load<Texture2D>("Exit");
             loadGame = Content.Load<Texture2D>("Load Game");
             newGame = Content.Load<Texture2D>("New Game");

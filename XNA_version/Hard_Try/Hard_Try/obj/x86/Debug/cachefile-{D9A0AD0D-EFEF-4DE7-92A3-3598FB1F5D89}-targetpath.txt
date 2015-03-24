@@ -1,6 +1,6 @@
 Content\Exit.xnb
-Content\back.xnb
 Content\Load Game.xnb
 Content\New Game.xnb
 Content\Options.xnb
 Content\Temporary.xnb
+Content\back_menu.xnb
