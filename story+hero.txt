@@ -1,32 +1,33 @@
 ######Story - in development######
 Imprisoned Hope
 
-SluneËnÌ svit. Pamatujete si? J· ne.
-Je to prvnÌ vÏc, na kterou zapomenete, kdyû jste roky uvÏznÏn˝ v jednÈ mÌstnosti bez oken a jen s jedinou û·rovkou. Chcete vÏdÏt proË? Poslouchejte vytrvale a pozornÏ.
+Sluneƒçn√≠ svit. Pamatujete si? J√° ne.
+Je to prvn√≠ vƒõc, na kterou zapomenete, kdy≈æ jste roky uvƒõznƒõn√Ω v jedn√© m√≠stnosti bez oken a jen s jedinou ≈æ√°rovkou. Chcete vƒõdƒõt proƒç? Poslouchejte vytrvale a pozornƒõ.
 
-//chlap je uvÏznÏn˝ v cele jen s jednÌm svÏtlem, û·dn· okna. ZaËne vypr·vÏt o tom jak se tam dostal.
-Je poslednÌ z rasy nesmrteln˝ch, kte¯Ì se objevili 220 let p¯ed tÌm, neû zav¯eli hrdinu. Na zemi byli ale mnohem dÈle, skr˝vali se p¯ed doktory protoûe vÏdÏli, ze by na nich dÏlali pokusy atd. Aû v roce 2035 objevili AmeriËanÈ v provincii, takÈ zn·mou jako Izrael, silnÏ zabezpeËen˝ ˙kryt. V domnÏnÌ, ze jde o zbytkovou populaci p˘vodnÌch obyvatel˘ Izraele, vrazili dovnit¯ a spat¯li do tÈ doby nezn·mou architektonickou podÌvanou. JeskynÏ zevnit¯ v˘bec nep¯ipomÌnala obydlÌ Izrealsk˝ch uprchlÌk˘. 
+//chlap je uvƒõznƒõn√Ω v cele jen s jedn√≠m svƒõtlem, ≈æ√°dn√° okna. Zaƒçne vypr√°vƒõt o tom jak se tam dostal.
+Je posledn√≠ z rasy nesmrteln√Ωch, kte≈ô√≠ se objevili 220 let p≈ôed t√≠m, ne≈æ zav≈ôeli hrdinu. Na zemi byli ale mnohem d√©le, skr√Ωvali se p≈ôed doktory proto≈æe vƒõdƒõli, ze by na nich dƒõlali pokusy atd. A≈æ v roce 2035 objevili Ameriƒçan√© v provincii, tak√© zn√°mou jako Izrael, silnƒõ zabezpeƒçen√Ω √∫kryt. V domnƒõn√≠, ze jde o zbytkovou populaci p≈Øvodn√≠ch obyvatel≈Ø Izraele, vrazili dovnit≈ô a spat≈ôli do t√© doby nezn√°mou architektonickou pod√≠vanou. Jeskynƒõ zevnit≈ô v≈Øbec nep≈ôipom√≠nala obydl√≠ Izrealsk√Ωch uprchl√≠k≈Ø. 
 
 
-Cel˝ v·ö svÏt se smrskne na mÌstnost Ëty¯i kr·t Ëty¯i metry a slunce imitujÌcÌ öedes·tkovou û·rovku.
+Cel√Ω v√°≈° svƒõt se smrskne na m√≠stnost ƒçty≈ôi kr√°t ƒçty≈ôi metry a slunce imituj√≠c√≠ ≈°edes√°tkovou ≈æ√°rovku.
 
 
 
 ######Hrdina, ability atd.######
-JmÈno: urËÌ si hr·Ë nebo p¯edurËenÈ
-VrozenÈ schopnosti: 
--nest·rne
+Jm√©no: urƒç√≠ si hr√°ƒç nebo p≈ôedurƒçen√©
+Vrozen√© schopnosti: 
+-nest√°rne
 .
 .
 .
 .
-//p¯idal bych dalöÌ "nap¯irozenÈ schopnosti" kterÈ budou na zaË·tku hry na nule, jelikoû nemÏl jak je procviËovat
+//p≈ôidal bych dal≈°√≠ "nap≈ôirozen√© schopnosti" kter√© budou na zaƒç√°tku hry na nule, jeliko≈æ nemƒõl jak je procviƒçovat
 
 
-######Pr˘bÏh hry######
-nÏjak˝ intro do p¯ÌbÏhu, bud se prostÏ vyhodÌ text, nebo nÏjak· animace apod. - dÏlal bych jako poslednÌ
-zhasnutÌ û·rovky => nastane nestandartnÌ situace, kdy nep˘jde û·rovka vymÏnit automaticky => hrdinovi se poda¯Ì utÈct 
-nast·v· hlavnÌ ˙kol, dostat se ven ze za¯ÌzenÌ
--nÏco jako stealth, moûnost obejÌt ochranku nebo ji zabÌt
--ochranka m˘ûe spustit alarm
--za¯ÌzenÌ m· nÏkolik level˘ apod.
+######Pr≈Øbƒõh hry######
+nƒõjak√Ω intro do p≈ô√≠bƒõhu, bud se prostƒõ vyhod√≠ text, nebo nƒõjak√° animace apod. - dƒõlal bych jako posledn√≠
+zhasnut√≠ ≈æ√°rovky => nastane nestandartn√≠ situace, kdy nep≈Øjde ≈æ√°rovka vymƒõnit automaticky => hrdinovi se poda≈ô√≠ ut√©ct 
+nast√°v√° hlavn√≠ √∫kol, dostat se ven ze za≈ô√≠zen√≠
+-nƒõco jako stealth, mo≈ænost obej√≠t ochranku nebo ji zab√≠t
+-ochranka m≈Ø≈æe spustit alarm
+-za≈ô√≠zen√≠ m√° nƒõkolik level≈Ø apod.
+-√∫tr≈æky z novin, hlaseni, naisy na zdi, rozhovor mezi straznymi
