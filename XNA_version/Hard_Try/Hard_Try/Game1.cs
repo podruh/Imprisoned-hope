@@ -27,7 +27,7 @@ namespace Hard_Try
         private int vyska = 720;
         public MouseState mys;
         private bool dopravaPohyb;
-        float menuSpeed = 0.15f;       
+        float menuSpeed = 0.9f;       
 
         public Game1()
         {
@@ -69,7 +69,7 @@ namespace Hard_Try
 
             FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
-            int y = 20;
+            int y = 450;
             for (int i = 0; i < menuTextury.Count;i++ )
             {
                 MenuItems.Add(new Sprite(menuTextury[i], new Rectangle(sirka - menuTextury[i].Width - 20, y, menuTextury[i].Width, menuTextury[i].Height), Color.White));
