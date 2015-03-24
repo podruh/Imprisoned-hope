@@ -30,4 +30,12 @@ nastává hlavní úkol, dostat se ven ze zařízení
 -něco jako stealth, možnost obejít ochranku nebo ji zabít
 -ochranka může spustit alarm
 -zařízení má několik levelů apod.
--útržky z novin, hlaseni, naisy na zdi, rozhovor mezi straznymi
+-útržky z novin, hlaseni, napisy na zdi, rozhovor mezi stražnými
+
+
+#####Useful tools#####
+-pixel art tutorial: http://makegames.tumblr.com/post/42648699708/pixel-art-tutorial
+--https://www.youtube.com/watch?v=fLT5aT0q3B0
+--
+#####Technical stuff#####
+-map editor
