@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Back.xnb</Output>
-      <Time>2015-03-24T21:44:35.7879488+01:00</Time>
+      <Time>2015-03-25T22:09:38.9056366+01:00</Time>
     </Item>
     <Item>
       <Source>Temporary.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb</Output>
-      <Time>2015-03-24T21:44:52.5438743+01:00</Time>
+      <Time>2015-03-25T22:09:38.9016363+01:00</Time>
     </Item>
     <Item>
       <Source>Fonty\font_courier_new.spritefont</Source>
