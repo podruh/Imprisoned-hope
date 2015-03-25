@@ -24,6 +24,7 @@ namespace Hard_Try
         private List<Texture2D> optMenuTextury = new List<Texture2D>();
         private List<Sprite> mainMenuItems = new List<Sprite>(); 
         private List<Sprite> optMenuItems = new List<Sprite>();
+        private Song music_menuTheme;
         public SpriteFont FontCourierNew;
         private int sirka = 1280;
         private int vyska = 720;
@@ -72,7 +73,10 @@ namespace Hard_Try
             optMenuTextury.Add(menuTemporary = Content.Load<Texture2D>("Temporary"));
             optMenuTextury.Add(menuBack = Content.Load<Texture2D>("Back"));
             #endregion
+
             iconMouse = Content.Load<Texture2D>("iconMouse");
+
+            music_menuTheme = Content.Load<Song>(@"Soundtrack\music_menuTheme");
 
             FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
@@ -89,6 +93,8 @@ namespace Hard_Try
                 yOpt += 60;
             }
             #endregion
+
+            MediaPlayer.Play(music_menuTheme);
         }
 
         /// <summary>
@@ -146,7 +152,7 @@ namespace Hard_Try
             {
                 s.Draw(graphics, spriteBatch);
             }
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.002", new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0021 w00d3nl3g", new Vector2(0, 0), Color.White);
             
             
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X-15, mys.Y-10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)

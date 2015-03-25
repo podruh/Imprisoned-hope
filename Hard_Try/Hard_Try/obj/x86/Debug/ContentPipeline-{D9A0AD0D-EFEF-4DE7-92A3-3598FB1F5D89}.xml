@@ -38,15 +38,6 @@
       <Time>2015-03-24T18:12:46.7793802+01:00</Time>
     </Item>
     <Item>
-      <Source>Temporary.png</Source>
-      <Name>Temporary</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb</Output>
-      <Time>2015-03-24T21:44:52.5438743+01:00</Time>
-    </Item>
-    <Item>
       <Source>back_menu.jpg</Source>
       <Name>back_menu</Name>
       <Importer>TextureImporter</Importer>
@@ -65,6 +56,24 @@
       <Time>2015-03-24T19:56:33.4904243+01:00</Time>
     </Item>
     <Item>
+      <Source>Back.png</Source>
+      <Name>Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Back.xnb</Output>
+      <Time>2015-03-24T21:44:35.7879488+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Temporary.png</Source>
+      <Name>Temporary</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb</Output>
+      <Time>2015-03-24T21:44:52.5438743+01:00</Time>
+    </Item>
+    <Item>
       <Source>Fonty\font_courier_new.spritefont</Source>
       <Name>Fonty\courier_new</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -74,13 +83,14 @@
       <Time>2015-03-24T19:37:44.128619+01:00</Time>
     </Item>
     <Item>
-      <Source>Back.png</Source>
-      <Name>Back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Source>Soundtrack\bensound-tomorrow.mp3</Source>
+      <Name>Soundtrack\music_menuTheme</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Back.xnb</Output>
-      <Time>2015-03-24T21:44:35.7879488+01:00</Time>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Soundtrack\music_menuTheme.xnb</Output>
+      <Extra>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Soundtrack\music_menuTheme.wma</Extra>
+      <Time>2015-03-25T21:32:06.7908474+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
