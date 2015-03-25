@@ -28,8 +28,9 @@ namespace Hard_Try
         private int sirka = 1280;
         private int vyska = 720;
         public MouseState mys;
-        private bool dopravaPohyb, dolevaPohyb;
-        float menuSpeed = 1.5f;       
+        private bool dopravaPohyb, dolevaPohyb, doluPohyb, nahoruPohyb;
+        float menuSpeed = 1.5f;
+        int menuOdsazeni = 450;
 
         public Game1()
         {
@@ -65,19 +66,21 @@ namespace Hard_Try
             // TODO: use this.Content to load your game content here
             menuBackground = Content.Load<Texture2D>("back_menu");
             #region Naèítání textur patøících do listù
+
             mainMenuTextury.Add(menuNewgame = Content.Load<Texture2D>("New Game"));
             mainMenuTextury.Add(menuLoadgame = Content.Load<Texture2D>("Load Game"));
             mainMenuTextury.Add(menuOptions = Content.Load<Texture2D>("Options"));
             mainMenuTextury.Add(menuExit = Content.Load<Texture2D>("Exit"));
             optMenuTextury.Add(menuTemporary = Content.Load<Texture2D>("Temporary"));
             optMenuTextury.Add(menuBack = Content.Load<Texture2D>("Back"));
+
             #endregion
             iconMouse = Content.Load<Texture2D>("iconMouse");
 
             FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
             #region øazení textur menu do ItemListù
-            int yMain = 450, yOpt = vyska + 1; //základní vertikální pozice menu
+            int yMain = menuOdsazeni, yOpt = vyska + 1; //základní vertikální pozice menu
             for (int i = 0; i < mainMenuTextury.Count; i++)// Naètení obsahu hlavního jmenu do listu hlavního jmenu. y = oddìlení položek vertikálnì.
             {
                 mainMenuItems.Add(new Sprite(mainMenuTextury[i], new Rectangle(sirka - mainMenuTextury[i].Width - 20, yMain, mainMenuTextury[i].Width, mainMenuTextury[i].Height), Color.White));
@@ -146,7 +149,7 @@ namespace Hard_Try
             {
                 s.Draw(graphics, spriteBatch);
             }
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.002", new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0021", new Vector2(0, 0), Color.White);
             
             
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X-15, mys.Y-10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
@@ -156,25 +159,38 @@ namespace Hard_Try
         }
         private void PohybMenu(GameTime gameTime)
         {
-            //options
+            
 
-            if (mainMenuItems[2].Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed)
+            if (mainMenuItems[2].Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed)//pohyb hlavního menu a vynoøení optMenu se zapne po stisknutí na options
             {
                 dopravaPohyb = true;
+                nahoruPohyb = true;
             }
-            if (mainMenuItems[1].Position.X > sirka)
+            if (mainMenuItems[1].Position.X > sirka)//pohyb mainMenu se po dosažení šíøky zastaví
             {
                 dopravaPohyb = false;
             }
-            if (optMenuItems[1].Rectangle.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
+            if (optMenuItems[0].Position.Y <= menuOdsazeni)//zastavení pohybu optMenu nahoru
             {
+                nahoruPohyb = false;
+            }
+
+            if (optMenuItems[1].Rectangle.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)//pohyb options menu zpet dolu
+            {
+                doluPohyb = true;
                 dolevaPohyb = true;
             }
-            if (mainMenuItems[1].Position.X < vyska - 20)
+            if (optMenuItems[0].Position.Y > vyska)//zastaveni pohybu
+            {
+                doluPohyb = false;
+            }
+
+            if (mainMenuItems[1].Position.X < sirka - mainMenuItems[1].Rectangle.Width - 20)
             {
                 dolevaPohyb = false;
             }
-            //pohyb menu
+
+            //pohyb
             if (dopravaPohyb)
             {
                 double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -183,11 +199,7 @@ namespace Hard_Try
                     s.Position.X += (float)(menuSpeed * elapsed);
                     s.Rectangle.X = (int)s.Position.X;
                 }
-                foreach (Sprite s in optMenuItems) //posunutí options menu nahoru
-                {
-                    s.Position.Y -= (float)(menuSpeed * elapsed);
-                    s.Rectangle.Y = (int)s.Position.Y;
-                }
+
             }
             if (dolevaPohyb)
             {
@@ -197,11 +209,25 @@ namespace Hard_Try
                     s.Position.X -= (float)(menuSpeed * elapsed);
                     s.Rectangle.X = (int)s.Position.X;
                 }
+
+            }
+            if (nahoruPohyb)
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                foreach (Sprite s in optMenuItems) //posunutí options menu nahoru
+                {
+                    s.Position.Y -= (float)(menuSpeed * elapsed);
+                    s.Rectangle.Y = (int)s.Position.Y;
+                } 
+            }
+            if (doluPohyb)
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
                 foreach (Sprite s in optMenuItems)
                 {
-                    s.Position.Y += (float)(menuSpeed * elapsed);;
+                    s.Position.Y += (float)(menuSpeed * elapsed);
                     s.Rectangle.Y = (int)s.Position.Y;
-                }
+                } 
             }
         }
     }
