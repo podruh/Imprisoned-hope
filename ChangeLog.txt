@@ -1,7 +1,7 @@
 0.002
   +úprava názvù promìnných
-	-textury (podly výskytu)
-	-listy (podle subMenu)
+    -textury (podly výskytu)
+    -listy (podle subMenu)
   +zpøehlednìní pomocí regionù
   +tlaèítko Exit v mainMenu funguje
   +ikona myši pasuje na reálnou polohu
@@ -10,7 +10,12 @@
   +pøidání nìkolika popiskù
   +funkèní tlaèítko "Back" u optMenu
   fix
-	- kreslení myši posunuto na konec aby nebyl pøekrytej kursor
+    - kreslení myši posunuto na konec aby nebyl pøekrytej kursor
+
 0.0021 - podruh
 	+oprava menu
 	+promìnná menuOdsazeni urèuje vertikální odsazení nabídek
+
+0.0022 - w00d3nl3g
+  + "Music" složka jak v contentu tak v základní složce(+ CC txt)
+  + pøi spuštìní hry se spustí music_menuTheme(bensound-tomorrow)

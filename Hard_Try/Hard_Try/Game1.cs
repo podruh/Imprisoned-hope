@@ -25,6 +25,7 @@ namespace Hard_Try
         private List<Sprite> mainMenuItems = new List<Sprite>(); 
         private List<Sprite> optMenuItems = new List<Sprite>();
         public SpriteFont FontCourierNew;
+        public Song music_menuTheme;
         private int sirka = 1280;
         private int vyska = 720;
         public MouseState mys;
@@ -75,7 +76,10 @@ namespace Hard_Try
             optMenuTextury.Add(menuBack = Content.Load<Texture2D>("Back"));
 
             #endregion
+
             iconMouse = Content.Load<Texture2D>("iconMouse");
+
+            music_menuTheme = Content.Load<Song>(@"Music\music_menuTheme");
 
             FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
@@ -92,6 +96,8 @@ namespace Hard_Try
                 yOpt += 60;
             }
             #endregion
+
+            MediaPlayer.Play(music_menuTheme);
         }
 
         /// <summary>

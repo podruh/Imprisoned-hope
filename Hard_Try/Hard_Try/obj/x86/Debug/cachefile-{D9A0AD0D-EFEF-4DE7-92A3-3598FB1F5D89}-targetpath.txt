@@ -1,0 +1,27 @@
+Content\Exit.xnb
+Content\Load Game.xnb
+Content\New Game.xnb
+Content\Options.xnb
+Content\back_menu.xnb
+Content\iconMouse.xnb
+Content\Back.xnb
+Content\Temporary.xnb
+Content\Fonty\courier_new.xnb
+Content\Music\bensound-betterdays.xnb
+Content\Music\bensound-betterdays.wma
+Content\Music\bensound-deepblue.xnb
+Content\Music\bensound-deepblue.wma
+Content\Music\bensound-epic.xnb
+Content\Music\bensound-epic.wma
+Content\Music\bensound-november.xnb
+Content\Music\bensound-november.wma
+Content\Music\bensound-ofeliasdream.xnb
+Content\Music\bensound-ofeliasdream.wma
+Content\Music\bensound-pianomoment.xnb
+Content\Music\bensound-pianomoment.wma
+Content\Music\music_menuTheme.xnb
+Content\Music\music_menuTheme.wma
+Content\Music\Come Play with Me.xnb
+Content\Music\Come Play with Me.wma
+Content\Music\The Escalation.xnb
+Content\Music\The Escalation.wma
