@@ -84,9 +84,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hard_TryContent\Hard_TryContent.contentproj">
-      <Name>Hard_TryContent</Name>
+    <ProjectReference Include="..\Hard_TryContent\Imprisoned_HopeContent.contentproj">
+      <Name>Imprisoned_HopeContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
