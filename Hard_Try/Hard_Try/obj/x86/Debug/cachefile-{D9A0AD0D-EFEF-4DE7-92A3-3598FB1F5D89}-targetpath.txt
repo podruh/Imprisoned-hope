@@ -25,3 +25,4 @@ Content\Music\Come Play with Me.xnb
 Content\Music\Come Play with Me.wma
 Content\Music\The Escalation.xnb
 Content\Music\The Escalation.wma
+Content\Hero.xnb

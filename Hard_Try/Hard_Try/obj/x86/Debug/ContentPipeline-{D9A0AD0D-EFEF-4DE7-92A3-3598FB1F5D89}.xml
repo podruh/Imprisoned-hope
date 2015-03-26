@@ -172,6 +172,15 @@
       <Extra>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\The Escalation.wma</Extra>
       <Time>2015-03-26T20:01:20.2300267+01:00</Time>
     </Item>
+    <Item>
+      <Source>Hero.jpg</Source>
+      <Name>Hero</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Hero.xnb</Output>
+      <Time>2015-03-26T21:03:14.3057326+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}</ContentProjectGUID>

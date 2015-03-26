@@ -31,3 +31,4 @@ C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\M
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\music_menuTheme.wma
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\Come Play with Me.wma
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\The Escalation.wma
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Hero.xnb

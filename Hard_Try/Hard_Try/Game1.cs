@@ -19,7 +19,7 @@ namespace Hard_Try
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary, menuBack;
+        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary, menuBack, hero;
         private List<Texture2D> mainMenuTextury = new List<Texture2D>(); 
         private List<Texture2D> optMenuTextury = new List<Texture2D>();
         private List<Sprite> mainMenuItems = new List<Sprite>(); 
@@ -77,6 +77,7 @@ namespace Hard_Try
 
             #endregion
 
+            hero = Content.Load<Texture2D>("Hero");
             iconMouse = Content.Load<Texture2D>("iconMouse");
 
             music_menuTheme = Content.Load<Song>(@"Music\music_menuTheme");
@@ -145,7 +146,8 @@ namespace Hard_Try
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             spriteBatch.Draw(menuBackground, new Rectangle(0, 0, menuBackground.Width, menuBackground.Height), Color.White);
-            
+
+            spriteBatch.Draw(hero, new Rectangle(0,50,hero.Width, hero.Height), Color.White);            
             
             foreach (Sprite s in mainMenuItems)
             {
