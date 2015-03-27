@@ -36,6 +36,7 @@ nastává hlavní úkol, dostat se ven ze zařízení
 #####Useful tools#####
 -pixel art tutorial: http://makegames.tumblr.com/post/42648699708/pixel-art-tutorial
 --https://www.youtube.com/watch?v=fLT5aT0q3B0
---
+--http://lpc.opengameart.org/static/lpc-style-guide/styleguide.html
 #####Technical stuff#####
 -map editor
+
