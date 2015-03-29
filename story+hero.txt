@@ -1,4 +1,4 @@
-######Story - in development######
+﻿######Story - in development######
 Imprisoned Hope
 
 Sluneční svit. Pamatujete si? Já ne.
@@ -21,6 +21,17 @@ Vrozené schopnosti:
 .
 .
 //přidal bych další "napřirozené schopnosti" které budou na začátku hry na nule, jelikož neměl jak je procvičovat
+
+Classy: 
+  Enforcer
+    - nějaký normální assault schoposti (větší DMG, odolnost atd.)
+  Mastermind
+    - ovládání mysli lidí
+  Phase Walker
+    - Umí vstoupit do Riftu kde ho nepřátelé nevidí a on může dávat např. DMG když je blízko. (viz. Lilith Borderlands)
+  Beast Tamer
+    - umí si ochočit zvířata
+    - stražení pastí
 
 
 ######Průběh hry######
