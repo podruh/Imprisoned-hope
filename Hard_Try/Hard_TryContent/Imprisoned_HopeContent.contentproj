@@ -30,29 +30,29 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exit.png">
+    <Compile Include="Textury\Menu\Exit.png">
       <Name>Exit</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Load Game.png">
+    <Compile Include="Textury\Menu\Load Game.png">
       <Name>Load Game</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="New Game.png">
+    <Compile Include="Textury\Menu\New Game.png">
       <Name>New Game</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Options.png">
+    <Compile Include="Textury\Menu\Options.png">
       <Name>Options</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="back_menu.jpg">
+    <Compile Include="Textury\Menu\back_menu.jpg">
       <Name>back_menu</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -66,21 +66,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="icon_mouse.png">
+    <Compile Include="Textury\icon_mouse.png">
       <Name>iconMouse</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Back.png">
+    <Compile Include="Textury\Menu\Back.png">
       <Name>Back</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Temporary.png">
+    <Compile Include="Textury\Menu\Temporary.png">
       <Name>Temporary</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -134,8 +134,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hero.jpg">
+    <Compile Include="Textury\Hero.jpg">
       <Name>Hero</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textury\enforcer_class.png">
+      <Name>enforcer_class</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textury\mastermind_class.png">
+      <Name>mastermind_class</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textury\pozadiNG.png">
+      <Name>pozadiNG</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

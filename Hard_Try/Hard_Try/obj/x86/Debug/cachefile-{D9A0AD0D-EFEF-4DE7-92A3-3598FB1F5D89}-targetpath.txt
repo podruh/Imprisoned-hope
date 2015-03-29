@@ -1,11 +1,3 @@
-Content\Exit.xnb
-Content\Load Game.xnb
-Content\New Game.xnb
-Content\Options.xnb
-Content\back_menu.xnb
-Content\iconMouse.xnb
-Content\Back.xnb
-Content\Temporary.xnb
 Content\Fonty\courier_new.xnb
 Content\Music\bensound-betterdays.xnb
 Content\Music\bensound-betterdays.wma
@@ -25,4 +17,16 @@ Content\Music\Come Play with Me.xnb
 Content\Music\Come Play with Me.wma
 Content\Music\The Escalation.xnb
 Content\Music\The Escalation.wma
-Content\Hero.xnb
+Content\Textury\Menu\Exit.xnb
+Content\Textury\Menu\Load Game.xnb
+Content\Textury\Menu\New Game.xnb
+Content\Textury\Menu\Options.xnb
+Content\Textury\Menu\back_menu.xnb
+Content\Textury\Menu\Back.xnb
+Content\Textury\Menu\Temporary.xnb
+Content\Textury\Hero.xnb
+Content\Textury\enforcer_class.xnb
+Content\Textury\iconMouse.xnb
+Content\Textury\mastermind_class.xnb
+Content\Textury\listina.xnb
+Content\Textury\pozadiNG.xnb

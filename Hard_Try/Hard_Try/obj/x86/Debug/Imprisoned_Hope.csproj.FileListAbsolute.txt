@@ -1,11 +1,3 @@
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Exit.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Load Game.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\New Game.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Options.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\back_menu.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\iconMouse.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Back.xnb
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Fonty\courier_new.xnb
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Imprisoned Hope.exe
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Imprisoned Hope.pdb
@@ -31,4 +23,16 @@ C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\M
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\music_menuTheme.wma
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\Come Play with Me.wma
 C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Music\The Escalation.wma
-C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Hero.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Exit.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Load Game.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\New Game.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Options.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\back_menu.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Back.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Temporary.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Hero.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\enforcer_class.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\iconMouse.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\mastermind_class.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\listina.xnb
+C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\pozadiNG.xnb

@@ -2,78 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Exit.png</Source>
-      <Name>Exit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Exit.xnb</Output>
-      <Time>2015-03-24T18:12:46.7263772+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Load Game.png</Source>
-      <Name>Load Game</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Load Game.xnb</Output>
-      <Time>2015-03-24T18:12:46.7463784+01:00</Time>
-    </Item>
-    <Item>
-      <Source>New Game.png</Source>
-      <Name>New Game</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\New Game.xnb</Output>
-      <Time>2015-03-24T18:12:46.7633793+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Options.png</Source>
-      <Name>Options</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Options.xnb</Output>
-      <Time>2015-03-24T18:12:46.7793802+01:00</Time>
-    </Item>
-    <Item>
-      <Source>back_menu.jpg</Source>
-      <Name>back_menu</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\back_menu.xnb</Output>
-      <Time>2015-03-24T18:17:52.274943+01:00</Time>
-    </Item>
-    <Item>
-      <Source>icon_mouse.png</Source>
-      <Name>iconMouse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\iconMouse.xnb</Output>
-      <Time>2015-03-24T19:56:33.4904243+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Back.png</Source>
-      <Name>Back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Back.xnb</Output>
-      <Time>2015-03-26T19:55:59.2511193+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Temporary.png</Source>
-      <Name>Temporary</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Temporary.xnb</Output>
-      <Time>2015-03-26T19:55:59.2571197+01:00</Time>
-    </Item>
-    <Item>
       <Source>Fonty\font_courier_new.spritefont</Source>
       <Name>Fonty\courier_new</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -173,13 +101,121 @@
       <Time>2015-03-26T20:01:20.2300267+01:00</Time>
     </Item>
     <Item>
-      <Source>Hero.jpg</Source>
-      <Name>Hero</Name>
+      <Source>Textury\Menu\Exit.png</Source>
+      <Name>Textury\Menu\Exit</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Hero.xnb</Output>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Exit.xnb</Output>
+      <Time>2015-03-24T18:12:46.7263772+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Menu\Load Game.png</Source>
+      <Name>Textury\Menu\Load Game</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Load Game.xnb</Output>
+      <Time>2015-03-24T18:12:46.7463784+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Menu\New Game.png</Source>
+      <Name>Textury\Menu\New Game</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\New Game.xnb</Output>
+      <Time>2015-03-24T18:12:46.7633793+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Menu\Options.png</Source>
+      <Name>Textury\Menu\Options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Options.xnb</Output>
+      <Time>2015-03-24T18:12:46.7793802+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Menu\back_menu.jpg</Source>
+      <Name>Textury\Menu\back_menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\back_menu.xnb</Output>
+      <Time>2015-03-24T18:17:52.274943+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Menu\Back.png</Source>
+      <Name>Textury\Menu\Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Back.xnb</Output>
+      <Time>2015-03-26T19:22:36.2517804+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Menu\Temporary.png</Source>
+      <Name>Textury\Menu\Temporary</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Menu\Temporary.xnb</Output>
+      <Time>2015-03-26T19:22:37.1588323+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\Hero.jpg</Source>
+      <Name>Textury\Hero</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\Hero.xnb</Output>
       <Time>2015-03-26T21:03:14.3057326+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\enforcer_class.png</Source>
+      <Name>Textury\enforcer_class</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\enforcer_class.xnb</Output>
+      <Time>2015-03-29T20:54:29.5830603+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\icon_mouse.png</Source>
+      <Name>Textury\iconMouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\iconMouse.xnb</Output>
+      <Time>2015-03-24T19:56:33.4904243+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\mastermind_class.png</Source>
+      <Name>Textury\mastermind_class</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\mastermind_class.xnb</Output>
+      <Time>2015-03-29T20:54:29.5800602+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\listina.png</Source>
+      <Name>Textury\listina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\listina.xnb</Output>
+      <Time>2015-03-29T20:41:07.1781654+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Textury\pozadiNG.png</Source>
+      <Name>Textury\pozadiNG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Filip\Desktop\Imprisoned-hope\Hard_Try\Hard_Try\bin\x86\Debug\Content\Textury\pozadiNG.xnb</Output>
+      <Time>2015-03-29T21:19:58.6075155+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

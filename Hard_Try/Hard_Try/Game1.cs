@@ -19,11 +19,13 @@ namespace Hard_Try
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary, menuBack, hero;
+        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary, menuBack, hero, classEnforcer, classMastermind, pozadiNG;
         private List<Texture2D> mainMenuTextury = new List<Texture2D>(); 
         private List<Texture2D> optMenuTextury = new List<Texture2D>();
+        private List<Texture2D> newgameMenuTextury = new List<Texture2D>();
         private List<Sprite> mainMenuItems = new List<Sprite>(); 
         private List<Sprite> optMenuItems = new List<Sprite>();
+        private List<Sprite> newgameMenuItems = new List<Sprite>();
         public SpriteFont FontCourierNew;
         public Song music_menuTheme;
         private int sirka = 1280;
@@ -65,20 +67,24 @@ namespace Hard_Try
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            menuBackground = Content.Load<Texture2D>("back_menu");
+            menuBackground = Content.Load<Texture2D>(@"Textury\Menu\back_menu");
             #region Naèítání textur patøících do listù
 
-            mainMenuTextury.Add(menuNewgame = Content.Load<Texture2D>("New Game"));
-            mainMenuTextury.Add(menuLoadgame = Content.Load<Texture2D>("Load Game"));
-            mainMenuTextury.Add(menuOptions = Content.Load<Texture2D>("Options"));
-            mainMenuTextury.Add(menuExit = Content.Load<Texture2D>("Exit"));
-            optMenuTextury.Add(menuTemporary = Content.Load<Texture2D>("Temporary"));
-            optMenuTextury.Add(menuBack = Content.Load<Texture2D>("Back"));
+            mainMenuTextury.Add(menuNewgame = Content.Load<Texture2D>(@"Textury\Menu\New Game"));
+            mainMenuTextury.Add(menuLoadgame = Content.Load<Texture2D>(@"Textury\Menu\Load Game"));
+            mainMenuTextury.Add(menuOptions = Content.Load<Texture2D>(@"Textury\Menu\Options"));
+            mainMenuTextury.Add(menuExit = Content.Load<Texture2D>(@"Textury\Menu\Exit"));
 
+            optMenuTextury.Add(menuTemporary = Content.Load<Texture2D>(@"Textury\Menu\Temporary"));
+            optMenuTextury.Add(menuBack = Content.Load<Texture2D>(@"Textury\Menu\Back"));
+
+            newgameMenuTextury.Add(classEnforcer = Content.Load<Texture2D>(@"Textury\enforcer_class"));
+            newgameMenuTextury.Add(classMastermind = Content.Load<Texture2D>(@"Textury\mastermind_class"));
+            newgameMenuTextury.Add(pozadiNG = Content.Load<Texture2D>(@"Textury\pozadiNG"));
             #endregion
 
-            hero = Content.Load<Texture2D>("Hero");
-            iconMouse = Content.Load<Texture2D>("iconMouse");
+            hero = Content.Load<Texture2D>(@"Textury\Hero");
+            iconMouse = Content.Load<Texture2D>(@"Textury\iconMouse");
 
             music_menuTheme = Content.Load<Song>(@"Music\music_menuTheme");
 
@@ -98,7 +104,7 @@ namespace Hard_Try
             }
             #endregion
 
-            MediaPlayer.Play(music_menuTheme);
+            //MediaPlayer.Play(music_menuTheme);
         }
 
         /// <summary>
@@ -147,8 +153,13 @@ namespace Hard_Try
             spriteBatch.Begin();
             spriteBatch.Draw(menuBackground, new Rectangle(0, 0, menuBackground.Width, menuBackground.Height), Color.White);
 
-            spriteBatch.Draw(hero, new Rectangle(0,50,hero.Width, hero.Height), Color.White);            
-            
+            spriteBatch.Draw(hero, new Rectangle(0,50,hero.Width, hero.Height), Color.White);
+            #region NewGame menu (Work in progress)
+            spriteBatch.Draw(pozadiNG, new Rectangle(15, 140, pozadiNG.Width, pozadiNG.Height), Color.White);
+            spriteBatch.Draw(classMastermind, new Rectangle(50, 190, classMastermind.Width, classMastermind.Height), Color.White);
+            spriteBatch.Draw(classEnforcer, new Rectangle(150, 190, classEnforcer.Width, classEnforcer.Height), Color.White);
+            #endregion
+
             foreach (Sprite s in mainMenuItems)
             {
                 s.Draw(graphics, spriteBatch);
