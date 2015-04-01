@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace Hard_Try
+namespace Imprisoned_Hope
 {
     /// <summary>
     /// This is the main type for your game
@@ -28,8 +28,8 @@ namespace Hard_Try
         private List<Sprite> newgameMenuItems = new List<Sprite>();
         public SpriteFont FontCourierNew;
         public Song music_menuTheme;
-        private int sirka = 1280;
-        private int vyska = 720;
+        public int sirka = 1280;
+        public int vyska = 720;
         public MouseState mys;
         private bool dopravaPohyb, dolevaPohyb, doluPohyb, nahoruPohyb;
         float menuSpeed = 1.5f;
@@ -168,7 +168,7 @@ namespace Hard_Try
             {
                 s.Draw(graphics, spriteBatch);
             }
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0021", new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0023", new Vector2(0, 0), Color.White);
             
             
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X-15, mys.Y-10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)

@@ -16,6 +16,11 @@
 	+oprava menu
 	+promìnná menuOdsazeni urèuje vertikální odsazení nabídek
 
-0.0022 - w00d3nl3g
+0.0023 - w00d3nl3g
   + "Music" složka jak v contentu tak v základní složce(+ CC txt)
   + pøi spuštìní hry se spustí music_menuTheme(bensound-tomorrow)
+0.0024 - podruh
+	+ objektové øešení menu, zatím jen pøidány tøídy
+		- Menu - obsahuje list s MenuItem
+		- MenuItem
+	+ upravený namespace aby odpovídal názvu projektu 

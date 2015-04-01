@@ -1,6 +1,6 @@
 using System;
 
-namespace Hard_Try
+namespace Imprisoned_Hope
 {
 #if WINDOWS || XBOX
     static class Program

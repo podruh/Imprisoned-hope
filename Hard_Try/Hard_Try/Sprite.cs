@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hard_Try
+namespace Imprisoned_Hope
 {
     public class Sprite
     {
@@ -13,6 +13,8 @@ namespace Hard_Try
         public Rectangle Rectangle;
         public Vector2 Position;
         public Color Color;
+
+        public Sprite() { }
 
         public Sprite(Texture2D texture, Rectangle rectangle, Color color)
         {
