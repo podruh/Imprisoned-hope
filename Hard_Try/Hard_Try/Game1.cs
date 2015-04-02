@@ -19,21 +19,21 @@ namespace Imprisoned_Hope
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary, menuBack, hero, classEnforcer, classMastermind, pozadiNG;
+        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary,
+            menuBack, hero, classEnforcer, classMastermind, pozadiNG;
         private List<Texture2D> mainMenuTextury = new List<Texture2D>(); 
         private List<Texture2D> optMenuTextury = new List<Texture2D>();
         private List<Texture2D> newgameMenuTextury = new List<Texture2D>();
-        private List<Sprite> mainMenuItems = new List<Sprite>(); 
-        private List<Sprite> optMenuItems = new List<Sprite>();
-        private List<Sprite> newgameMenuItems = new List<Sprite>();
+        Menu mainMenu, optMenu, newgameMenu;
         public SpriteFont FontCourierNew;
         public Song music_menuTheme;
         public int sirka = 1280;
         public int vyska = 720;
         public MouseState mys;
-        private bool dopravaPohyb, dolevaPohyb, doluPohyb, nahoruPohyb;
+        public MouseState minulaMys;
         float menuSpeed = 1.5f;
-        int menuOdsazeni = 450;
+        int menuX = 760;
+        int menuY = 450;
 
         public Game1()
         {
@@ -91,17 +91,8 @@ namespace Imprisoned_Hope
             FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
 
             #region øazení textur menu do ItemListù
-            int yMain = menuOdsazeni, yOpt = vyska + 1; //základní vertikální pozice menu
-            for (int i = 0; i < mainMenuTextury.Count; i++)// Naètení obsahu hlavního jmenu do listu hlavního jmenu. y = oddìlení položek vertikálnì.
-            {
-                mainMenuItems.Add(new Sprite(mainMenuTextury[i], new Rectangle(sirka - mainMenuTextury[i].Width - 20, yMain, mainMenuTextury[i].Width, mainMenuTextury[i].Height), Color.White));
-                yMain += 60;
-            }
-            for (int i = 0; i < optMenuTextury.Count; i++)
-            {
-                optMenuItems.Add(new Sprite(optMenuTextury[i], new Rectangle(sirka - optMenuTextury[i].Width - 20, yOpt, optMenuTextury[i].Width, optMenuTextury[i].Height), Color.White));
-                yOpt += 60;
-            }
+            mainMenu = new Menu(mainMenuTextury, new Rectangle(menuX, menuY, 0, 0), menuSpeed, menuX, menuY);
+            optMenu = new Menu(optMenuTextury, new Rectangle(menuX, vyska + 1, 0, 0), menuSpeed, menuX, menuY);            
             #endregion
 
             //MediaPlayer.Play(music_menuTheme);
@@ -131,11 +122,29 @@ namespace Imprisoned_Hope
 
             //naète myš
             mys = Mouse.GetState();
-            PohybMenu(gameTime);
-            if (mainMenuItems[3].Rectangle.Contains(new Point(mys.X, mys.Y)) && mys.LeftButton == ButtonState.Pressed)
+            //PohybMenu(gameTime);
+            
+            if (mainMenu.MenuItems[3].isClicked(mys))
             {
                 this.Exit();
             }
+
+            if (mainMenu.MenuItems[2].isClicked(mys))
+            {
+                optMenu.DockY = menuY;//zmìní koneènou pozici pohybu na dockovací souøadnici
+                optMenu.changeMovement("up");//changeMovement zkontroluje jestli mùže menu do smìru "left"
+                mainMenu.DockX = sirka;
+                mainMenu.changeMovement("right");
+            }
+            if (optMenu.MenuItems[1].isClicked(mys))
+            {
+                mainMenu.DockX = menuX;
+                mainMenu.changeMovement("left");
+                optMenu.DockY = vyska;
+                optMenu.changeMovement("down");
+            }
+            optMenu.moveMenu(gameTime);
+            mainMenu.moveMenu(gameTime);
             base.Update(gameTime);
         }
 
@@ -160,94 +169,21 @@ namespace Imprisoned_Hope
             spriteBatch.Draw(classEnforcer, new Rectangle(150, 190, classEnforcer.Width, classEnforcer.Height), Color.White);
             #endregion
 
-            foreach (Sprite s in mainMenuItems)
+            foreach (MenuItem s in mainMenu.MenuItems)
             {
                 s.Draw(graphics, spriteBatch);
             }
-            foreach (Sprite s in optMenuItems)
+            foreach (MenuItem s in optMenu.MenuItems)
             {
                 s.Draw(graphics, spriteBatch);
             }
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0023", new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0025" + mainMenu.Movement, new Vector2(0, 0), Color.White);
             
             
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X-15, mys.Y-10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
 
             base.Draw(gameTime);
-        }
-        private void PohybMenu(GameTime gameTime)
-        {
-            
-
-            if (mainMenuItems[2].Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed)//pohyb hlavního menu a vynoøení optMenu se zapne po stisknutí na options
-            {
-                dopravaPohyb = true;
-                nahoruPohyb = true;
-            }
-            if (mainMenuItems[1].Position.X > sirka)//pohyb mainMenu se po dosažení šíøky zastaví
-            {
-                dopravaPohyb = false;
-            }
-            if (optMenuItems[0].Position.Y <= menuOdsazeni)//zastavení pohybu optMenu nahoru
-            {
-                nahoruPohyb = false;
-            }
-
-            if (optMenuItems[1].Rectangle.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)//pohyb options menu zpet dolu
-            {
-                doluPohyb = true;
-                dolevaPohyb = true;
-            }
-            if (optMenuItems[0].Position.Y > vyska)//zastaveni pohybu
-            {
-                doluPohyb = false;
-            }
-
-            if (mainMenuItems[1].Position.X < sirka - mainMenuItems[1].Rectangle.Width - 20)
-            {
-                dolevaPohyb = false;
-            }
-
-            //pohyb
-            if (dopravaPohyb)
-            {
-                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                foreach (Sprite s in mainMenuItems)
-                {
-                    s.Position.X += (float)(menuSpeed * elapsed);
-                    s.Rectangle.X = (int)s.Position.X;
-                }
-
-            }
-            if (dolevaPohyb)
-            {
-                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                foreach (Sprite s in mainMenuItems)
-                {
-                    s.Position.X -= (float)(menuSpeed * elapsed);
-                    s.Rectangle.X = (int)s.Position.X;
-                }
-
-            }
-            if (nahoruPohyb)
-            {
-                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                foreach (Sprite s in optMenuItems) //posunutí options menu nahoru
-                {
-                    s.Position.Y -= (float)(menuSpeed * elapsed);
-                    s.Rectangle.Y = (int)s.Position.Y;
-                } 
-            }
-            if (doluPohyb)
-            {
-                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                foreach (Sprite s in optMenuItems)
-                {
-                    s.Position.Y += (float)(menuSpeed * elapsed);
-                    s.Rectangle.Y = (int)s.Position.Y;
-                } 
-            }
-        }
+        }       
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,10 @@ namespace Imprisoned_Hope
 {
     public class Menu : Sprite
     {
-        public List<MenuItem> MenuItems;
-        public float Speed;
+        public List<MenuItem> MenuItems= new List<MenuItem>();
+        public float Speed; // rychlost pohybu menu
+        public int DockX, DockY;
+        public string Movement = "none";
 
         public Menu(List<MenuItem> list, Rectangle rect, float speed)
         {
@@ -19,16 +22,71 @@ namespace Imprisoned_Hope
             this.Position = new Vector2(rect.X, rect.Y);
             this.Speed = speed;
         }
+        
+        public Menu(List<Texture2D> list, Rectangle rect, float speed, int dockX, int dockY)
+        {
+            this.Rectangle = rect;
+            this.Position = new Vector2(rect.X, rect.Y);
+            this.Speed = speed;
+            this.DockX = dockX;
+            this.DockY = dockY;
+            int x = rect.X;
+            int y = rect.Y;
+            int width = 0;
+            int height = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y, list[i].Width, list[i].Height), Color.White));
+                y += list[i].Height;
+                height += list[i].Height;
+                if (list[i].Width > width)
+                {
+                    width = list[i].Width;
+                }
+                
+            }
+            this.Rectangle.Width = width;
+            this.Rectangle.Height = height;                        
+        }
+
+        public Menu(Texture2D Texture, List<Texture2D> list, Rectangle rect, float speed, int dockX, int dockY)
+        {
+            this.Texture = Texture;
+            this.Rectangle = rect;
+            this.Position = new Vector2(rect.X, rect.Y);
+            this.Speed = speed;
+            this.DockX = dockX;
+            this.DockY = dockY;
+            int x = rect.X;
+            int y = rect.Y;
+            int width = 0;
+            int height = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y, list[i].Width, list[i].Height), Color.White));
+                y += list[i].Height;
+                height += list[i].Height;
+                if (list[i].Width > width)
+                {
+                    width = list[i].Width;
+                }
+
+            }
+            this.Rectangle.Width = width;
+            this.Rectangle.Height = height;
+        }
+
 
         public void updateItemsPosition()//nastaví všem itemům pozici aby byli pod sebou a se stejným začátkem jako objekt menu
         {
             int x = this.Rectangle.X;
             int y = this.Rectangle.Y;
+            
             for (int i = 0; i < MenuItems.Count; i++)
             {
-                MenuItems[i].Rectangle = new Rectangle(x, y, MenuItems[i].Texture.Width, MenuItems[i].Texture.Height);                
-                y += MenuItems[i].Texture.Width;
-                
+                MenuItems[i].Rectangle.X = x;
+                MenuItems[i].Rectangle.Y = y;
+                y += MenuItems[i].Texture.Height;                                
             }
         }
 
@@ -51,72 +109,82 @@ namespace Imprisoned_Hope
                 return false;
             }
         }
-        public void moveMenu(GameTime gameTime, string direction) //pohyby :D
+        public void moveMenu(GameTime gameTime) //kontrola směru pohybu a možnosti dalšího pohybu ve směru movement
         {
-            if(offLimits() == false)
-            { 
-                if(direction == "up")
-                { 
-                    double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                    Position.Y -= (float)(Speed * elapsed);
-                    Rectangle.Y = (int)Position.Y;
-                    updateItemsPosition();
-                }
-                if (direction == "down")
-                {
-                    double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                    Position.Y += (float)(Speed * elapsed);
-                    Rectangle.Y = (int)Position.Y;
-                    updateItemsPosition();
-                }
-                if (direction == "left")
-                {
-                    double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                    Position.X -= (float)(Speed * elapsed);
-                    Rectangle.X = (int)Position.X;
-                    updateItemsPosition();               
-                }
-                if (direction == "right")
-                {
-                    double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
-                    Position.X += (float)(Speed * elapsed);
-                    Rectangle.X = (int)Position.X;
-                    updateItemsPosition();
-                }
-            }
-        }
-        public bool offLimits()//zjistění jestli není menu už mimo hranice okna
-        {
-            if (Position.X + Rectangle.Height < 0)
+            if (Movement == "up" &&  canMove(Movement))
             {
-                return true;
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                Position.Y -= (float)(Speed * elapsed);
+                Rectangle.Y = (int)Position.Y;
+                updateItemsPosition();//nastaví všem menuItems stejné souřadnice
+            }
+            if (Movement == "down" && canMove(Movement))
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                Position.Y += (float)(Speed * elapsed);
+                Rectangle.Y = (int)Position.Y;
+                updateItemsPosition();
+            }
+            if (Movement == "left" && canMove(Movement))
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                Position.X -= (float)(Speed * elapsed);
+                Rectangle.X = (int)Position.X;
+                updateItemsPosition();
+            }
+            if (Movement == "right" && canMove(Movement))
+            {
+                double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
+                Position.X += (float)(Speed * elapsed);
+                Rectangle.X = (int)Position.X;
+                updateItemsPosition();
+            }          
+                
+        }
+        public bool canMove(string dir)//zjistění jestli není menu už mimo hranice okna nebo pozice kde má být
+        {
+            if (dir == "left" && ((Position.X + Rectangle.Width < 0)|| Rectangle.X <= DockX)) // 
+            {
+                Movement = "none";
+                return false;
             }
             else
             {
-                if (Position.X > 720)
+                if (dir == "right" && ((Position.X > 1280) || Rectangle.X >= DockX))
                 {
-                    return true;
+                    Movement = "none";
+                    return false;
                 }
                 else
                 {
-                    if (Position.Y + Rectangle.Width < 0)
+                    if (dir == "up" && ((Position.Y + Rectangle.Height < 0) || Rectangle.Y <= DockY))
                     {
-                        return true;
+                        Movement = "none";
+                        return false;
                     }
                     else
-                    {
-                        if(Position.Y > 1280)
+	                {
+                        if (dir == "down" && ((Position.Y > 720) || Rectangle.Y >= DockY))
                         {
-                            return true;
+                            Movement = "none";
+                            return false;
                         }
                         else
                         {
-                            return false;
-                        }
-                    }
+                            return true;
+                        }  
+	                }
                 }
             }
+                                 
             
+        }
+        public void changeMovement(string move)
+        {
+            if (canMove(move))
+            {
+                Movement = move;
+            }
         }
     }
 }

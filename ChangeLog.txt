@@ -23,4 +23,10 @@
 	+ objektové øešení menu, zatím jen pøidány tøídy
 		- Menu - obsahuje list s MenuItem
 		- MenuItem
-	+ upravený namespace aby odpovídal názvu projektu 
+	+ upravený namespace aby odpovídal názvu projektu
+0.0025 - podruh
+	+dodìlané menu, zatim se položky automaticky pøidávají pod sebe
+	+naètené dvì menu - Main a Options, do NG jsem nechtìl sahat
+	+pøidáno pøetížení, teï je k dispozici nahrát textutru menu nebo ne
+	+pohyb menu vyøesen
+		-musí se pokaždé zmìnit promìnná, která obsahuje souøadnice míste ukonèení pohybu, DockX, DockY 
