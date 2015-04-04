@@ -123,17 +123,17 @@ namespace Imprisoned_Hope
 			this.DockY = dockY;
 			int x = rect.X + odstupX;
 			int y = rect.Y;
-            //int width = 0;
-            //int height = 0;
+			//int width = 0;
+			//int height = 0;
 			for (int i = 0; i < list.Count; i++)
 			{
 				MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y + odstupY, list[i].Width, list[i].Height), Color.White));
 				x += list[i].Width + mezera;
-                //width += list[i].Width + mezera;
-                //if (list[i].Height > height)
-                //{
-                //    height = list[i].Height;
-                //}
+				//width += list[i].Width + mezera;
+				//if (list[i].Height > height)
+				//{
+				//    height = list[i].Height;
+				//}
 
 			}
 			this.Rectangle.Width = Texture.Width;

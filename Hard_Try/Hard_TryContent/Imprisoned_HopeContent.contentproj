@@ -134,13 +134,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textury\Hero.jpg">
-      <Name>Hero</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Textury\enforcer_class.png">
       <Name>enforcer_class</Name>
       <Importer>TextureImporter</Importer>
@@ -171,6 +164,13 @@
       <Name>times</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textury\Hero.png">
+      <Name>Hero</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

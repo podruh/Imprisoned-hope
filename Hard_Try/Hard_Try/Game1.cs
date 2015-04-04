@@ -171,7 +171,7 @@ namespace Imprisoned_Hope
             spriteBatch.Begin();
             spriteBatch.Draw(menuBackground, new Rectangle(0, 0, menuBackground.Width, menuBackground.Height), Color.White);
 
-            spriteBatch.Draw(hero, new Rectangle(0,50,hero.Width, hero.Height), Color.White);
+            spriteBatch.Draw(hero, new Rectangle(sirka/2 - hero.Width/2,70,hero.Width, hero.Height), Color.White);
             #region NewGame menu (Work in progress)
             /*spriteBatch.Draw(pozadiNG, new Rectangle(ngmenuX, ngmenuY, pozadiNG.Width, pozadiNG.Height), Color.White);
             spriteBatch.Draw(classMastermind, new Rectangle(ngmenuX + 45, ngmenuY + 50, classMastermind.Width, classMastermind.Height), Color.White);
