@@ -19,12 +19,12 @@ namespace Imprisoned_Hope
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Texture2D menuBackground, menuExit, menuLoadgame, menuOptions,menuNewgame,iconMouse, menuTemporary,
-            menuBack, hero, classEnforcer, classMastermind, pozadiNG;
+        private Texture2D menuBackground, menuItem_Exit, menuItem_Loadgame, menuItem_Options,menuItem_Newgame,
+            iconMouse, menuItem_Temporary, menuItem_Back, hero, classEnforcer, classMastermind, pozadiNG;
         private List<Texture2D> mainMenuTextury = new List<Texture2D>(); 
         private List<Texture2D> optMenuTextury = new List<Texture2D>();
         private List<Texture2D> newgameMenuTextury = new List<Texture2D>();
-        Menu mainMenu, optMenu, newgameMenu;
+        Menu mainMenu, optMenu, newGameMenu;
         private float menuSpeed = 1.5f;
         private int menuX = 760;
         private int menuY = 450;
@@ -69,6 +69,7 @@ namespace Imprisoned_Hope
             menuBackground = Content.Load<Texture2D>(@"Textury\Menu\back_menu");
 
             hero = Content.Load<Texture2D>(@"Textury\Hero");
+
             iconMouse = Content.Load<Texture2D>(@"Textury\iconMouse");
 
             music_menuTheme = Content.Load<Song>(@"Music\music_menuTheme");
@@ -77,21 +78,25 @@ namespace Imprisoned_Hope
 
             #region Naèítání textur patøících do listù
 
-            mainMenuTextury.Add(menuNewgame = Content.Load<Texture2D>(@"Textury\Menu\New Game"));
-            mainMenuTextury.Add(menuLoadgame = Content.Load<Texture2D>(@"Textury\Menu\Load Game"));
-            mainMenuTextury.Add(menuOptions = Content.Load<Texture2D>(@"Textury\Menu\Options"));
-            mainMenuTextury.Add(menuExit = Content.Load<Texture2D>(@"Textury\Menu\Exit"));
+            mainMenuTextury.Add(menuItem_Newgame = Content.Load<Texture2D>(@"Textury\Menu\New Game"));
+            mainMenuTextury.Add(menuItem_Loadgame = Content.Load<Texture2D>(@"Textury\Menu\Load Game"));
+            mainMenuTextury.Add(menuItem_Options = Content.Load<Texture2D>(@"Textury\Menu\Options"));
+            mainMenuTextury.Add(menuItem_Exit = Content.Load<Texture2D>(@"Textury\Menu\Exit"));
 
-            optMenuTextury.Add(menuTemporary = Content.Load<Texture2D>(@"Textury\Menu\Temporary"));
-            optMenuTextury.Add(menuBack = Content.Load<Texture2D>(@"Textury\Menu\Back"));
+            optMenuTextury.Add(menuItem_Temporary = Content.Load<Texture2D>(@"Textury\Menu\Temporary"));
+            optMenuTextury.Add(menuItem_Back = Content.Load<Texture2D>(@"Textury\Menu\Back"));
 
             newgameMenuTextury.Add(classEnforcer = Content.Load<Texture2D>(@"Textury\enforcer_class"));
             newgameMenuTextury.Add(classMastermind = Content.Load<Texture2D>(@"Textury\mastermind_class"));
             newgameMenuTextury.Add(pozadiNG = Content.Load<Texture2D>(@"Textury\pozadiNG"));
-            #endregion            
+
+            #endregion   
+         
             #region naplòování menu listama textur a urèování startovní pozice
+
             mainMenu = new Menu(mainMenuTextury, new Rectangle(menuX, menuY, 0, 0), menuSpeed, menuX, menuY);
-            optMenu = new Menu(optMenuTextury, new Rectangle(menuX, vyska + 1, 0, 0), menuSpeed, menuX, menuY);            
+            optMenu = new Menu(optMenuTextury, new Rectangle(menuX, vyska + 1, 0, 0), menuSpeed, menuX, menuY); 
+            
             #endregion
 
             //MediaPlayer.Play(music_menuTheme);
@@ -165,15 +170,19 @@ namespace Imprisoned_Hope
             spriteBatch.Draw(classEnforcer, new Rectangle(150, 190, classEnforcer.Width, classEnforcer.Height), Color.White);
             #endregion
 
-            foreach (MenuItem s in mainMenu.MenuItems)
-            {
-                s.Draw(graphics, spriteBatch);
-            }
-            foreach (MenuItem s in optMenu.MenuItems)
-            {
-                s.Draw(graphics, spriteBatch);
-            }
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0025" + mainMenu.Movement, new Vector2(0, 0), Color.White);
+            //foreach (MenuItem s in mainMenu.MenuItems)
+            //{
+            //    s.Draw(graphics, spriteBatch);
+            //}
+            //foreach (MenuItem s in optMenu.MenuItems)
+            //{
+            //    s.Draw(graphics, spriteBatch);
+            //}
+            //nová metoda v Menu Draw
+            mainMenu.DrawMenu(graphics, spriteBatch);
+            optMenu.DrawMenu(graphics, spriteBatch);
+
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0025" + mainMenu.MenuDirection, new Vector2(0, 0), Color.White);
             
             
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X-15, mys.Y-10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
