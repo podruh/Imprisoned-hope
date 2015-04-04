@@ -25,15 +25,14 @@ namespace Imprisoned_Hope
         private List<Texture2D> optMenuTextury = new List<Texture2D>();
         private List<Texture2D> newgameMenuTextury = new List<Texture2D>();
         Menu mainMenu, optMenu, newgameMenu;
+        private float menuSpeed = 1.5f;
+        private int menuX = 760;
+        private int menuY = 450;
         public SpriteFont FontCourierNew;
         public Song music_menuTheme;
         public int sirka = 1280;
         public int vyska = 720;
         public MouseState mys;
-        public MouseState minulaMys;
-        float menuSpeed = 1.5f;
-        int menuX = 760;
-        int menuY = 450;
 
         public Game1()
         {
@@ -68,6 +67,14 @@ namespace Imprisoned_Hope
 
             // TODO: use this.Content to load your game content here
             menuBackground = Content.Load<Texture2D>(@"Textury\Menu\back_menu");
+
+            hero = Content.Load<Texture2D>(@"Textury\Hero");
+            iconMouse = Content.Load<Texture2D>(@"Textury\iconMouse");
+
+            music_menuTheme = Content.Load<Song>(@"Music\music_menuTheme");
+
+            FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
+
             #region Naèítání textur patøících do listù
 
             mainMenuTextury.Add(menuNewgame = Content.Load<Texture2D>(@"Textury\Menu\New Game"));
@@ -81,16 +88,8 @@ namespace Imprisoned_Hope
             newgameMenuTextury.Add(classEnforcer = Content.Load<Texture2D>(@"Textury\enforcer_class"));
             newgameMenuTextury.Add(classMastermind = Content.Load<Texture2D>(@"Textury\mastermind_class"));
             newgameMenuTextury.Add(pozadiNG = Content.Load<Texture2D>(@"Textury\pozadiNG"));
-            #endregion
-
-            hero = Content.Load<Texture2D>(@"Textury\Hero");
-            iconMouse = Content.Load<Texture2D>(@"Textury\iconMouse");
-
-            music_menuTheme = Content.Load<Song>(@"Music\music_menuTheme");
-
-            FontCourierNew = Content.Load<SpriteFont>(@"Fonty\courier_new");
-
-            #region øazení textur menu do ItemListù
+            #endregion            
+            #region naplòování menu listama textur a urèování startovní pozice
             mainMenu = new Menu(mainMenuTextury, new Rectangle(menuX, menuY, 0, 0), menuSpeed, menuX, menuY);
             optMenu = new Menu(optMenuTextury, new Rectangle(menuX, vyska + 1, 0, 0), menuSpeed, menuX, menuY);            
             #endregion
@@ -118,11 +117,8 @@ namespace Imprisoned_Hope
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
-
             //naète myš
             mys = Mouse.GetState();
-            //PohybMenu(gameTime);
             
             if (mainMenu.MenuItems[3].isClicked(mys))
             {
