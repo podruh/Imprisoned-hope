@@ -12,9 +12,11 @@ namespace Imprisoned_Hope
     {
         public List<MenuItem> MenuItems= new List<MenuItem>();
         public float Speed; // rychlost pohybu menu
-        public int DockX, DockY;
-        public string Movement = "none";
-
+        public int DockX, DockY;//pozice, kde se menu zastaví při pohybu
+        public string Movement = "none";//jaký pohyb menu koná
+        /*
+         bere celý list objektů MenuItem, Rectangle který patří Menu a rychlost pohybu
+         */
         public Menu(List<MenuItem> list, Rectangle rect, float speed)
         {
             this.MenuItems.AddRange(list);
@@ -22,7 +24,11 @@ namespace Imprisoned_Hope
             this.Position = new Vector2(rect.X, rect.Y);
             this.Speed = speed;
         }
-        
+        /*
+         * bere list textur, ze kterých si pak udělá obejkty MenuItems
+         * nastaví si podle položek šířku a výšku
+         * bere rovnou i dockovací pozici
+         */
         public Menu(List<Texture2D> list, Rectangle rect, float speed, int dockX, int dockY)
         {
             this.Rectangle = rect;
@@ -39,7 +45,7 @@ namespace Imprisoned_Hope
                 MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y, list[i].Width, list[i].Height), Color.White));
                 y += list[i].Height;
                 height += list[i].Height;
-                if (list[i].Width > width)
+                if (list[i].Width > width)//nastavení šířky menu
                 {
                     width = list[i].Width;
                 }
@@ -48,7 +54,9 @@ namespace Imprisoned_Hope
             this.Rectangle.Width = width;
             this.Rectangle.Height = height;                        
         }
-
+        /*
+         *dělá to samý jako předchozí konstruktor, ale menu má vlastní pozadí - netestováno 
+         */
         public Menu(Texture2D Texture, List<Texture2D> list, Rectangle rect, float speed, int dockX, int dockY)
         {
             this.Texture = Texture;
@@ -111,7 +119,7 @@ namespace Imprisoned_Hope
         }
         public void moveMenu(GameTime gameTime) //kontrola směru pohybu a možnosti dalšího pohybu ve směru movement
         {
-            if (Movement == "up" &&  canMove(Movement))
+            if (Movement == "up" &&  canMove(Movement))//jestliže je validní hodnota Movement a jestli se může menu s daném směru pohybovat dál
             {
                 double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
                 Position.Y -= (float)(Speed * elapsed);
@@ -143,7 +151,7 @@ namespace Imprisoned_Hope
         }
         public bool canMove(string dir)//zjistění jestli není menu už mimo hranice okna nebo pozice kde má být
         {
-            if (dir == "left" && ((Position.X + Rectangle.Width < 0)|| Rectangle.X <= DockX)) // 
+            if (dir == "left" && ((Position.X + Rectangle.Width < 0)|| Rectangle.X <= DockX)) //vrátí false když bude menu mimo okno nebo v pozici dockování
             {
                 Movement = "none";
                 return false;
@@ -179,7 +187,7 @@ namespace Imprisoned_Hope
                                  
             
         }
-        public void changeMovement(string move)
+        public void changeMovement(string move) // hlídá jestli může změnít směr pohybu
         {
             if (canMove(move))
             {
