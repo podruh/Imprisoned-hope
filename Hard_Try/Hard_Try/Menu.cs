@@ -101,44 +101,44 @@ namespace Imprisoned_Hope
 			this.Rectangle.Width = width;
 			this.Rectangle.Height = height;
 		}
-        /// <summary>
-        /// Pro menu NewGame menu orientované po ose X
-        /// </summary>
-        /// <param name="Texture">textura pozadí</param>
-        /// <param name="list">List s texturami</param>
-        /// <param name="rect">Rect pozadí (asi)</param>
-        /// <param name="speed">Rychlos posunu (float)</param>
-        /// <param name="dockX">Pozice X kde se menu zastaví</param>
-        /// <param name="dockY">Pozice Y kde se menu zastaví</param>
-        /// <param name="odstupX">Odsazení od textury</param>
-        /// <param name="odstupY">Odsazení od textury</param>
-        /// <param name="mezera">Mezera mezi ikonami</param>
-        public Menu(Texture2D Texture, List<Texture2D> list, Rectangle rect, float speed, int dockX, int dockY, int odstupX, int odstupY, int mezera)
-        {
-            this.Texture = Texture;
-            this.Rectangle = rect;
-            this.Position = new Vector2(rect.X, rect.Y);
-            this.Speed = speed;
-            this.DockX = dockX;
-            this.DockY = dockY;
-            int x = rect.X + odstupX;
-            int y = rect.Y;
-            int width = 0;
-            int height = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y + odstupY, list[i].Width, list[i].Height), Color.White));
-                x += list[i].Height + mezera;
-                width += list[i].Width + mezera;
-                if (list[i].Height > height)
-                {
-                    height = list[i].Height;
-                }
+		/// <summary>
+		/// Pro menu NewGame menu orientované po ose X
+		/// </summary>
+		/// <param name="Texture">textura pozadí</param>
+		/// <param name="list">List s texturami</param>
+		/// <param name="rect">Rect pozadí (asi)</param>
+		/// <param name="speed">Rychlos posunu (float)</param>
+		/// <param name="dockX">Pozice X kde se menu zastaví</param>
+		/// <param name="dockY">Pozice Y kde se menu zastaví</param>
+		/// <param name="odstupX">Odsazení od textury</param>
+		/// <param name="odstupY">Odsazení od textury</param>
+		/// <param name="mezera">Mezera mezi ikonami</param>
+		public Menu(Texture2D Texture, List<Texture2D> list, Rectangle rect, float speed, int dockX, int dockY, int odstupX, int odstupY, int mezera)
+		{
+			this.Texture = Texture;
+			this.Rectangle = rect;
+			this.Position = new Vector2(rect.X, rect.Y);
+			this.Speed = speed;
+			this.DockX = dockX;
+			this.DockY = dockY;
+			int x = rect.X + odstupX;
+			int y = rect.Y;
+            //int width = 0;
+            //int height = 0;
+			for (int i = 0; i < list.Count; i++)
+			{
+				MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y + odstupY, list[i].Width, list[i].Height), Color.White));
+				x += list[i].Width + mezera;
+                //width += list[i].Width + mezera;
+                //if (list[i].Height > height)
+                //{
+                //    height = list[i].Height;
+                //}
 
-            }
-            this.Rectangle.Width = width;
-            this.Rectangle.Height = height;
-        }
+			}
+			this.Rectangle.Width = Texture.Width;
+			this.Rectangle.Height = Texture.Height;
+		}
 		public void updateItemsPosition()//nastaví všem itemům pozici aby byli pod sebou a se stejným začátkem jako objekt menu
 		{
 			int x = this.Rectangle.X;
