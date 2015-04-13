@@ -248,7 +248,7 @@ namespace Imprisoned_Hope
 				MenuDirection = requstedMove;
 			}
 		}
-		public void DrawMenu(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
+		public void DrawMenu(SpriteBatch spriteBatch)
 		{
 			//spriteBatch.Draw(Texture, Rectangle, Color);
 
@@ -261,7 +261,7 @@ namespace Imprisoned_Hope
 			//vykreslení položek
 			foreach (MenuItem i in MenuItems)
 			{
-				i.Draw(graphics, spriteBatch);
+				i.Draw(spriteBatch);
 			}
 		}
 	}

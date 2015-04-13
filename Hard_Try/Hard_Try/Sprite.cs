@@ -24,7 +24,7 @@ namespace Imprisoned_Hope
             this.Color = color;
         }
 
-        public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture, Rectangle, Color);
         }
