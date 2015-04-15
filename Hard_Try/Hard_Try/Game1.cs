@@ -78,6 +78,7 @@ namespace Imprisoned_Hope
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+
             base.Update(gameTime);
         }
 
@@ -97,6 +98,14 @@ namespace Imprisoned_Hope
             spriteBatch.End();
 
             base.Draw(gameTime);
-        }       
+        } 
+        public void GoFullscreen()
+        {
+            graphics.IsFullScreen = true;
+        }
+        public void GoWindow()
+        {
+            graphics.IsFullScreen = false;
+        }
     }
 }

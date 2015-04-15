@@ -18,7 +18,7 @@ namespace Imprisoned_Hope
     public class MenuComponent : Microsoft.Xna.Framework.DrawableGameComponent
     {
         private Game1 Hra;
-
+        
         SpriteBatch spriteBatch;
 
         #region popisy class
@@ -30,7 +30,7 @@ namespace Imprisoned_Hope
         #endregion
 
         private Texture2D menuBackground, menuItem_Exit, menuItem_Loadgame, menuItem_Options, menuItem_Newgame,
-            iconMouse, menuItem_Temporary, menuItem_Back, hero, classEnforcer, classMastermind, pozadiNG, iconTemp;
+            iconMouse, menuItem_Temporary, menuItem_Back,menuItem_Fullscreen, menuItem_Window, hero, classEnforcer, classMastermind, pozadiNG, iconTemp;
         private List<Texture2D> mainMenuTextury;
         private List<Texture2D> optMenuTextury;
         private List<Texture2D> newgameMenuTextury;
@@ -42,8 +42,8 @@ namespace Imprisoned_Hope
         public int sirka;
         public int vyska;
         public MouseState mys;
-        public MenuComponent(Game1 game)
-            : base(game)
+
+        public MenuComponent(Game1 game) : base(game)
         {
             // TODO: Construct any child components here
             this.Hra = game;
@@ -107,12 +107,15 @@ namespace Imprisoned_Hope
             mainMenuTextury.Add(menuItem_Options = Hra.Content.Load<Texture2D>(@"Textury\Menu\Options"));
             mainMenuTextury.Add(menuItem_Exit = Hra.Content.Load<Texture2D>(@"Textury\Menu\Exit"));
 
+            optMenuTextury.Add(menuItem_Fullscreen = Hra.Content.Load<Texture2D>(@"Textury\Menu\Fullscreen"));
+            optMenuTextury.Add(menuItem_Window = Hra.Content.Load<Texture2D>(@"Textury\Menu\Window"));
             optMenuTextury.Add(menuItem_Temporary = Hra.Content.Load<Texture2D>(@"Textury\Menu\Temporary"));
             optMenuTextury.Add(menuItem_Back = Hra.Content.Load<Texture2D>(@"Textury\Menu\Back"));
 
             pozadiNG = Hra.Content.Load<Texture2D>(@"Textury\pozadiNG");
             newgameMenuTextury.Add(classMastermind = Hra.Content.Load<Texture2D>(@"Textury\mastermind_class"));
             newgameMenuTextury.Add(classEnforcer = Hra.Content.Load<Texture2D>(@"Textury\enforcer_class"));
+            newgameMenuTextury.Add(iconTemp = Hra.Content.Load<Texture2D>(@"Textury\temp"));
             newgameMenuTextury.Add(iconTemp = Hra.Content.Load<Texture2D>(@"Textury\temp"));
             newgameMenuTextury.Add(iconTemp = Hra.Content.Load<Texture2D>(@"Textury\temp"));
 
@@ -122,7 +125,7 @@ namespace Imprisoned_Hope
 
             mainMenu = new Menu(mainMenuTextury, new Rectangle(menuX, menuY, 0, 0), mainmenuSpeed, menuX, menuY);
             optMenu = new Menu(optMenuTextury, new Rectangle(menuX, vyska + 1, 0, 0), optmenuSpeed, menuX, menuY);
-            newGameMenu = new Menu(pozadiNG, newgameMenuTextury, new Rectangle(ngmenuX, ngmenuY, pozadiNG.Width, pozadiNG.Height), mainmenuSpeed, ngmenuX, ngmenuY, 45, 50, 100);
+            newGameMenu = new Menu(pozadiNG, newgameMenuTextury, new Rectangle(0 - pozadiNG.Width, ngmenuY, pozadiNG.Width, pozadiNG.Height), mainmenuSpeed, 0 - pozadiNG.Width, ngmenuY, 45, 50, 60);
             #endregion
 
             //MediaPlayer.Play(music_menuTheme);
@@ -143,6 +146,13 @@ namespace Imprisoned_Hope
                 Hra.Exit();
             }
 
+            if (mainMenu.MenuItems[0].isClicked(mys))
+            {
+                newGameMenu.DockX = ngmenuX;
+                newGameMenu.changeMovement("right");
+                mainMenu.DockX = sirka;
+                mainMenu.changeMovement("right");
+            }
             if (mainMenu.MenuItems[2].isClicked(mys))
             {
                 optMenu.DockY = menuY;//zmìní koneènou pozici pohybu na dockovací souøadnici
@@ -150,7 +160,7 @@ namespace Imprisoned_Hope
                 mainMenu.DockX = sirka;
                 mainMenu.changeMovement("right");
             }
-            if (optMenu.MenuItems[1].isClicked(mys))
+            if (optMenu.MenuItems[3].isClicked(mys))
             {
                 mainMenu.DockX = menuX;
                 mainMenu.changeMovement("left");
@@ -164,11 +174,19 @@ namespace Imprisoned_Hope
             if (newGameMenu.MenuItems[2].isClicked(mys))
                 classNews = "Beasttamer";
             if (newGameMenu.MenuItems[3].isClicked(mys))
-                classNews = "Phasewalker";
-
+                classNews = "Phasewalker";              
+            if (newGameMenu.MenuItems[4].isClicked(mys))
+            {
+                newGameMenu.DockX = 0 - pozadiNG.Width;
+                newGameMenu.changeMovement("left");
+                mainMenu.DockX = menuX;
+                mainMenu.changeMovement("left");
+                classNews = null;
+            }
 
             optMenu.moveMenu(gameTime);
             mainMenu.moveMenu(gameTime);
+            newGameMenu.moveMenu(gameTime);
             base.Update(gameTime);
         }
         public override void Draw(GameTime gameTime)
@@ -184,8 +202,7 @@ namespace Imprisoned_Hope
             optMenu.DrawMenu(spriteBatch);
             newGameMenu.DrawMenu(spriteBatch);
 
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0028", new Vector2(0, 0), Color.White);
-            #region NewGame menu (Work in progress)
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0029" + "  " + newGameMenu.canMove("right") + "  " + newGameMenu.DockX + "  " + newGameMenu.Position, new Vector2(0, 0), Color.White);
             switch (classNews)
             {
                 case "Mastermind":
@@ -203,7 +220,6 @@ namespace Imprisoned_Hope
                 default:
                     break;
             }
-            #endregion
 
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();

@@ -14,6 +14,7 @@ namespace Imprisoned_Hope
 		public float Speed; // rychlost pohybu menu
 		public int DockX, DockY;//pozice, kde se menu zastaví při pohybu
 		public string MenuDirection = "none";//jaký pohyb menu koná
+        private string osa;
 		/*
 		 bere celý list objektů MenuItem, Rectangle který patří Menu a rychlost pohybu
 		 */
@@ -29,6 +30,7 @@ namespace Imprisoned_Hope
 			this.Rectangle = rect;
 			this.Position = new Vector2(rect.X, rect.Y);
 			this.Speed = speed;
+            osa = "y";
 		}
 
 		/// <summary>
@@ -52,6 +54,7 @@ namespace Imprisoned_Hope
 			int y = rect.Y;
 			int width = 0;
 			int height = 0;
+            osa = "y";
 			for (int i = 0; i < list.Count; i++)
 			{
 				MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y, list[i].Width, list[i].Height), Color.White));
@@ -87,6 +90,7 @@ namespace Imprisoned_Hope
 			int y = rect.Y;
 			int width = 0;
 			int height = 0;
+            osa = "y";
 			for (int i = 0; i < list.Count; i++)
 			{
 				MenuItems.Add(new MenuItem(list[i], new Rectangle(x, y, list[i].Width, list[i].Height), Color.White));
@@ -123,6 +127,7 @@ namespace Imprisoned_Hope
 			this.DockY = dockY;
 			int x = rect.X + odstupX;
 			int y = rect.Y;
+            osa = "x";
 			//int width = 0;
 			//int height = 0;
 			for (int i = 0; i < list.Count; i++)
@@ -139,17 +144,33 @@ namespace Imprisoned_Hope
 			this.Rectangle.Width = Texture.Width;
 			this.Rectangle.Height = Texture.Height;
 		}
-		public void updateItemsPosition()//nastaví všem itemům pozici aby byli pod sebou a se stejným začátkem jako objekt menu
+		public void updateItemsPosition(string osa, int mezera,int odsazeni)//nastaví všem itemům pozici aby byli pod sebou a se stejným začátkem jako objekt menu
 		{
 			int x = this.Rectangle.X;
 			int y = this.Rectangle.Y;
-			
-			for (int i = 0; i < MenuItems.Count; i++)
-			{
-				MenuItems[i].Rectangle.X = x;
-				MenuItems[i].Rectangle.Y = y;
-				y += MenuItems[i].Texture.Height;                                
-			}
+            if (osa == "y")
+            {
+                y += odsazeni;
+                for (int i = 0; i < MenuItems.Count; i++)
+                {
+                    MenuItems[i].Rectangle.X = x;
+                    MenuItems[i].Rectangle.Y = y;
+                    y += MenuItems[i].Texture.Height;
+                    y += mezera;
+                }
+            }
+            else
+            {
+                y += odsazeni;
+                x += odsazeni;
+                for (int i = 0; i < MenuItems.Count; i++)
+                {
+                    MenuItems[i].Rectangle.X = x;
+                    MenuItems[i].Rectangle.Y = y;
+                    x += MenuItems[i].Texture.Height;
+                    x += mezera;
+                }
+            }
 		}
 
 		public bool anyItemClicked(MouseState mys)//jestliže uživatel klikne na jakékoliv tlačítko/item
@@ -178,28 +199,40 @@ namespace Imprisoned_Hope
 				double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
 				Position.Y -= (float)(Speed * elapsed);
 				Rectangle.Y = (int)Position.Y;
-				updateItemsPosition();//nastaví všem menuItems stejné souřadnice
+                if (osa == "y")                          //nastaví všem menuItems stejné souřadnic
+                    updateItemsPosition(osa, 0, 0);
+                else
+                    updateItemsPosition(osa, 60, 45);
 			}
 			if (MenuDirection == "down" && canMove(MenuDirection))
 			{
 				double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
 				Position.Y += (float)(Speed * elapsed);
 				Rectangle.Y = (int)Position.Y;
-				updateItemsPosition();
+                if (osa == "y")
+                    updateItemsPosition(osa, 0, 0);
+                else
+                    updateItemsPosition(osa, 60, 45);
 			}
 			if (MenuDirection == "left" && canMove(MenuDirection))
 			{
 				double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
 				Position.X -= (float)(Speed * elapsed);
 				Rectangle.X = (int)Position.X;
-				updateItemsPosition();
+                if (osa == "y")
+                    updateItemsPosition(osa, 0, 0);
+                else
+                    updateItemsPosition(osa, 60, 45);
 			}
 			if (MenuDirection == "right" && canMove(MenuDirection))
 			{
 				double elapsed = gameTime.ElapsedGameTime.TotalMilliseconds;
 				Position.X += (float)(Speed * elapsed);
 				Rectangle.X = (int)Position.X;
-				updateItemsPosition();
+                if (osa == "y")
+                    updateItemsPosition(osa, 0, 0);
+                else
+                    updateItemsPosition(osa, 60, 45);
 			}          
 				
 		}
@@ -255,7 +288,7 @@ namespace Imprisoned_Hope
 			//vykreslení menu a jeho textury
 			if (Texture != null)
 			{
-				spriteBatch.Draw(Texture, Rectangle, Color.White);    
+				spriteBatch.Draw(Texture, /*Rectangle*/new Rectangle(Rectangle.X - 45, Rectangle.Y, Rectangle.Width, Rectangle.Height), Color.White);    
 			}
 			
 			//vykreslení položek
