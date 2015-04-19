@@ -23,6 +23,12 @@ namespace Imprisoned_Hope
 
         Texture2D mrizka,iconMouse, brickWall;
         public MouseState mys;
+        public SpriteFont FontCourierNew;
+
+        Map currentMap;
+
+        List<Block> mrizkaBloky;
+        List<Block> mapBloky;
 
         public BuilderComponent(Game1 game)
             : base(game)
@@ -38,7 +44,8 @@ namespace Imprisoned_Hope
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-
+            mrizkaBloky = new List<Block>();
+            mapBloky = new List<Block>();
             base.Initialize();
         }
         protected override void LoadContent()
@@ -47,6 +54,17 @@ namespace Imprisoned_Hope
             mrizka = Hra.Content.Load<Texture2D>(@"Textury\mrizka");
             iconMouse = Hra.Content.Load<Texture2D>(@"Textury\iconMouse");
             brickWall = Hra.Content.Load<Texture2D>(@"Textury\Brick Wall");
+            
+            for (int i = 0; i < Hra.vyska; i += mrizka.Height - 1)
+            {
+                for (int j = 0; j < Hra.sirka; j += mrizka.Width - 1)
+                {
+                    mrizkaBloky.Add(new Block(mrizka, mrizka, new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
+                }
+            }
+            FontCourierNew = Hra.Content.Load<SpriteFont>(@"Fonty\courier_new");
+
+
             base.LoadContent();
         }
 
@@ -58,7 +76,25 @@ namespace Imprisoned_Hope
         {
             // TODO: Add your update code here
             mys = Mouse.GetState();
-           
+            foreach (Block item in mrizkaBloky)
+            {
+                if (item.Rectangle.Contains(mys.X,mys.Y))
+                {
+                    item.Color = Color.Orange;
+                }
+                else
+                {
+                    item.Color = Color.White;
+                }
+
+                if (Kliknuto((Sprite)item))
+                {
+                    
+                }
+            }
+            
+
+
             base.Update(gameTime);
         }
 
@@ -70,24 +106,30 @@ namespace Imprisoned_Hope
             spriteBatch.Begin();
 
             //vykreslení vodící møížky
-            for (int i = 0; i < Hra.vyska; i += mrizka.Height-1)
+            foreach (Block item in mrizkaBloky)
             {
-                for (int j = 0; j < Hra.sirka; j += mrizka.Width-1)
-                {
-                    if (new Rectangle(j, i, mrizka.Width, mrizka.Height).Contains(mys.X,mys.Y))
-                    {
-                        spriteBatch.Draw(brickWall, new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.Orange);
-                    }
-                    else
-                    {
-                        spriteBatch.Draw(mrizka, new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White);     
-                    }
-                    
-                }
-            }
+                item.DrawBlock(spriteBatch);
+            }            
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void UlozMapu(Map map)
+        { 
+            
+        }
+
+        private bool Kliknuto(Sprite sprite)
+        {
+            if (sprite.Rectangle.Contains(mys.X, mys.Y)&& mys.LeftButton == ButtonState.Pressed)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

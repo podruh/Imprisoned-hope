@@ -54,3 +54,7 @@
 0.0031 - podruh
 	+nová komponenta Builder
 	+kliknutí na panáèka zapne pre-alphu builderu
+
+0.0032 - podruh
+	+pøidány textury do ng menu back32 a back64
+	+levelBuilder in progress
