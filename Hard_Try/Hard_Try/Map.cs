@@ -17,11 +17,6 @@ namespace Imprisoned_Hope
             Blocks = new List<Block>();
         }
 
-        public Map(params Block[] bloky)
-        {
-            Blocks = new List<Block>();
-            Blocks.AddRange(bloky);
-        }
 
         public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
         {
@@ -29,10 +24,6 @@ namespace Imprisoned_Hope
             {
                 item.DrawBlock(spriteBatch);
             }
-        }
-        public void PridejBLock(Block block)
-        {
-            Blocks.Add(block);
         }
     }
 }
