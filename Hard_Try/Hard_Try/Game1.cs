@@ -22,6 +22,8 @@ namespace Imprisoned_Hope
         public int sirka = 1280;
         public int vyska = 720;
         public MouseState mys;
+        Display displayMenu;
+        Display displayLevelBuilder;
 
         public Game1()
         {
@@ -41,11 +43,44 @@ namespace Imprisoned_Hope
         {
             // TODO: Add your initialization logic here
             IsMouseVisible = false;
+            //pøidávání komponent
             MenuComponent menu = new MenuComponent(this);
-            Components.Add(menu);
+            //pøidání displejù
+            displayMenu = new Display(this, menu);
+            //vypnutí komponent
+            foreach (GameComponent item in Components)
+            {
+                PrepniKomponentu(item, false);
+            }
+
             base.Initialize();
         }
 
+        /// <summary>
+        /// Zapne/vypne komponentu v dané herní obrazovce
+        /// </summary>
+        /// <param name="komponenta">Komponenta</param>
+        /// <param name="zapnout">True pokud se má komponenta zapnout, false pokud se má vypnout</param>
+        private void PrepniKomponentu(GameComponent komponenta, bool zapnout)
+        {
+            komponenta.Enabled = zapnout;
+            if (komponenta is DrawableGameComponent)
+                ((DrawableGameComponent)komponenta).Visible = zapnout;
+        }
+
+        /// <summary>
+        /// Pøepne herní obrazovku
+        /// </summary>
+        /// <param name="obrazovka"></param>
+        public void PrepniObrazovku(Display obrazovka)
+        {
+            GameComponent[] povolene = obrazovka.VratKomponenty();
+            foreach (GameComponent komponenta in Components)
+            {
+                bool povolena = povolene.Contains(komponenta);
+                PrepniKomponentu(komponenta, povolena);
+            }            
+        }
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -56,6 +91,7 @@ namespace Imprisoned_Hope
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //MediaPlayer.Play(music_menuTheme);
+            PrepniObrazovku(displayMenu);
         }
 
         /// <summary>

@@ -39,3 +39,14 @@
 	+soubor TODO.txt
 		-"úkolníèek" - vše v souboru
 	+upraven Sprite
+
+0.0029 - w00d3nl3g
+	+ Funkce UpdatePosition vyžaduje mezeru (int) a odsazení (int).
+	+ V classe Menu je nový string "osa", podle které se urèí pozice prvkù v menu.
+	+ Optimalizace optMenu textur, aby vypadaly jako ostatní menu textury.
+	+ Pøidání "Fullscreen" a "Window" optMenu itemy.
+	+ NG menu po stisknutí "New Game" vyjede a po stisknutí "Back" zase zajede.
+	+ -> Nový Item - tlaèítko zpìt.
+
+0.0030 - podruh
+	+pøepínání obrazovek

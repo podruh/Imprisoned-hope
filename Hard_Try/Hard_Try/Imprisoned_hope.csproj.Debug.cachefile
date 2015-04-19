@@ -4,8 +4,6 @@ Content\Textury\Menu\New Game.xnb
 Content\Textury\Menu\Options.xnb
 Content\Textury\Menu\back_menu.xnb
 Content\Textury\iconMouse.xnb
-Content\Textury\Menu\Back.xnb
-Content\Textury\Menu\Temporary.xnb
 Content\Textury\enforcer_class.xnb
 Content\Textury\mastermind_class.xnb
 Content\Textury\pozadiNG.xnb
@@ -14,6 +12,8 @@ Content\Textury\Hero.xnb
 Content\Textury\mrizka.xnb
 Content\Textury\Menu\Fullscreen.xnb
 Content\Textury\Menu\Window.xnb
+Content\Textury\Menu\Back.xnb
+Content\Textury\Menu\Temporary.xnb
 Content\Fonty\courier_new.xnb
 Content\Fonty\times.xnb
 Content\Music\bensound-betterdays.xnb
