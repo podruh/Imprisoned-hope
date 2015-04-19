@@ -13,14 +13,30 @@ namespace Imprisoned_Hope
         private string Direction;
         private int Count;
         private bool Lighted;
+
+        public Block() { }
         public Block(Texture2D texture, Texture2D shadowed, Rectangle rectangle, Color color)
         {
             this.Texture = texture;
             this.Shadowed = shadowed;
             this.Rectangle = rectangle;
             this.Color = color;
+            Count = 1;
+            Lighted = false;
         }
-        public void DrawBlock(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
+
+        public Block(Texture2D texture, Texture2D shadowed, Rectangle rectangle, Color color,string direction,int count)
+        {
+            this.Texture = texture;
+            this.Shadowed = shadowed;
+            this.Rectangle = rectangle;
+            this.Color = color;
+            this.Direction = direction;
+            this.Count = count;
+            Lighted = false;
+        }
+
+        public void DrawBlock( SpriteBatch spriteBatch)
         {
             if (Lighted)
             {

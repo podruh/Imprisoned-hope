@@ -50,3 +50,7 @@
 
 0.0030 - podruh
 	+pøepínání obrazovek
+
+0.0031 - podruh
+	+nová komponenta Builder
+	+kliknutí na panáèka zapne pre-alphu builderu

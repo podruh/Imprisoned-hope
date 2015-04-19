@@ -43,6 +43,8 @@ namespace Imprisoned_Hope
         public int vyska;
         public MouseState mys;
 
+        Rectangle heroRect;
+
         public MenuComponent(Game1 game) : base(game)
         {
             // TODO: Construct any child components here
@@ -92,7 +94,7 @@ namespace Imprisoned_Hope
             menuBackground = Hra.Content.Load<Texture2D>(@"Textury\Menu\back_menu");
 
             hero = Hra.Content.Load<Texture2D>(@"Textury\Hero");
-
+            heroRect = new Rectangle(sirka / 2 - hero.Width / 2, 70, hero.Width, hero.Height);
             iconMouse = Hra.Content.Load<Texture2D>(@"Textury\iconMouse");
 
             //music_menuTheme = Hra.Content.Load<Song>(@"Music\music_menuTheme");
@@ -183,7 +185,10 @@ namespace Imprisoned_Hope
                 mainMenu.changeMovement("left");
                 classNews = null;
             }
-
+            if (heroRect.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
+            {
+                Hra.PrepniObrazovku(Hra.displayLevelBuilder);
+            }
             optMenu.moveMenu(gameTime);
             mainMenu.moveMenu(gameTime);
             newGameMenu.moveMenu(gameTime);
@@ -197,7 +202,7 @@ namespace Imprisoned_Hope
             spriteBatch.Begin();
             spriteBatch.Draw(menuBackground, new Rectangle(0, 0, menuBackground.Width, menuBackground.Height), Color.White);
 
-            spriteBatch.Draw(hero, new Rectangle(sirka / 2 - hero.Width / 2, 70, hero.Width, hero.Height), Color.White);
+            spriteBatch.Draw(hero,heroRect, Color.White);
             mainMenu.DrawMenu(spriteBatch);
             optMenu.DrawMenu(spriteBatch);
             newGameMenu.DrawMenu(spriteBatch);

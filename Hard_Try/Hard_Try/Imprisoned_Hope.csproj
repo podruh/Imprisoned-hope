@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Block.cs" />
+    <Compile Include="Components\BuilderComponent.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />
