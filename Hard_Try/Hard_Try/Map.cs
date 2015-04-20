@@ -22,7 +22,7 @@ namespace Imprisoned_Hope
         {
             foreach (Block item in Blocks)
             {
-                item.DrawBlock(spriteBatch);
+                item.DrawBlockLine(spriteBatch);
             }
         }
     }

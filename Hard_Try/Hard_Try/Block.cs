@@ -36,17 +36,45 @@ namespace Imprisoned_Hope
             Lighted = false;
         }
 
-        public void DrawBlock( SpriteBatch spriteBatch)
+        public void DrawBlock(SpriteBatch spriteBatch, int x,int y)
         {
             if (Lighted)
             {
-                spriteBatch.Draw(Texture, Rectangle, Color);
+                spriteBatch.Draw(Texture, new Rectangle(x,y,Rectangle.Width,Rectangle.Height), Color);
             }
             else
             {
-                spriteBatch.Draw(Shadowed, Rectangle, Color);
+                spriteBatch.Draw(Shadowed, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color);
             }
         
         }
+        public void DrawBlockLine(SpriteBatch spriteBatch)
+        {
+            int x = this.Rectangle.X;
+            int y = this.Rectangle.Y;
+            for (int i = 1; i <= Count; i++)
+            {
+                DrawBlock(spriteBatch, x, y);
+                switch (Direction)
+                {
+                    case "up":
+                        y -= 32;
+                        break;
+                    case "down":
+                        y += 32;
+                        break;
+                    case"left":
+                        x -= 32;
+                        break;
+                    case "right":
+                        x += 32;
+                        break;
+                    default:
+                        break;
+                } 
+            }  
+        }
+        
+
     }
 }

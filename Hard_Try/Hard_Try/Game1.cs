@@ -22,7 +22,9 @@ namespace Imprisoned_Hope
         public int sirka = 1280;
         public int vyska = 720;
         public MouseState mys;
-        public Display displayMenu, displayLevelBuilder;        
+        public Display displayMenu, displayLevelBuilder;
+
+        public KeyboardState klavesy, klavesyMinule;
 
         public Game1()
         {
@@ -115,11 +117,17 @@ namespace Imprisoned_Hope
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            klavesyMinule = klavesy;
+            klavesy = Keyboard.GetState();
+
 
             base.Update(gameTime);
         }
 
-        
+        public bool NovaKlavesa(Keys klavesa)
+        {
+            return klavesy.IsKeyDown(klavesa) && klavesyMinule.IsKeyUp(klavesa);
+        }
 
         /// <summary>
         /// This is called when the game should draw itself.

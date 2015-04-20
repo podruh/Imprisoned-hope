@@ -15,6 +15,11 @@ Content\Textury\Menu\Window.xnb
 Content\Textury\Menu\Back.xnb
 Content\Textury\Menu\Temporary.xnb
 Content\Textury\Brick Wall.xnb
+Content\Textury\Menu\back64.xnb
+Content\Textury\Menu\back32.xnb
+Content\Textury\input.xnb
+Content\Textury\OKbutton.xnb
+Content\Textury\prompt.xnb
 Content\Fonty\courier_new.xnb
 Content\Fonty\times.xnb
 Content\Music\bensound-betterdays.xnb

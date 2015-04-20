@@ -21,14 +21,18 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        Texture2D mrizka,iconMouse, brickWall;
-        public MouseState mys;
+        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input;
+        public MouseState mys,staraMys;
         public SpriteFont FontCourierNew;
 
         Map currentMap;
 
         List<Block> mrizkaBloky;
         List<Block> mapBloky;
+
+        BuilderPromtp FormPrompt;
+
+        private bool promptShown;
 
         public BuilderComponent(Game1 game)
             : base(game)
@@ -54,6 +58,9 @@ namespace Imprisoned_Hope
             mrizka = Hra.Content.Load<Texture2D>(@"Textury\mrizka");
             iconMouse = Hra.Content.Load<Texture2D>(@"Textury\iconMouse");
             brickWall = Hra.Content.Load<Texture2D>(@"Textury\Brick Wall");
+            OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
+            input = Hra.Content.Load<Texture2D>(@"Textury\input");
+            prompt = Hra.Content.Load<Texture2D>(@"Textury\prompt");
             
             for (int i = 0; i < Hra.vyska; i += mrizka.Height - 1)
             {
@@ -62,8 +69,7 @@ namespace Imprisoned_Hope
                     mrizkaBloky.Add(new Block(mrizka, mrizka, new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
                 }
             }
-            FontCourierNew = Hra.Content.Load<SpriteFont>(@"Fonty\courier_new");
-
+            FontCourierNew = Hra.Content.Load<SpriteFont>(@"Fonty\courier_new");            
 
             base.LoadContent();
         }
@@ -75,28 +81,15 @@ namespace Imprisoned_Hope
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            staraMys = mys;
             mys = Mouse.GetState();
-            foreach (Block item in mrizkaBloky)
-            {
-                if (item.Rectangle.Contains(mys.X,mys.Y))
-                {
-                    item.Color = Color.Orange;
-                }
-                else
-                {
-                    item.Color = Color.White;
-                }
 
-                if (Kliknuto((Sprite)item))
-                {
-                    
-                }
-            }
+            KliknutaMrizka();
             
-
-
             base.Update(gameTime);
         }
+
+
 
         public override void Draw(GameTime gameTime)
         {
@@ -108,8 +101,12 @@ namespace Imprisoned_Hope
             //vykreslení vodící møížky
             foreach (Block item in mrizkaBloky)
             {
-                item.DrawBlock(spriteBatch);
-            }            
+                item.DrawBlockLine(spriteBatch);
+            }
+            foreach (Block item in mapBloky)
+            {
+                item.DrawBlockLine(spriteBatch);
+            }
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
             base.Draw(gameTime);
@@ -122,7 +119,7 @@ namespace Imprisoned_Hope
 
         private bool Kliknuto(Sprite sprite)
         {
-            if (sprite.Rectangle.Contains(mys.X, mys.Y)&& mys.LeftButton == ButtonState.Pressed)
+            if (sprite.Rectangle.Contains(mys.X, mys.Y)&& mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released)
             {
                 return true;
             }
@@ -130,6 +127,46 @@ namespace Imprisoned_Hope
             {
                 return false;
             }
+        }
+
+        private void KliknutaMrizka()
+        {
+            foreach (Block item in mrizkaBloky)
+            {
+                if (item.Rectangle.Contains(mys.X, mys.Y))
+                {
+                    item.Color = Color.Orange;
+                }
+                else
+                {
+                    item.Color = Color.White;
+                }
+
+                if (Kliknuto((Sprite)item) && !promptShown)
+                {
+                    PrepniPrompt();
+                    FormPrompt = new BuilderPromtp(this, item.Rectangle.X, item.Rectangle.Y);
+                    FormPrompt.Show();                    
+                }
+            }
+        }
+
+        public void VytvorBlok(string textura, int count, string dir, int x, int y)
+        {
+            switch (textura)
+            {
+                case "Brick Wall": 
+                    mapBloky.Add(new Block(brickWall, brickWall, new Rectangle(x, y, 32, 32), Color.White, dir, count));
+                    break;
+                default:
+                    break;
+            }
+            PrepniPrompt();
+        }
+        public void PrepniPrompt()
+        {
+            bool b = promptShown;
+            promptShown = !b;
         }
     }
 }

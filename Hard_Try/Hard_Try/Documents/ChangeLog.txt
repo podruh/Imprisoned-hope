@@ -58,3 +58,7 @@
 0.0032 - podruh
 	+pøidány textury do ng menu back32 a back64
 	+levelBuilder in progress
+
+0.0033 - podruh
+	+lehce fungující level builder
+	+tlaèítko hrdiny...
