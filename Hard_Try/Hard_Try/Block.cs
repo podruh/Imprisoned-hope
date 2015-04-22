@@ -7,12 +7,14 @@ using System.Text;
 
 namespace Imprisoned_Hope
 {
+    [Serializable()]
     class Block : Sprite
     {
         private Texture2D Shadowed;
         private string Direction;
         private int Count;
         private bool Lighted;
+        public string Type;
 
         public Block() { }
         public Block(Texture2D texture, Texture2D shadowed, Rectangle rectangle, Color color)
@@ -48,10 +50,10 @@ namespace Imprisoned_Hope
             }
         
         }
-        public void DrawBlockLine(SpriteBatch spriteBatch)
+        public void DrawBlockLine(SpriteBatch spriteBatch, int posunX,int posunY)
         {
-            int x = this.Rectangle.X;
-            int y = this.Rectangle.Y;
+            int x = this.Rectangle.X + posunX;
+            int y = this.Rectangle.Y + posunY;
             for (int i = 1; i <= Count; i++)
             {
                 DrawBlock(spriteBatch, x, y);

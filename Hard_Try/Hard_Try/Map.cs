@@ -10,11 +10,15 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class Map
     {
+        private int PosunX, PosunY;
+        
         private List<Block> Blocks;
 
         public Map() 
         {
             Blocks = new List<Block>();
+            PosunX = 0;
+            PosunY = 0;
         }
 
 
@@ -22,7 +26,7 @@ namespace Imprisoned_Hope
         {
             foreach (Block item in Blocks)
             {
-                item.DrawBlockLine(spriteBatch);
+                item.DrawBlockLine(spriteBatch, PosunX, PosunY);
             }
         }
     }

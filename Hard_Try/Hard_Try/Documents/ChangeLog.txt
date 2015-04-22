@@ -62,3 +62,10 @@
 0.0033 - podruh
 	+lehce fungující level builder
 	+tlaèítko hrdiny...
+
+0.0034 - podruh
+	+funkèní posouvání editoru
+		-posouvání šipkama, pokaždý se posune v danám smìru o 32 pixelù
+	+rozšíøení hranic mapy(2 mil. blokù do všech stran)
+	+tøíde Block pøidána promìná Type, bude urèovat typ bloku, podle toho se bude rozpoznávat akce atd.
+	+tøída map dostala dva inty, posunX, posunY - oèekávané použití až v gameplayi

@@ -23,6 +23,7 @@ namespace Imprisoned_Hope
 
         public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input;
         public MouseState mys,staraMys;
+        public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
 
         Map currentMap;
@@ -33,6 +34,8 @@ namespace Imprisoned_Hope
         BuilderPromtp FormPrompt;
 
         private bool promptShown;
+
+        private int posunX, posunY;
 
         public BuilderComponent(Game1 game)
             : base(game)
@@ -50,6 +53,8 @@ namespace Imprisoned_Hope
             // TODO: Add your initialization code here
             mrizkaBloky = new List<Block>();
             mapBloky = new List<Block>();
+            posunX = 0;
+            posunY = 0;
             base.Initialize();
         }
         protected override void LoadContent()
@@ -62,9 +67,9 @@ namespace Imprisoned_Hope
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
             prompt = Hra.Content.Load<Texture2D>(@"Textury\prompt");
             
-            for (int i = 0; i < Hra.vyska; i += mrizka.Height - 1)
+            for (int i = 0; i < Hra.vyska; i += mrizka.Height)
             {
-                for (int j = 0; j < Hra.sirka; j += mrizka.Width - 1)
+                for (int j = 0; j < Hra.sirka; j += mrizka.Width)
                 {
                     mrizkaBloky.Add(new Block(mrizka, mrizka, new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
                 }
@@ -84,12 +89,35 @@ namespace Imprisoned_Hope
             staraMys = mys;
             mys = Mouse.GetState();
 
+            staraKeyboard = keyboard;
+            keyboard = Keyboard.GetState();
+
+            VstupUpdate();
+
             KliknutaMrizka();
             
             base.Update(gameTime);
         }
 
-
+        public void VstupUpdate()
+        {
+            if (keyboard.IsKeyDown(Keys.Up)&& !staraKeyboard.IsKeyDown(Keys.Up))
+            {
+                posunY -= 32;
+            }
+            if (keyboard.IsKeyDown(Keys.Down) && !staraKeyboard.IsKeyDown(Keys.Down))
+            {
+                posunY += 32;
+            }
+            if (keyboard.IsKeyDown(Keys.Left) && !staraKeyboard.IsKeyDown(Keys.Left))
+            {
+                posunX -= 32;
+            }
+            if (keyboard.IsKeyDown(Keys.Right) && !staraKeyboard.IsKeyDown(Keys.Right))
+            {
+                posunX += 32;
+            }
+        }
 
         public override void Draw(GameTime gameTime)
         {
@@ -101,11 +129,12 @@ namespace Imprisoned_Hope
             //vykreslení vodící møížky
             foreach (Block item in mrizkaBloky)
             {
-                item.DrawBlockLine(spriteBatch);
+                item.DrawBlockLine(spriteBatch,0,0);
             }
+            //vykreslení použitých blokù
             foreach (Block item in mapBloky)
             {
-                item.DrawBlockLine(spriteBatch);
+                item.DrawBlockLine(spriteBatch, posunX, posunY);
             }
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
@@ -156,12 +185,11 @@ namespace Imprisoned_Hope
             switch (textura)
             {
                 case "Brick Wall": 
-                    mapBloky.Add(new Block(brickWall, brickWall, new Rectangle(x, y, 32, 32), Color.White, dir, count));
+                    mapBloky.Add(new Block(brickWall, brickWall, new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
                     break;
                 default:
                     break;
             }
-            PrepniPrompt();
         }
         public void PrepniPrompt()
         {

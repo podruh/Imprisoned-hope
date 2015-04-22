@@ -41,8 +41,12 @@ namespace Imprisoned_Hope
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BC.PrepniPrompt();
             this.Close();
+        }
+
+        private void BuilderPromtp_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BC.PrepniPrompt();
         }
     }
 }
