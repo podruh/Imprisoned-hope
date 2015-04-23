@@ -76,6 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Block.cs" />
+    <Compile Include="BuilderControler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuilderControler.Designer.cs">
+      <DependentUpon>BuilderControler.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuilderPromtp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,7 @@
     <Compile Include="Components\BuilderComponent.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MapManager.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Components\MenuComponent.cs" />
     <Compile Include="MenuItem.cs" />
@@ -132,6 +139,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BuilderControler.resx">
+      <DependentUpon>BuilderControler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuilderPromtp.resx">
       <DependentUpon>BuilderPromtp.cs</DependentUpon>
     </EmbeddedResource>

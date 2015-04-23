@@ -69,3 +69,9 @@
 	+rozšíøení hranic mapy(2 mil. blokù do všech stran)
 	+tøíde Block pøidána promìná Type, bude urèovat typ bloku, podle toho se bude rozpoznávat akce atd.
 	+tøída map dostala dva inty, posunX, posunY - oèekávané použití až v gameplayi
+
+0.0035 - podruh
+	+pøidána tøída mapmanager
+		-bude obsluhovat jakékoliv ukláddání nahrání map
+	+form builder controler
+		-bude vybírat mapy k úpravì, celkovì obsluhovat editor map

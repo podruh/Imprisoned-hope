@@ -10,15 +10,24 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class Map
     {
-        private int PosunX, PosunY;
+        public string Name;
         
-        private List<Block> Blocks;
+        private int PosunX, PosunY;        
+        
+        public List<Block> Blocks;
 
         public Map() 
         {
-            Blocks = new List<Block>();
-            PosunX = 0;
-            PosunY = 0;
+            this.Blocks = new List<Block>();
+            this.PosunX = 0;
+            this.PosunY = 0;
+        }
+        public Map(string name)
+        {
+            this.Name = name;
+            this.Blocks = new List<Block>();
+            this.PosunX = 0;
+            this.PosunY = 0;
         }
 
 

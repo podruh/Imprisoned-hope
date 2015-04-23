@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.IO;
+using System.Xml.Serialization;
 
 
 namespace Imprisoned_Hope
@@ -26,16 +28,19 @@ namespace Imprisoned_Hope
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
 
-        Map currentMap;
+        private Map currentMap;
+        private List<Map> mapList;
 
-        List<Block> mrizkaBloky;
-        List<Block> mapBloky;
+        private List<Block> mrizkaBloky;
+        private List<Block> mapBloky;
 
-        BuilderPromtp FormPrompt;
+        private BuilderPromtp FormPrompt;
 
         private bool promptShown;
 
         private int posunX, posunY;
+
+        private string message;
 
         public BuilderComponent(Game1 game)
             : base(game)
@@ -55,6 +60,7 @@ namespace Imprisoned_Hope
             mapBloky = new List<Block>();
             posunX = 0;
             posunY = 0;
+            message = "";
             base.Initialize();
         }
         protected override void LoadContent()
@@ -71,7 +77,7 @@ namespace Imprisoned_Hope
             {
                 for (int j = 0; j < Hra.sirka; j += mrizka.Width)
                 {
-                    mrizkaBloky.Add(new Block(mrizka, mrizka, new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
+                    mrizkaBloky.Add(new Block(mrizka, mrizka,"mrizka", new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
                 }
             }
             FontCourierNew = Hra.Content.Load<SpriteFont>(@"Fonty\courier_new");            
@@ -98,7 +104,9 @@ namespace Imprisoned_Hope
             
             base.Update(gameTime);
         }
-
+        /// <summary>
+        /// zajišuje posun mapy
+        /// </summary>
         public void VstupUpdate()
         {
             if (keyboard.IsKeyDown(Keys.Up)&& !staraKeyboard.IsKeyDown(Keys.Up))
@@ -137,15 +145,15 @@ namespace Imprisoned_Hope
                 item.DrawBlockLine(spriteBatch, posunX, posunY);
             }
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
+            spriteBatch.DrawString(FontCourierNew, message, new Vector2(0, 0), Color.Black);
             spriteBatch.End();
             base.Draw(gameTime);
         }
-
-        public void UlozMapu(Map map)
-        { 
-            
-        }
-
+        /// <summary>
+        /// vrátí bool jestliže je kliknute na daný sprite
+        /// </summary>
+        /// <param name="sprite">zjiš´tovaný sprite</param>
+        /// <returns>Bool hodnota kliknutí na sprite</returns>
         private bool Kliknuto(Sprite sprite)
         {
             if (sprite.Rectangle.Contains(mys.X, mys.Y)&& mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released)
@@ -157,7 +165,9 @@ namespace Imprisoned_Hope
                 return false;
             }
         }
-
+        /// <summary>
+        /// vytvoøí a otevøe nový fomr pøi kliknutí na møížku
+        /// </summary>
         private void KliknutaMrizka()
         {
             foreach (Block item in mrizkaBloky)
@@ -179,22 +189,40 @@ namespace Imprisoned_Hope
                 }
             }
         }
-
+        /// <summary>
+        /// vytvoøí blok, který se poté dodá listu, který bude naèten do mapy k uložení
+        /// </summary>
+        /// <param name="textura">textura bloku</param>
+        /// <param name="count">poèet blokù ve smìru</param>
+        /// <param name="dir">smìr vykreslování</param>
+        /// <param name="x">pozice x</param>
+        /// <param name="y">pozice y</param>
         public void VytvorBlok(string textura, int count, string dir, int x, int y)
         {
             switch (textura)
             {
                 case "Brick Wall": 
-                    mapBloky.Add(new Block(brickWall, brickWall, new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add(new Block(brickWall, brickWall,"wall", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
                     break;
                 default:
                     break;
             }
         }
+        /// <summary>
+        /// pøepne jestli má být prompt zapnutý/vypnutý
+        /// </summary>
         public void PrepniPrompt()
         {
             bool b = promptShown;
             promptShown = !b;
+        }
+        /// <summary>
+        /// nìco na zpùsob messageboxu
+        /// </summary>
+        /// <param name="text">zobrazovaný text vlevo nahoøe</param>
+        public void Message(string text)
+        {
+            this.message = text;
         }
     }
 }

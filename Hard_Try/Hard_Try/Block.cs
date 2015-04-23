@@ -4,34 +4,59 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Imprisoned_Hope
 {
     [Serializable()]
     class Block : Sprite
     {
+        [XmlIgnore]
         private Texture2D Shadowed;
-        private string Direction;
-        private int Count;
-        private bool Lighted;
+        
         public string Type;
 
-        public Block() { }
-        public Block(Texture2D texture, Texture2D shadowed, Rectangle rectangle, Color color)
+        public int X;
+
+        public int Y;
+       
+        public int Count;
+
+        public string Direction;
+
+        [XmlIgnore]
+        private bool Lighted;
+        
+        public Block() 
+        {
+            this.Position = new Vector2(X, Y);
+            this.Rectangle = new Rectangle(X, Y, 32, 32);
+            this.Color = Color.White;
+            Lighted = false;
+
+        }
+        public Block(Texture2D texture, Texture2D shadowed,string type, Rectangle rectangle, Color color)
         {
             this.Texture = texture;
             this.Shadowed = shadowed;
+            this.Type = type;
             this.Rectangle = rectangle;
+            this.X = rectangle.X;
+            this.Y = rectangle.Y;
             this.Color = color;
             Count = 1;
             Lighted = false;
         }
 
-        public Block(Texture2D texture, Texture2D shadowed, Rectangle rectangle, Color color,string direction,int count)
+        public Block(Texture2D texture, Texture2D shadowed,string type, Rectangle rectangle, Color color,string direction,int count)
         {
             this.Texture = texture;
             this.Shadowed = shadowed;
+            this.Type = type;
             this.Rectangle = rectangle;
+            this.X = rectangle.X;
+            this.Y = rectangle.Y;
             this.Color = color;
             this.Direction = direction;
             this.Count = count;
