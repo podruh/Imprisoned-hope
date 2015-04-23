@@ -30,7 +30,7 @@ namespace Imprisoned_Hope
         #endregion
 
         private Texture2D menuBackground, menuItem_Exit, menuItem_Loadgame, menuItem_Options, menuItem_Newgame,
-            iconMouse, menuItem_Temporary, menuItem_Back,menuItem_Fullscreen, menuItem_Window, hero, classEnforcer, classMastermind, pozadiNG, iconTemp;
+            iconMouse, menuItem_Temporary, menuItem_Back,menuItem_Fullscreen, menuItem_musicon, menuItem_musicoff, menuItem_Window, hero, class_Phasewalker, classEnforcer, classMastermind, pozadiNG, iconTemp, iconBack64;
         private List<Texture2D> mainMenuTextury;
         private List<Texture2D> optMenuTextury;
         private List<Texture2D> newgameMenuTextury;
@@ -42,6 +42,7 @@ namespace Imprisoned_Hope
         public int sirka;
         public int vyska;
         public MouseState mys;
+        public static MediaState music;
 
         Rectangle heroRect;
 
@@ -97,7 +98,7 @@ namespace Imprisoned_Hope
             heroRect = new Rectangle(sirka / 2 - hero.Width / 2, 70, hero.Width, hero.Height);
             iconMouse = Hra.Content.Load<Texture2D>(@"Textury\iconMouse");
 
-            //music_menuTheme = Hra.Content.Load<Song>(@"Music\music_menuTheme");
+            music_menuTheme = Hra.Content.Load<Song>(@"Music\music_menuTheme");
 
             FontCourierNew = Hra.Content.Load<SpriteFont>(@"Fonty\courier_new");
             FontTimes = Hra.Content.Load<SpriteFont>(@"Fonty\times");
@@ -109,17 +110,17 @@ namespace Imprisoned_Hope
             mainMenuTextury.Add(menuItem_Options = Hra.Content.Load<Texture2D>(@"Textury\Menu\Options"));
             mainMenuTextury.Add(menuItem_Exit = Hra.Content.Load<Texture2D>(@"Textury\Menu\Exit"));
 
-            optMenuTextury.Add(menuItem_Fullscreen = Hra.Content.Load<Texture2D>(@"Textury\Menu\Fullscreen"));
-            optMenuTextury.Add(menuItem_Window = Hra.Content.Load<Texture2D>(@"Textury\Menu\Window"));
             optMenuTextury.Add(menuItem_Temporary = Hra.Content.Load<Texture2D>(@"Textury\Menu\Temporary"));
+            optMenuTextury.Add(menuItem_musicon = Hra.Content.Load<Texture2D>(@"Textury\Menu\musicon"));
+            optMenuTextury.Add(menuItem_musicoff = Hra.Content.Load<Texture2D>(@"Textury\Menu\musicoff"));
             optMenuTextury.Add(menuItem_Back = Hra.Content.Load<Texture2D>(@"Textury\Menu\Back"));
 
             pozadiNG = Hra.Content.Load<Texture2D>(@"Textury\pozadiNG");
             newgameMenuTextury.Add(classMastermind = Hra.Content.Load<Texture2D>(@"Textury\mastermind_class"));
             newgameMenuTextury.Add(classEnforcer = Hra.Content.Load<Texture2D>(@"Textury\enforcer_class"));
             newgameMenuTextury.Add(iconTemp = Hra.Content.Load<Texture2D>(@"Textury\temp"));
-            newgameMenuTextury.Add(iconTemp = Hra.Content.Load<Texture2D>(@"Textury\temp"));
-            newgameMenuTextury.Add(iconTemp = Hra.Content.Load<Texture2D>(@"Textury\temp"));
+            newgameMenuTextury.Add(class_Phasewalker = Hra.Content.Load<Texture2D>(@"Textury\phasewalker_class"));
+            newgameMenuTextury.Add(iconBack64 = Hra.Content.Load<Texture2D>(@"Textury\Menu\back64"));
 
             #endregion
 
@@ -130,7 +131,8 @@ namespace Imprisoned_Hope
             newGameMenu = new Menu(pozadiNG, newgameMenuTextury, new Rectangle(0 - pozadiNG.Width, ngmenuY, pozadiNG.Width, pozadiNG.Height), mainmenuSpeed, 0 - pozadiNG.Width, ngmenuY, 45, 50, 60);
             #endregion
 
-            //MediaPlayer.Play(music_menuTheme);
+            MediaPlayer.Play(music_menuTheme);
+            music = MediaState.Playing;
             base.LoadContent();
         }
         /// <summary>
@@ -185,6 +187,16 @@ namespace Imprisoned_Hope
                 mainMenu.changeMovement("left");
                 classNews = null;
             }
+            if(optMenu.MenuItems[1].isClicked(mys) && music == MediaState.Stopped)
+            {
+                 MediaPlayer.Play(music_menuTheme);
+                 music = MediaState.Playing;
+            }
+            if (optMenu.MenuItems[2].isClicked(mys))
+            {
+                    MediaPlayer.Stop();
+                    music = MediaState.Stopped;
+            }
             if (heroRect.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
             {
                 Hra.PrepniObrazovku(Hra.displayLevelBuilder);
@@ -207,7 +219,7 @@ namespace Imprisoned_Hope
             optMenu.DrawMenu(spriteBatch);
             newGameMenu.DrawMenu(spriteBatch);
 
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0029" + "  " + newGameMenu.canMove("right") + "  " + newGameMenu.DockX + "  " + newGameMenu.Position, new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0035" + music, new Vector2(0, 0), Color.White);
             switch (classNews)
             {
                 case "Mastermind":
