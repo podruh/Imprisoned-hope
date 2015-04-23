@@ -11,10 +11,10 @@ namespace Imprisoned_Hope
     public class Map
     {
         public string Name;
-        
-        private int PosunX, PosunY;        
-        
+               
         public List<Block> Blocks;
+
+        private int PosunX,PosunY;
 
         public Map() 
         {
@@ -24,8 +24,8 @@ namespace Imprisoned_Hope
         }
         public Map(string name)
         {
-            this.Name = name;
             this.Blocks = new List<Block>();
+            this.Name = name;            
             this.PosunX = 0;
             this.PosunY = 0;
         }

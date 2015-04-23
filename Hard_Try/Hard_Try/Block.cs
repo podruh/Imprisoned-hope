@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    class Block : Sprite
+    public class Block : Sprite
     {
         [XmlIgnore]
         private Texture2D Shadowed;
