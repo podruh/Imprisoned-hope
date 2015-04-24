@@ -132,6 +132,7 @@ namespace Imprisoned_Hope
             #endregion
 
             MediaPlayer.Play(music_menuTheme);
+            MediaPlayer.IsRepeating = true;
             music = MediaState.Playing;
             base.LoadContent();
         }
@@ -219,7 +220,7 @@ namespace Imprisoned_Hope
             optMenu.DrawMenu(spriteBatch);
             newGameMenu.DrawMenu(spriteBatch);
 
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0035" + music, new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0035" + "  " + music, new Vector2(0, 0), Color.White);
             switch (classNews)
             {
                 case "Mastermind":

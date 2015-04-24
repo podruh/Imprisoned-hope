@@ -111,19 +111,19 @@ namespace Imprisoned_Hope
         {
             if (keyboard.IsKeyDown(Keys.Up)&& !staraKeyboard.IsKeyDown(Keys.Up))
             {
-                posunY -= 32;
+                posunY += 32;
             }
             if (keyboard.IsKeyDown(Keys.Down) && !staraKeyboard.IsKeyDown(Keys.Down))
             {
-                posunY += 32;
+                posunY -= 32;
             }
             if (keyboard.IsKeyDown(Keys.Left) && !staraKeyboard.IsKeyDown(Keys.Left))
             {
-                posunX -= 32;
+                posunX += 32;
             }
             if (keyboard.IsKeyDown(Keys.Right) && !staraKeyboard.IsKeyDown(Keys.Right))
             {
-                posunX += 32;
+                posunX -= 32;
             }
         }
 
