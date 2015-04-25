@@ -200,7 +200,7 @@ namespace Imprisoned_Hope
             }
             if (heroRect.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
             {
-                Hra.PrepniObrazovku(Hra.displayLevelBuilder);
+                Hra.PrepniObrazovku(Hra.displayLevelBuilder);                
             }
             optMenu.moveMenu(gameTime);
             mainMenu.moveMenu(gameTime);

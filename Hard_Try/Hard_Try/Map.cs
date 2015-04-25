@@ -30,8 +30,13 @@ namespace Imprisoned_Hope
             this.PosunY = 0;
         }
 
+        public void UpdatePosun(int x,int y)
+        {
+            this.PosunX = x;
+            this.PosunY = y;
+        }
 
-        public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             foreach (Block item in Blocks)
             {

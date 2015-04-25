@@ -70,8 +70,17 @@
 	+tøíde Block pøidána promìná Type, bude urèovat typ bloku, podle toho se bude rozpoznávat akce atd.
 	+tøída map dostala dva inty, posunX, posunY - oèekávané použití až v gameplayi
 
-0.0035 - podruh
+0.0035 - w00d3nl3g
+	+ opt menu obsahuje nastavení Music ON/OFF
+	+ textury
+
+0.0036 - podruh
 	+pøidána tøída mapmanager
 		-bude obsluhovat jakékoliv ukláddání nahrání map
 	+form builder controler
 		-bude vybírat mapy k úpravì, celkovì obsluhovat editor map
+
+0.0037 - podruh
+	+editor dokonèen
+	+veškeré dìní se ovládá pomocí builder controleru
+	+menší okomentování mapManageru a Blocku

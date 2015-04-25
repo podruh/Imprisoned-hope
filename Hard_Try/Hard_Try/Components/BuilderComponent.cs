@@ -28,15 +28,16 @@ namespace Imprisoned_Hope
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
 
-        private Map currentMap;
-        private List<Map> mapList;
+        private Map currentMap;       
+        private MapManager manager;
 
         private List<Block> mrizkaBloky;
         private List<Block> mapBloky;
 
         private BuilderPromtp FormPrompt;
+        private BuilderControler Controler;
 
-        private bool promptShown;
+        private bool promptShown, controlerShown, promptState;
 
         private int posunX, posunY;
 
@@ -58,9 +59,16 @@ namespace Imprisoned_Hope
             // TODO: Add your initialization code here
             mrizkaBloky = new List<Block>();
             mapBloky = new List<Block>();
+            manager = new MapManager();
+           
+            controlerShown = true;
+            promptState = false;
+
             posunX = 0;
             posunY = 0;
+
             message = "";
+
             base.Initialize();
         }
         protected override void LoadContent()
@@ -72,7 +80,11 @@ namespace Imprisoned_Hope
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
             prompt = Hra.Content.Load<Texture2D>(@"Textury\prompt");
-            
+            manager.AddTexture(mrizka, brickWall);
+            manager.AddType("mrizka", "wall");
+            manager.Nahrat();
+            currentMap = manager.GetMapByName(manager.GetMapNameArray()[0]);
+            mapBloky = currentMap.Blocks;
             for (int i = 0; i < Hra.vyska; i += mrizka.Height)
             {
                 for (int j = 0; j < Hra.sirka; j += mrizka.Width)
@@ -80,6 +92,7 @@ namespace Imprisoned_Hope
                     mrizkaBloky.Add(new Block(mrizka, mrizka,"mrizka", new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
                 }
             }
+
             FontCourierNew = Hra.Content.Load<SpriteFont>(@"Fonty\courier_new");            
 
             base.LoadContent();
@@ -101,7 +114,8 @@ namespace Imprisoned_Hope
             VstupUpdate();
 
             KliknutaMrizka();
-            
+
+
             base.Update(gameTime);
         }
         /// <summary>
@@ -112,38 +126,47 @@ namespace Imprisoned_Hope
             if (keyboard.IsKeyDown(Keys.Up)&& !staraKeyboard.IsKeyDown(Keys.Up))
             {
                 posunY += 32;
+                currentMap.UpdatePosun(posunX, posunY);
             }
             if (keyboard.IsKeyDown(Keys.Down) && !staraKeyboard.IsKeyDown(Keys.Down))
             {
                 posunY -= 32;
+                currentMap.UpdatePosun(posunX, posunY);
             }
             if (keyboard.IsKeyDown(Keys.Left) && !staraKeyboard.IsKeyDown(Keys.Left))
             {
                 posunX += 32;
+                currentMap.UpdatePosun(posunX, posunY);
             }
             if (keyboard.IsKeyDown(Keys.Right) && !staraKeyboard.IsKeyDown(Keys.Right))
             {
                 posunX -= 32;
+                currentMap.UpdatePosun(posunX, posunY);
             }
+            
         }
 
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-
             spriteBatch.Begin();
-
+            if (controlerShown)
+            {
+                Controler = new BuilderControler(this, manager);
+                Controler.Show();
+                controlerShown = false;
+            }
+            
             //vykreslení vodící møížky
             foreach (Block item in mrizkaBloky)
             {
                 item.DrawBlockLine(spriteBatch,0,0);
             }
+
             //vykreslení použitých blokù
-            foreach (Block item in mapBloky)
-            {
-                item.DrawBlockLine(spriteBatch, posunX, posunY);
-            }
+            currentMap.Draw(spriteBatch);
+
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.DrawString(FontCourierNew, message, new Vector2(0, 0), Color.Black);
             spriteBatch.End();
@@ -166,7 +189,7 @@ namespace Imprisoned_Hope
             }
         }
         /// <summary>
-        /// vytvoøí a otevøe nový fomr pøi kliknutí na møížku
+        /// vytvoøí a otevøe nový form pøi kliknutí na møížku
         /// </summary>
         private void KliknutaMrizka()
         {
@@ -181,7 +204,7 @@ namespace Imprisoned_Hope
                     item.Color = Color.White;
                 }
 
-                if (Kliknuto((Sprite)item) && !promptShown)
+                if (Kliknuto((Sprite)item) && !promptShown && promptState)
                 {
                     PrepniPrompt();
                     FormPrompt = new BuilderPromtp(this, item.Rectangle.X, item.Rectangle.Y);
@@ -204,9 +227,13 @@ namespace Imprisoned_Hope
                 case "Brick Wall": 
                     mapBloky.Add(new Block(brickWall, brickWall,"wall", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
                     break;
+
+                    //pøidat další typy blokù
+
                 default:
                     break;
             }
+            currentMap.Blocks = mapBloky;
         }
         /// <summary>
         /// pøepne jestli má být prompt zapnutý/vypnutý
@@ -215,7 +242,17 @@ namespace Imprisoned_Hope
         {
             bool b = promptShown;
             promptShown = !b;
+            ChangePromptState(false);
         }
+        /// <summary>
+        /// slouží k povolení promtpu
+        /// </summary>
+        /// <param name="st"></param>
+        public void ChangePromptState(bool st)
+        {
+            promptState = st;
+        }
+
         /// <summary>
         /// nìco na zpùsob messageboxu
         /// </summary>
@@ -223,6 +260,44 @@ namespace Imprisoned_Hope
         public void Message(string text)
         {
             this.message = text;
+        }
+        /// <summary>
+        /// vymìní mapu k vekreslení a upravování podle zadaného jména
+        /// </summary>
+        /// <param name="mapName">jméno mapy k naètení</param>
+        public void PrepniMapu(string mapName)
+        {
+            manager.UpdateMap(currentMap);
+            currentMap = manager.GetMapByName(mapName);
+        }
+        /// <summary>
+        /// uloží všechny mapy a pøidá poslední zmìny
+        /// </summary>
+        public void UlozMapy()
+        {
+            manager.UpdateMap(currentMap);
+            manager.Ulozit();
+        }
+        /// <summary>
+        /// vytvoøí novou mapu a pøidá jí do seznamu map
+        /// </summary>
+        /// <param name="name">jméno nové mapy</param>
+        public void NovaMapa(string name)
+        {
+            manager.UpdateMap(currentMap);
+            currentMap = new Map(name);
+            mapBloky = new List<Block>();
+            manager.AddMap(currentMap);
+        }
+        /// <summary>
+        /// pøepne zpìt do menu
+        /// </summary>
+        public void Zavri()
+        {
+            
+            Hra.PrepniObrazovku(Hra.displayMenu);
+            controlerShown = true;
+
         }
     }
 }

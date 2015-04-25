@@ -30,10 +30,7 @@ namespace Imprisoned_Hope
         
         public Block() 
         {
-            this.Position = new Vector2(X, Y);
-            this.Rectangle = new Rectangle(X, Y, 32, 32);
-            this.Color = Color.White;
-            Lighted = false;
+
 
         }
         public Block(Texture2D texture, Texture2D shadowed,string type, Rectangle rectangle, Color color)
@@ -75,6 +72,7 @@ namespace Imprisoned_Hope
             }
         
         }
+        
         public void DrawBlockLine(SpriteBatch spriteBatch, int posunX,int posunY)
         {
             int x = this.Rectangle.X + posunX;
@@ -100,6 +98,20 @@ namespace Imprisoned_Hope
                         break;
                 } 
             }  
+        }
+        /// <summary>
+        /// nastaví hodnoty po načtení z xml souboru
+        /// </summary>
+        /// <param name="normal"></param>
+        /// <param name="shadowed"></param>
+        public void SetTextures(Texture2D normal, Texture2D shadowed)
+        {
+            this.Texture = normal;
+            this.Shadowed = shadowed;
+            this.Position = new Vector2(X, Y);
+            this.Rectangle = new Rectangle(X, Y, 32, 32);
+            this.Color = Color.White;
+            Lighted = false;
         }
         
 
