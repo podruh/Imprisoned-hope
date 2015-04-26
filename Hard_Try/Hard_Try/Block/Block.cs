@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    public class Block : Sprite
+    public partial class Block : Sprite
     {
         [XmlIgnore]
         private Texture2D Shadowed;
@@ -24,6 +24,8 @@ namespace Imprisoned_Hope
         public int Count;
 
         public string Direction;
+
+        public string SpecialText;
 
         [XmlIgnore]
         private bool Lighted;

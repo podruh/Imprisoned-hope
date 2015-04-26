@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Imprisoned_Hope
 {
-    public class MapManager
+    public partial class MapManager
     {
         private List<Map> MapList;
 

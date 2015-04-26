@@ -8,7 +8,7 @@ using System.Text;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    public class Map
+    public partial class Map
     {
         public string Name;
                

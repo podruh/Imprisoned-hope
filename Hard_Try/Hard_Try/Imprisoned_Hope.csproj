@@ -75,7 +75,9 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Block.cs" />
+    <Compile Include="Block\Block.cs" />
+    <Compile Include="Block\Block_F.cs" />
+    <Compile Include="Block\Block_D.cs" />
     <Compile Include="BuilderControler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +92,12 @@
     </Compile>
     <Compile Include="Components\BuilderComponent.cs" />
     <Compile Include="Display.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="MapManager.cs" />
+    <Compile Include="Map\Map_D.cs" />
+    <Compile Include="Map\Map_F.cs" />
+    <Compile Include="Map\Map.cs" />
+    <Compile Include="MapManger\MapManager.cs" />
+    <Compile Include="MapManger\MapManager_F.cs" />
+    <Compile Include="MapManger\MapManager_D.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Components\MenuComponent.cs" />
     <Compile Include="MenuItem.cs" />

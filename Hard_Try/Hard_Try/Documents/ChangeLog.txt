@@ -84,3 +84,7 @@
 	+editor dokonèen
 	+veškeré dìní se ovládá pomocí builder controleru
 	+menší okomentování mapManageru a Blocku
+
+0.0038 - podruh
+	+projekt je pøipraven k vìtvení
+	+bloku je pøidán special text
