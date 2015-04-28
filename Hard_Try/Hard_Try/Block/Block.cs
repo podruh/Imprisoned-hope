@@ -13,32 +13,18 @@ namespace Imprisoned_Hope
     public partial class Block : Sprite
     {
         [XmlIgnore]
-        private Texture2D Shadowed;
-        
         public string Type;
-
         public int X;
-
         public int Y;
-       
         public int Count;
-
         public string Direction;
-
-        public string SpecialText;
-
         [XmlIgnore]
-        private bool Lighted;
+        public bool Lighted;
         
-        public Block() 
-        {
-
-
-        }
-        public Block(Texture2D texture, Texture2D shadowed,string type, Rectangle rectangle, Color color)
+        public Block(){}
+        public Block(Texture2D texture,string type, Rectangle rectangle, Color color)
         {
             this.Texture = texture;
-            this.Shadowed = shadowed;
             this.Type = type;
             this.Rectangle = rectangle;
             this.X = rectangle.X;
@@ -48,10 +34,9 @@ namespace Imprisoned_Hope
             Lighted = false;
         }
 
-        public Block(Texture2D texture, Texture2D shadowed,string type, Rectangle rectangle, Color color,string direction,int count)
+        public Block(Texture2D texture,string type, Rectangle rectangle, Color color,string direction,int count)
         {
-            this.Texture = texture;
-            this.Shadowed = shadowed;
+            this.Texture = texture;;
             this.Type = type;
             this.Rectangle = rectangle;
             this.X = rectangle.X;
@@ -70,7 +55,7 @@ namespace Imprisoned_Hope
             }
             else
             {
-                spriteBatch.Draw(Shadowed, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color);
+                spriteBatch.Draw(Texture, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color.Black);
             }
         
         }
@@ -109,7 +94,6 @@ namespace Imprisoned_Hope
         public void SetTextures(Texture2D normal, Texture2D shadowed)
         {
             this.Texture = normal;
-            this.Shadowed = shadowed;
             this.Position = new Vector2(X, Y);
             this.Rectangle = new Rectangle(X, Y, 32, 32);
             this.Color = Color.White;

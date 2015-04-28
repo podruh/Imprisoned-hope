@@ -30,7 +30,7 @@ namespace Imprisoned_Hope
         #endregion
 
         private Texture2D menuBackground, menuItem_Exit, menuItem_Loadgame, menuItem_Options, menuItem_Newgame,
-            iconMouse, menuItem_Temporary, menuItem_Back,menuItem_Fullscreen, menuItem_musicon, menuItem_musicoff, menuItem_Window, hero, class_Phasewalker, classEnforcer, classMastermind, pozadiNG, iconTemp, iconBack64;
+            iconMouse, menuItem_Temporary, menuItem_Back, menuItem_musicon, menuItem_musicoff, hero, class_Phasewalker, classEnforcer, classMastermind, pozadiNG, iconTemp, iconBack64;
         private List<Texture2D> mainMenuTextury;
         private List<Texture2D> optMenuTextury;
         private List<Texture2D> newgameMenuTextury;

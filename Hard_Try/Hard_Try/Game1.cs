@@ -144,13 +144,5 @@ namespace Imprisoned_Hope
 
             base.Draw(gameTime);
         } 
-        public void GoFullscreen()
-        {
-            graphics.IsFullScreen = true;
-        }
-        public void GoWindow()
-        {
-            graphics.IsFullScreen = false;
-        }
     }
 }
