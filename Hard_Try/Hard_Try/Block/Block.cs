@@ -12,7 +12,6 @@ namespace Imprisoned_Hope
     [Serializable()]
     public partial class Block : Sprite
     {
-        [XmlIgnore]
         public string Type;
         public int X;
         public int Y;
@@ -49,15 +48,7 @@ namespace Imprisoned_Hope
 
         public void DrawBlock(SpriteBatch spriteBatch, int x,int y)
         {
-            if (Lighted)
-            {
-                spriteBatch.Draw(Texture, new Rectangle(x,y,Rectangle.Width,Rectangle.Height), Color);
-            }
-            else
-            {
-                spriteBatch.Draw(Texture, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color.Black);
-            }
-        
+                spriteBatch.Draw(Texture, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color);
         }
         
         public void DrawBlockLine(SpriteBatch spriteBatch, int posunX,int posunY)
@@ -91,7 +82,7 @@ namespace Imprisoned_Hope
         /// </summary>
         /// <param name="normal"></param>
         /// <param name="shadowed"></param>
-        public void SetTextures(Texture2D normal, Texture2D shadowed)
+        public void SetTextures(Texture2D normal)
         {
             this.Texture = normal;
             this.Position = new Vector2(X, Y);

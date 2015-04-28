@@ -238,7 +238,7 @@ namespace Imprisoned_Hope
         {
             foreach (Block item in map.Blocks)
             {
-                item.SetTextures(GetTexture2DByType(item.Type),GetTexture2DByType(item.Type));               
+                item.SetTextures(GetTexture2DByType(item.Type));               
             }
         }
     }
