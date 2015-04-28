@@ -19,7 +19,7 @@ namespace Imprisoned_Hope
         public int Count;
         public string Direction;
         [XmlIgnore]
-        public bool Lighted;
+        public bool Lighted = true;
         
         public Block(){}
         public Block(Texture2D texture,string type, Rectangle rectangle, Color color)
@@ -31,7 +31,7 @@ namespace Imprisoned_Hope
             this.Y = rectangle.Y;
             this.Color = color;
             Count = 1;
-            Lighted = false;
+            Lighted = true;
         }
 
         public Block(Texture2D texture,string type, Rectangle rectangle, Color color,string direction,int count)
@@ -55,7 +55,7 @@ namespace Imprisoned_Hope
             }
             else
             {
-                spriteBatch.Draw(Texture, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color.Black);
+                spriteBatch.Draw(Texture, new Rectangle(x, y, Rectangle.Width, Rectangle.Height), Color);
             }
         
         }
