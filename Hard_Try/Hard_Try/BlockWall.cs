@@ -22,7 +22,7 @@ namespace Imprisoned_Hope
             this.Color = color;
             this.Direction = direction;
             this.Count = count;
-            this.Lighted = true;
+            this.Lighted = false;
             this.desc = Description;
         }
         public void LightChange()
