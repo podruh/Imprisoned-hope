@@ -89,7 +89,7 @@ namespace Imprisoned_Hope
             {
                 for (int j = 0; j < Hra.sirka; j += mrizka.Width)
                 {
-                    mrizkaBloky.Add(new Block(mrizka, mrizka,"mrizka", new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
+                    mrizkaBloky.Add(new Block(mrizka,"mrizka", new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
                 }
             }
 
@@ -220,12 +220,12 @@ namespace Imprisoned_Hope
         /// <param name="dir">smìr vykreslování</param>
         /// <param name="x">pozice x</param>
         /// <param name="y">pozice y</param>
-        public void VytvorBlok(string textura, int count, string dir, int x, int y)
+        public void VytvorBlok(string typ, int count, string dir, int x, int y)
         {
-            switch (textura)
+            switch (typ)
             {
                 case "Brick Wall": 
-                    mapBloky.Add(new Block(brickWall, brickWall,"wall", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add(new BlockWall(brickWall,"wall", "Zeï!", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
                     break;
 
                     //pøidat další typy blokù
