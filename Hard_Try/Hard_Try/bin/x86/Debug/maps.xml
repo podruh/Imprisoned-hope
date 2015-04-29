@@ -1,33 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Map>
-    <Name>druhá</Name>
-    <Blocks>
-      <Block>
-        <Type>wall</Type>
-        <X>352</X>
-        <Y>224</Y>
-        <Count>20</Count>
-        <Direction>right</Direction>
-      </Block>
-      <Block>
-        <Type>wall</Type>
-        <X>0</X>
-        <Y>0</Y>
-        <Count>10</Count>
-        <Direction>down</Direction>
-      </Block>
-      <Block>
-        <Type>wall</Type>
-        <X>320</X>
-        <Y>352</Y>
-        <Count>2</Count>
-        <Direction>down</Direction>
-      </Block>
-    </Blocks>
-  </Map>
-  <Map>
-    <Name>Třetí</Name>
+    <Name>First</Name>
     <Blocks>
       <Block>
         <Type>wall</Type>
@@ -42,6 +16,14 @@
         <Y>0</Y>
         <Count>20</Count>
         <Direction>down</Direction>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>32</X>
+        <Y>608</Y>
+        <Count>30</Count>
+        <Direction>right</Direction>
+        <desc>Zeď!</desc>
       </Block>
     </Blocks>
   </Map>

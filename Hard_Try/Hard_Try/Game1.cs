@@ -22,7 +22,7 @@ namespace Imprisoned_Hope
         public int sirka = 1280;
         public int vyska = 720;
         public MouseState mys;
-        public Display displayMenu, displayLevelBuilder;
+        public Display displayMenu, displayLevelBuilder,displayGameplay;
 
         public KeyboardState klavesy, klavesyMinule;
 
@@ -47,9 +47,11 @@ namespace Imprisoned_Hope
             //pøidávání komponent
             MenuComponent menu = new MenuComponent(this);
             BuilderComponent builder = new BuilderComponent(this);
+            Gameplay gameplay = new Gameplay(this);
             //pøidání displejù
             displayMenu = new Display(this, menu);
             displayLevelBuilder = new Display(this, builder);
+            displayGameplay = new Display(this, gameplay);
             //vypnutí komponent
             foreach (GameComponent item in Components)
             {

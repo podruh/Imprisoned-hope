@@ -9,9 +9,11 @@ using System.Xml.Serialization;
 
 namespace Imprisoned_Hope
 {
-    class BlockWall :Block, IBlock
+    [Serializable()]
+    public class BlockWall :Block, IBlock
     {
         public string desc;
+        public BlockWall() { }
         public BlockWall(Texture2D texture,string type, string Description, Rectangle rectangle, Color color,string direction,int count)
         {
             this.Texture = texture;;

@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Components\BuilderComponent.cs" />
     <Compile Include="Display.cs" />
+    <Compile Include="Components\Gameplay.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Map\Map_D.cs" />
     <Compile Include="Map\Map_F.cs" />
