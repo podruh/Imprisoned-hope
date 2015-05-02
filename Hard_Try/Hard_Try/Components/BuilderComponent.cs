@@ -225,7 +225,7 @@ namespace Imprisoned_Hope
             switch (typ)
             {
                 case "Brick Wall": 
-                    mapBloky.Add(new BlockWall(brickWall,"wall", "Zeï!", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add((Block)new BlockWall(brickWall,"wall", "Zeï!", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
                     break;
 
                     //pøidat další typy blokù
@@ -269,6 +269,7 @@ namespace Imprisoned_Hope
         {
             manager.UpdateMap(currentMap);
             currentMap = manager.GetMapByName(mapName);
+            mapBloky = currentMap.Blocks;
         }
         /// <summary>
         /// uloží všechny mapy a pøidá poslední zmìny

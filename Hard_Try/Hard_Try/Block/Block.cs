@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 namespace Imprisoned_Hope
 {
     [Serializable()]
+    [XmlInclude(typeof(BlockWall))]
     public partial class Block : Sprite
     {
         public string Type;
