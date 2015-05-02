@@ -25,6 +25,14 @@
         <Direction>right</Direction>
         <desc>Zeď!</desc>
       </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>960</X>
+        <Y>576</Y>
+        <Count>20</Count>
+        <Direction>up</Direction>
+        <desc>Zeď!</desc>
+      </Block>
     </Blocks>
   </Map>
 </ArrayOfMap>
