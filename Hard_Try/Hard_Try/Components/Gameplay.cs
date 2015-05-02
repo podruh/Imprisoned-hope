@@ -102,6 +102,9 @@ namespace Imprisoned_Hope
             MapManager.DrawMapByName(MapManager.GetMapNameArray()[0], spriteBatch);
 
 
+
+
+            spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);
