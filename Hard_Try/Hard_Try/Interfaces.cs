@@ -9,25 +9,23 @@ namespace Imprisoned_Hope
     {
         void LightChange();
         string GetDescription();
+        bool GetCollision();
     }
-    interface IInteractive
+    interface IInteractive : IBlock
     {
-        void ChangeState();
+        void Action();
     }
 
 
-
-
-    interface ILootable : IBlock
+    interface IContainer : IInteractive
     {
-        void ShowContent();
         List<Object> GetContent();
     }
     interface IInformational : IInteractive
     {
         void ShowMessage();
     }
-    interface ISwitchable : IBlock, IInteractive
+    interface ISwitchable : IInteractive
     {
         void Action();
     }

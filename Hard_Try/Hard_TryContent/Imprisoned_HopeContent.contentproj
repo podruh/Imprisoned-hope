@@ -191,7 +191,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textury\brick_wall_nicked.png">
+    <Compile Include="Textury\Objects\brick_wall_nicked.png">
       <Name>Brick Wall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -243,6 +243,23 @@
     </Compile>
     <Compile Include="Textury\Menu\musicon.png">
       <Name>musicon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textury\Objects\floor1.png">
+      <Name>floor1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textury\Objects\floor2.png">
+      <Name>floor2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textury\Objects\floor3.png">
+      <Name>floor3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

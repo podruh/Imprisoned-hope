@@ -23,7 +23,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input;
+        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3;
         public MouseState mys,staraMys;
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
@@ -76,7 +76,12 @@ namespace Imprisoned_Hope
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mrizka = Hra.Content.Load<Texture2D>(@"Textury\mrizka");
             iconMouse = Hra.Content.Load<Texture2D>(@"Textury\iconMouse");
-            brickWall = Hra.Content.Load<Texture2D>(@"Textury\Brick Wall");
+            #region Blocky
+            brickWall = Hra.Content.Load<Texture2D>(@"Textury\Objects\Brick Wall");
+            floor1 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor1");
+            floor2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor2");
+            floor3 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor3");
+            #endregion
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
             prompt = Hra.Content.Load<Texture2D>(@"Textury\prompt");
@@ -224,15 +229,44 @@ namespace Imprisoned_Hope
         {
             switch (typ)
             {
-                case "Brick Wall": 
-                    mapBloky.Add((Block)new BlockWall(brickWall,"wall", "Zeï!", new Rectangle(x-posunX, y-posunY, 32, 32), Color.White, dir, count));
+                case "Brick Wall":
+                    mapBloky.Add((Block)new BlockWall(brickWall, "wall", "Zeï!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
-                    //pøidat další typy blokù
+                case "Floor 1":
+                    mapBloky.Add((Block)new BlockFloor(floor1, "floor", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Floor 2":
+                    mapBloky.Add((Block)new BlockFloor(floor2, "floor", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Floor 3":
+                    mapBloky.Add((Block)new BlockFloor(floor3, "floor", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
 
                 default:
                     break;
             }
+            currentMap.Blocks = mapBloky;
+        }
+        /// <summary>
+        /// vytvoøí blok, který se poté dodá listu, který bude naèten do mapy k uložení
+        /// </summary>
+        /// <param name="typ">Typ objektu</param>
+        /// <param name="itemy">List obsahu containeru</param>
+        /// <param name="x">pozice x</param>
+        /// <param name="y">pozice y</param>
+        public void VytvorContainer(string typ,List<Object> itemy , int x, int y)
+        {
+            switch (typ)
+            {
+                case "Supplies":
+                    break;
+                default:
+                    break;
+            }
+           
             currentMap.Blocks = mapBloky;
         }
         /// <summary>

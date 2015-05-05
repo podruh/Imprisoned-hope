@@ -14,7 +14,6 @@ Content\Textury\Menu\Fullscreen.xnb
 Content\Textury\Menu\Window.xnb
 Content\Textury\Menu\Back.xnb
 Content\Textury\Menu\Temporary.xnb
-Content\Textury\Brick Wall.xnb
 Content\Textury\Menu\back64.xnb
 Content\Textury\Menu\back32.xnb
 Content\Textury\input.xnb
@@ -34,6 +33,10 @@ Content\Music\bensound-pianomoment.xnb
 Content\Music\music_menuTheme.xnb
 Content\Music\Come Play with Me.xnb
 Content\Music\The Escalation.xnb
+Content\Textury\Objects\Brick Wall.xnb
+Content\Textury\Objects\floor1.xnb
+Content\Textury\Objects\floor2.xnb
+Content\Textury\Objects\floor3.xnb
 Content\Music\bensound-betterdays.wma
 Content\Music\bensound-deepblue.wma
 Content\Music\bensound-epic.wma

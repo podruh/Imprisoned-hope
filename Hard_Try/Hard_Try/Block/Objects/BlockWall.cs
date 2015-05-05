@@ -10,9 +10,10 @@ using System.Xml.Serialization;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    public class BlockWall :Block, IBlock
+    public class BlockWall : Block, IBlock
     {
         public string desc;
+        public bool collide = true;
         public BlockWall() { }
         public BlockWall(Texture2D texture,string type, string Description, Rectangle rectangle, Color color,string direction,int count)
         {
@@ -35,6 +36,11 @@ namespace Imprisoned_Hope
         public string GetDescription()
         {
             return desc;
+        }
+       
+        public bool GetCollision()
+        {
+            return collide;
         }
     }
 }

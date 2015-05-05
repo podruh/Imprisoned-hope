@@ -75,7 +75,9 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlockWall.cs" />
+    <Compile Include="Block\Objects\BlockContainer.cs" />
+    <Compile Include="Block\Objects\BlockFloor.cs" />
+    <Compile Include="Block\Objects\BlockWall.cs" />
     <Compile Include="Block\Block.cs" />
     <Compile Include="Block\Block_F.cs" />
     <Compile Include="Block\Block_D.cs" />

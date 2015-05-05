@@ -11,6 +11,8 @@ namespace Imprisoned_Hope
 {
     [Serializable()]
     [XmlInclude(typeof(BlockWall))]
+    [XmlInclude(typeof(BlockFloor))]
+    [XmlInclude(typeof(BlockContainer))]
     public partial class Block : Sprite
     {
         public string Type;
