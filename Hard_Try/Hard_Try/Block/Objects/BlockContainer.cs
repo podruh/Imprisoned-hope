@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    class BlockContainer : Block, IContainer
+    public class BlockContainer : Block, IContainer
     {
         public string desc;
         public bool collide = true;

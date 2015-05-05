@@ -59,7 +59,7 @@ namespace Imprisoned_Hope
             // TODO: Add your initialization code here
             mrizkaBloky = new List<Block>();
             mapBloky = new List<Block>();
-            manager = new MapManager();
+            manager = new MapManager(Hra);
            
             controlerShown = true;
             promptState = false;
@@ -85,8 +85,6 @@ namespace Imprisoned_Hope
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
             prompt = Hra.Content.Load<Texture2D>(@"Textury\prompt");
-            manager.AddTexture(mrizka, brickWall);
-            manager.AddType("mrizka", "wall");
             manager.Nahrat();
             currentMap = manager.GetMapByName(manager.GetMapNameArray()[0]);
             mapBloky = currentMap.Blocks;
@@ -234,15 +232,15 @@ namespace Imprisoned_Hope
                     break;
 
                 case "Floor 1":
-                    mapBloky.Add((Block)new BlockFloor(floor1, "floor", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add((Block)new BlockFloor(floor1, "Floor 1", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
                 case "Floor 2":
-                    mapBloky.Add((Block)new BlockFloor(floor2, "floor", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add((Block)new BlockFloor(floor2, "Floor 2", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
                 case "Floor 3":
-                    mapBloky.Add((Block)new BlockFloor(floor3, "floor", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add((Block)new BlockFloor(floor3, "Floor 3", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
                 default:

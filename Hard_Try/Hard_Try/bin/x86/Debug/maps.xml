@@ -24,6 +24,7 @@
         <Count>30</Count>
         <Direction>right</Direction>
         <desc>Zeď!</desc>
+        <collide>true</collide>
       </Block>
       <Block xsi:type="BlockWall">
         <Type>wall</Type>
@@ -32,6 +33,25 @@
         <Count>20</Count>
         <Direction>up</Direction>
         <desc>Zeď!</desc>
+        <collide>true</collide>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 1</Type>
+        <X>320</X>
+        <Y>224</Y>
+        <Count>4</Count>
+        <Direction>down</Direction>
+        <desc>Podlaha!</desc>
+        <collide>false</collide>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>320</X>
+        <Y>352</Y>
+        <Count>10</Count>
+        <Direction>right</Direction>
+        <desc>Podlaha!</desc>
+        <collide>false</collide>
       </Block>
     </Blocks>
   </Map>
