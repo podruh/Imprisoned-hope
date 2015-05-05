@@ -29,6 +29,10 @@ namespace Imprisoned_Hope
 
         bool oldEnabled;
 
+        SaveManager SaveM;
+
+        Player player;
+
         public Gameplay(Game1 game)
             : base(game)
         {
@@ -51,6 +55,10 @@ namespace Imprisoned_Hope
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
 
+            SaveM = new SaveManager(Hra);                
+
+
+
             base.LoadContent();
         }
         
@@ -60,6 +68,7 @@ namespace Imprisoned_Hope
             if (Enabled != oldEnabled && Enabled == true)
             {
                 MapManager.Nahrat();
+
             }
 
             //update myši a klávesnice
