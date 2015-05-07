@@ -23,7 +23,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3;
+        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, glass2;
         public MouseState mys,staraMys;
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
@@ -81,6 +81,15 @@ namespace Imprisoned_Hope
             floor1 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor1");
             floor2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor2");
             floor3 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor3");
+            grayBrick = Hra.Content.Load<Texture2D>(@"Textury\Objects\grayBrick");
+            grayBrick2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\grayBrick2");
+            bedHead = Hra.Content.Load<Texture2D>(@"Textury\Objects\bedHead");
+            bedFeet = Hra.Content.Load<Texture2D>(@"Textury\Objects\bedFeet");
+            jailDoors = Hra.Content.Load<Texture2D>(@"Textury\Objects\JailDoors");
+            jailDoors2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\JailDoors2");
+            glass = Hra.Content.Load<Texture2D>(@"Textury\Objects\glass");
+            glass2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\glass2");
+            supplies = Hra.Content.Load<Texture2D>(@"Textury\Objects\supplies");
             #endregion
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
@@ -243,6 +252,38 @@ namespace Imprisoned_Hope
                     mapBloky.Add((Block)new BlockFloor(floor3, "Floor 3", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
+                case "Gray Brick Wall":
+                    mapBloky.Add((Block)new BlockWall(grayBrick, "Gray Brick Wall", "Zeï!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Gray Brick Wall 2":
+                    mapBloky.Add((Block)new BlockWall(grayBrick2, "Gray Brick Wall", "Zeï!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Bed Head":
+                    mapBloky.Add((Block)new BlockFloor(bedHead, "Bed Head", "Postel!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Bed Feet":
+                    mapBloky.Add((Block)new BlockFloor(bedFeet, "Bed Feet", "Postel!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Jail Doors":
+                    mapBloky.Add((Block)new BlockDoor(jailDoors, "Jail Doors", "Dveøe!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Jail Doors 2":
+                    mapBloky.Add((Block)new BlockDoor(jailDoors2, "Jail Doors 2", "Dveøe!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Glass":
+                    mapBloky.Add((Block)new BlockWall(glass, "Glass", "Sklo!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Glass 2":
+                    mapBloky.Add((Block)new BlockWall(glass2, "Glass 2", "Sklo!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
                 default:
                     break;
             }
@@ -260,6 +301,7 @@ namespace Imprisoned_Hope
             switch (typ)
             {
                 case "Supplies":
+                    mapBloky.Add((Block)new BlockContainer(supplies, "Supplies", "Bedna!", itemy, new Rectangle(x - posunX, y - posunY, 32, 32),Color.White));
                     break;
                 default:
                     break;

@@ -23,11 +23,7 @@ namespace Imprisoned_Hope
     }
     interface IInformational : IInteractive
     {
-        void ShowMessage();
-    }
-    interface ISwitchable : IInteractive
-    {
-        void Action();
+        string GetMessage();
     }
     interface IEnvironment : IInteractive
     {

@@ -76,7 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Block\Objects\BlockContainer.cs" />
+    <Compile Include="Block\Objects\BlockDoor.cs" />
     <Compile Include="Block\Objects\BlockFloor.cs" />
+    <Compile Include="Block\Objects\BlockNote.cs" />
     <Compile Include="Block\Objects\BlockWall.cs" />
     <Compile Include="Block\Block.cs" />
     <Compile Include="Block\Block_F.cs" />

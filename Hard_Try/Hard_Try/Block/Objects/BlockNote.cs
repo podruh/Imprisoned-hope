@@ -10,25 +10,12 @@ using System.Xml.Serialization;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    public class BlockFloor : Block, IBlock
+    public class BlockNote : Block, IInformational
     {
-        public BlockFloor() { }
+        public string message;
 
-        public BlockFloor(Texture2D texture, string type, string description, Rectangle rectangle, Color color, string direction, int count)
-        {
-            this.Texture = texture;;
-            this.Type = type;
-            this.Rectangle = rectangle;
-            this.X = rectangle.X;
-            this.Y = rectangle.Y;
-            this.Color = color;
-            this.Direction = direction;
-            this.Count = count;
-            this.Lighted = false;
-            this.desc = description;
-        }
-
-        public BlockFloor(Texture2D texture, string type, string description, Rectangle rectangle, Color color, string direction, int count, bool collision)
+        public BlockNote() { }
+        public BlockNote(Texture2D texture, string type, string Description, Rectangle rectangle, Color color, string Message)
         {
             this.Texture = texture; ;
             this.Type = type;
@@ -36,25 +23,52 @@ namespace Imprisoned_Hope
             this.X = rectangle.X;
             this.Y = rectangle.Y;
             this.Color = color;
-            this.Direction = direction;
-            this.Count = count;
+            this.Direction = "right";
+            this.Count = 1;
             this.Lighted = false;
-            this.desc = description;
+            this.desc = Description;
+            this.message = Message;
+        }
+
+        public BlockNote(Texture2D texture, string type, string Description, Rectangle rectangle, Color color, string Message, bool collision)
+        {
+            this.Texture = texture; ;
+            this.Type = type;
+            this.Rectangle = rectangle;
+            this.X = rectangle.X;
+            this.Y = rectangle.Y;
+            this.Color = color;
+            this.Direction = "right";
+            this.Count = 1;
+            this.Lighted = false;
+            this.desc = Description;
             this.collide = collision;
+            this.message = Message;
         }
 
         public void LightChange()
         {
-            throw new NotImplementedException();
+            this.Lighted = !this.Lighted;
         }
 
         public string GetDescription()
         {
             return desc;
         }
+
         public bool GetCollision()
         {
             return collide;
+        }
+
+        public void Action()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetMessage()
+        {
+            return this.message;
         }
     }
 }

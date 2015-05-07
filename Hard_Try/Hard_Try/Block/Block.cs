@@ -19,7 +19,8 @@ namespace Imprisoned_Hope
         public int X;
         public int Y;
         public int Count;
-        public string Direction;
+        public string Direction, Description = "Neznámý block";
+        public bool collide = true;
         [XmlIgnore]
         public bool Lighted;
         

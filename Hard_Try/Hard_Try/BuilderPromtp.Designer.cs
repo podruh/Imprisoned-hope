@@ -46,7 +46,15 @@
             "Brick Wall",
             "Floor 1",
             "Floor 2",
-            "Floor 3"});
+            "Floor 3",
+            "Gray Brick Wall",
+            "Gray Brick Wall 2",
+            "Bed Head",
+            "Bed Feet",
+            "Jail Doors",
+            "Jail Doors 2",
+            "Glass",
+            "Glass 2"});
             this.comboBox1.Location = new System.Drawing.Point(109, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(115, 21);
@@ -65,9 +73,19 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(109, 39);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(115, 20);
             this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // comboBox2
             // 
@@ -81,6 +99,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(115, 21);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.Text = "right";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
