@@ -134,7 +134,9 @@ namespace Imprisoned_Hope
                      if (
                         key.IsKeyDown(Keys.Right) 
                         && (this.Position.X+this.Texture.Width >= item.Rectangle.Left - 3 && this.Position.X+this.Texture.Width <= item.Rectangle.Left)
-                        && ((this.Rectangle.Top >= item.Rectangle.Top && this.Rectangle.Top <= item.Rectangle.Bottom) || (this.Rectangle.Bottom >= item.Rectangle.Top && this.Rectangle.Bottom <= item.Rectangle.Bottom))
+                        && ((this.Rectangle.Top <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top) 
+                        //|| (this.Rectangle.Bottom >= item.Rectangle.Top && this.Rectangle.Bottom <= item.Rectangle.Bottom)
+                        )
                         )
                     {
                         return true;
@@ -150,7 +152,9 @@ namespace Imprisoned_Hope
                      if (
                         key.IsKeyDown(Keys.Left)
                         && (this.Position.X <= item.Rectangle.Right + 3 && this.Position.X >= item.Rectangle.Right)
-                        && ((this.Rectangle.Top >= item.Rectangle.Top && this.Rectangle.Top <= item.Rectangle.Bottom) || (this.Rectangle.Bottom >= item.Rectangle.Top && this.Rectangle.Bottom <= item.Rectangle.Bottom))
+                        && ((this.Rectangle.Top <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top)
+                        //|| (this.Rectangle.Bottom >= item.Rectangle.Top && this.Rectangle.Bottom <= item.Rectangle.Bottom)
+                        )
                         )
                     {
                         return true;
