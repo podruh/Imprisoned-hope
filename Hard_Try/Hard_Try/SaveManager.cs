@@ -36,7 +36,7 @@ namespace Imprisoned_Hope
             }
         }
 
-        public void LoadSaves()
+        public void SaveSaves()
         {
             try
             {
