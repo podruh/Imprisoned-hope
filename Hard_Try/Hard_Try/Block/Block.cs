@@ -25,7 +25,7 @@ namespace Imprisoned_Hope
         public bool Lighted;
         
         public Block(){}
-        public Block(Texture2D texture,string type, Rectangle rectangle, Color color)
+        public Block(Texture2D texture,string type, Rectangle rectangle, Color color, bool col)
         {
             this.Texture = texture;
             this.Type = type;
@@ -35,6 +35,7 @@ namespace Imprisoned_Hope
             this.Color = color;
             Count = 1;
             Lighted = false;
+            collide = col;
         }
 
         public Block(Texture2D texture,string type, Rectangle rectangle, Color color,string direction,int count)
@@ -92,6 +93,7 @@ namespace Imprisoned_Hope
             this.Position = new Vector2(X, Y);
             this.Rectangle = new Rectangle(X, Y, 32, 32);
             this.Color = Color.White;
+            
             Lighted = false;
         }
         

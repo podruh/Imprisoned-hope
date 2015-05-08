@@ -101,7 +101,7 @@ namespace Imprisoned_Hope
             {
                 for (int j = 0; j < Hra.sirka; j += mrizka.Width)
                 {
-                    mrizkaBloky.Add(new Block(mrizka,"mrizka", new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White));
+                    mrizkaBloky.Add(new Block(mrizka,"mrizka", new Rectangle(j, i, mrizka.Width, mrizka.Height), Color.White, false));
                 }
             }
 

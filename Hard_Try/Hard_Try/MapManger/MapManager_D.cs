@@ -47,5 +47,11 @@ namespace Imprisoned_Hope
             TypeList.Add("Glass");
             TypeList.Add("Iron Bars");
         }
+
+        public List<Map> GetMaps()
+        {
+            return MapList;
+        }
+
     }
 }
