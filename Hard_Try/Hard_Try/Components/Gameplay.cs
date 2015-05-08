@@ -56,7 +56,7 @@ namespace Imprisoned_Hope
 
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
-            CurrentMap = MapManager.GetMaps()[0];
+            CurrentMap = MapManager.GetMaps()[1];
             SaveM = new SaveManager(Hra);
 
             player = new Player(Hra, 300, 300, 100, "kokot");
@@ -86,6 +86,7 @@ namespace Imprisoned_Hope
             {
                 Hra.PrepniObrazovku(Hra.displayMenu);
             }
+
 
             oldEnabled = Enabled;
             base.Update(gameTime);
