@@ -33,6 +33,8 @@ namespace Imprisoned_Hope
 
         Player player;
 
+        Map CurrentMap;
+
         public Gameplay(Game1 game)
             : base(game)
         {
@@ -54,7 +56,7 @@ namespace Imprisoned_Hope
 
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
-
+            CurrentMap = MapManager.GetMaps()[0];
             SaveM = new SaveManager(Hra);
 
             player = new Player(Hra, 300, 300, 100, "kokot");
@@ -77,7 +79,7 @@ namespace Imprisoned_Hope
             starKeyboard = keyboard;
             keyboard = Keyboard.GetState();
             mys = Mouse.GetState();
-            player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime,MapManager.GetMaps()[0]);
+            player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime,CurrentMap);
             //vypnutá gameply pomocí ESC
 
             if (StisknutaKlavesa(Keys.Escape))
@@ -107,7 +109,7 @@ namespace Imprisoned_Hope
             spriteBatch.Begin();
 
             //prozatimní vyjkreslování mapy
-            MapManager.DrawMapByName(MapManager.GetMapNameArray()[0], spriteBatch);
+            CurrentMap.Draw(spriteBatch);
             //vykreslování hráèe
             player.DrawPlayer(spriteBatch);
             //vykreslení healthbaru
@@ -117,6 +119,12 @@ namespace Imprisoned_Hope
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void ZmenMapu(int index)
+        {
+            MapManager.UpdateMap(CurrentMap);
+            CurrentMap = MapManager.GetMaps()[index];
         }
     }
 }
