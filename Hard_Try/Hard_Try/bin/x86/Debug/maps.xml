@@ -1,21 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Map>
+    <Name>Second</Name>
+    <Blocks>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>256</X>
+        <Y>224</Y>
+        <Count>5</Count>
+        <Direction>down</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>288</X>
+        <Y>384</Y>
+        <Count>5</Count>
+        <Direction>right</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>448</X>
+        <Y>352</Y>
+        <Count>5</Count>
+        <Direction>up</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>416</X>
+        <Y>192</Y>
+        <Count>5</Count>
+        <Direction>left</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>256</X>
+        <Y>192</Y>
+        <Count>5</Count>
+        <Direction>up</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>448</X>
+        <Y>192</Y>
+        <Count>5</Count>
+        <Direction>up</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>256</X>
+        <Y>32</Y>
+        <Count>7</Count>
+        <Direction>left</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>448</X>
+        <Y>32</Y>
+        <Count>6</Count>
+        <Direction>left</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+    </Blocks>
+  </Map>
+  <Map>
     <Name>First</Name>
     <Blocks>
-      <Block>
+      <Block xsi:type="BlockWall">
         <Type>wall</Type>
         <X>352</X>
         <Y>224</Y>
         <Count>20</Count>
         <Direction>right</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
       </Block>
-      <Block>
+      <Block xsi:type="BlockWall">
         <Type>wall</Type>
         <X>0</X>
         <Y>0</Y>
         <Count>20</Count>
         <Direction>down</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
       </Block>
       <Block xsi:type="BlockWall">
         <Type>wall</Type>
@@ -23,6 +104,7 @@
         <Y>608</Y>
         <Count>30</Count>
         <Direction>right</Direction>
+        <collide>true</collide>
         <desc>Zeď!</desc>
       </Block>
       <Block xsi:type="BlockWall">
@@ -31,6 +113,48 @@
         <Y>576</Y>
         <Count>20</Count>
         <Direction>up</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+    </Blocks>
+  </Map>
+  <Map>
+    <Name>Kurva</Name>
+    <Blocks>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>320</X>
+        <Y>448</Y>
+        <Count>5</Count>
+        <Direction>right</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>544</X>
+        <Y>416</Y>
+        <Count>5</Count>
+        <Direction>up</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>448</X>
+        <Y>256</Y>
+        <Count>5</Count>
+        <Direction>left</Direction>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>224</X>
+        <Y>288</Y>
+        <Count>5</Count>
+        <Direction>down</Direction>
+        <collide>true</collide>
         <desc>Zeď!</desc>
       </Block>
     </Blocks>

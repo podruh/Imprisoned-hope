@@ -25,5 +25,11 @@ namespace Imprisoned_Hope
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Brick Wall"));
             TypeList.Add("wall");
         }
+
+        public List<Map> GetMaps()
+        {
+            return MapList;
+        }
+
     }
 }
