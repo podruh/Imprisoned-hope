@@ -30,7 +30,21 @@ namespace Imprisoned_Hope
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BC.VytvorBlok(comboBox1.SelectedItem.ToString(), Convert.ToInt32(numericUpDown1.Value), comboBox2.SelectedItem.ToString(), X, Y);
+            switch (cmbType.Text)
+            {
+                case "Block":
+                    BC.VytvorBlok(comboBox1.SelectedItem.ToString(), Convert.ToInt32(numericUpDown1.Value), comboBox2.SelectedItem.ToString(), X, Y);
+                    break;
+                case "Door":
+                    break;
+                case "Container":
+                    break;
+                case "Note":
+                    break;
+
+                default:
+                    break;
+            }
             this.Close();
         }
 

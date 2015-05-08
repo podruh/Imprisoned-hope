@@ -11,13 +11,16 @@ namespace Imprisoned_Hope
 {
     [Serializable()]
     [XmlInclude(typeof(BlockWall))]
+    [XmlInclude(typeof(BlockFloor))]
+    [XmlInclude(typeof(BlockContainer))]
     public partial class Block : Sprite
     {
         public string Type;
         public int X;
         public int Y;
         public int Count;
-        public string Direction;
+        public string Direction, Description = "Neznámý block";
+        public bool collide = true;
         [XmlIgnore]
         public bool Lighted;
         

@@ -7,7 +7,6 @@ namespace Imprisoned_Hope
 {
 	public partial class Block
 	{
-		public bool collide = true;
 
 		public bool IsNearToPlayer(Player player)
 		{

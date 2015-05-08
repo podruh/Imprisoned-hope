@@ -14,7 +14,7 @@ Content\Textury\Menu\Fullscreen.xnb
 Content\Textury\Menu\Window.xnb
 Content\Textury\Menu\Back.xnb
 Content\Textury\Menu\Temporary.xnb
-Content\Textury\Brick Wall.xnb
+Content\Textury\Objects\Brick Wall.xnb
 Content\Textury\Menu\back64.xnb
 Content\Textury\Menu\back32.xnb
 Content\Textury\input.xnb
@@ -23,6 +23,18 @@ Content\Textury\prompt.xnb
 Content\Textury\phasewalker_class.xnb
 Content\Textury\Menu\musicoff.xnb
 Content\Textury\Menu\musicon.xnb
+Content\Textury\Objects\floor1.xnb
+Content\Textury\Objects\floor2.xnb
+Content\Textury\Objects\floor3.xnb
+Content\Textury\Objects\bedFeet.xnb
+Content\Textury\Objects\bedHead.xnb
+Content\Textury\Objects\grayBrick.xnb
+Content\Textury\Objects\grayBrick2.xnb
+Content\Textury\Objects\JailDoors.xnb
+Content\Textury\Objects\JailDoors2.xnb
+Content\Textury\Objects\supplies.xnb
+Content\Textury\Objects\glass.xnb
+Content\Textury\Objects\ironBars.xnb
 Content\Textury\Hero Up.xnb
 Content\Fonty\courier_new.xnb
 Content\Fonty\times.xnb
