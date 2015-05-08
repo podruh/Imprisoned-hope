@@ -77,7 +77,7 @@ namespace Imprisoned_Hope
             starKeyboard = keyboard;
             keyboard = Keyboard.GetState();
             mys = Mouse.GetState();
-            player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime,MapManager.GetMaps()[2]);
+            player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime,MapManager.GetMaps()[0]);
             //vypnutá gameply pomocí ESC
 
             if (StisknutaKlavesa(Keys.Escape))
@@ -107,10 +107,11 @@ namespace Imprisoned_Hope
             spriteBatch.Begin();
 
             //prozatimní vyjkreslování mapy
-            MapManager.DrawMapByName(MapManager.GetMapNameArray()[2], spriteBatch);
+            MapManager.DrawMapByName(MapManager.GetMapNameArray()[0], spriteBatch);
             //vykreslování hráèe
             player.DrawPlayer(spriteBatch);
-
+            //vykreslení healthbaru
+            player.DrawHealtBar(spriteBatch);
 
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
             spriteBatch.End();

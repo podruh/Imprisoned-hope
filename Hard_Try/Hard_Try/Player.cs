@@ -31,6 +31,9 @@ namespace Imprisoned_Hope
         [XmlIgnore]
         float Speed;
 
+        [XmlIgnore]
+        Texture2D HealthTexture;
+
         public Player()
         { 
             
@@ -48,6 +51,7 @@ namespace Imprisoned_Hope
             this.Health = health;
             Speed = 0.2F;
             SetPlayer(textures[0]);
+            HealthTexture = game.Content.Load<Texture2D>(@"Textury\Health1");
         }
 
 
@@ -168,6 +172,17 @@ namespace Imprisoned_Hope
             } 
             
             return false;          
+        }
+
+        public void DrawHealtBar(SpriteBatch spriteBatch)
+        {
+            int x = 1278;
+            int y = 710;
+            for (int i = 1; i <= Health; i++)
+            {
+                spriteBatch.Draw(HealthTexture, new Rectangle(x, y, HealthTexture.Width, HealthTexture.Height), Color.White);
+                x -= 2;
+            }
         }
     }
 }
