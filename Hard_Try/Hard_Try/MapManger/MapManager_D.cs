@@ -33,7 +33,7 @@ namespace Imprisoned_Hope
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\JailDoors"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\JailDoors2"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\glass"));
-            TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\glass2"));
+            TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\ironBars"));
             TypeList.Add("wall");
             TypeList.Add("Floor 1");
             TypeList.Add("Floor 2");
@@ -45,7 +45,7 @@ namespace Imprisoned_Hope
             TypeList.Add("Jail Doors");
             TypeList.Add("Jail Doors 2");
             TypeList.Add("Glass");
-            TypeList.Add("Glass 2");
+            TypeList.Add("Iron Bars");
         }
     }
 }

@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.lblType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,18 +45,18 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "Bed Feet",
+            "Bed Head",
             "Brick Wall",
             "Floor 1",
             "Floor 2",
             "Floor 3",
+            "Glass",
+            "Iron Bars",
             "Gray Brick Wall",
             "Gray Brick Wall 2",
-            "Bed Head",
-            "Bed Feet",
             "Jail Doors",
-            "Jail Doors 2",
-            "Glass",
-            "Glass 2"});
+            "Jail Doors 2"});
             this.comboBox1.Location = new System.Drawing.Point(109, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(115, 21);
@@ -139,11 +141,36 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cmbType
+            // 
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Block",
+            "Door",
+            "Container",
+            "Note"});
+            this.cmbType.Location = new System.Drawing.Point(245, 38);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(96, 21);
+            this.cmbType.TabIndex = 8;
+            this.cmbType.Text = "Block";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Location = new System.Drawing.Point(242, 15);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(64, 13);
+            this.lblType.TabIndex = 9;
+            this.lblType.Text = "Typ Blocku:";
+            // 
             // BuilderPromtp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 128);
+            this.ClientSize = new System.Drawing.Size(355, 128);
+            this.Controls.Add(this.lblType);
+            this.Controls.Add(this.cmbType);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -174,6 +201,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.Label lblType;
 
 
 

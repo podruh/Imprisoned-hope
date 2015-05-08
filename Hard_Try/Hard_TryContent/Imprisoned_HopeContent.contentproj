@@ -299,20 +299,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textury\Objects\glass.png">
-      <Name>glass</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Textury\Objects\glass2.png">
-      <Name>glass2</Name>
+    <Compile Include="Textury\Objects\supplies.png">
+      <Name>supplies</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textury\Objects\supplies.png">
-      <Name>supplies</Name>
+    <Compile Include="Textury\Objects\glass.png">
+      <Name>glass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textury\Objects\ironBars.png">
+      <Name>ironBars</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

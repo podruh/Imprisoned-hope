@@ -23,7 +23,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, glass2;
+        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, ironBars;
         public MouseState mys,staraMys;
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
@@ -88,7 +88,7 @@ namespace Imprisoned_Hope
             jailDoors = Hra.Content.Load<Texture2D>(@"Textury\Objects\JailDoors");
             jailDoors2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\JailDoors2");
             glass = Hra.Content.Load<Texture2D>(@"Textury\Objects\glass");
-            glass2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\glass2");
+            ironBars = Hra.Content.Load<Texture2D>(@"Textury\Objects\ironBars");
             supplies = Hra.Content.Load<Texture2D>(@"Textury\Objects\supplies");
             #endregion
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
@@ -280,8 +280,8 @@ namespace Imprisoned_Hope
                     mapBloky.Add((Block)new BlockWall(glass, "Glass", "Sklo!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
-                case "Glass 2":
-                    mapBloky.Add((Block)new BlockWall(glass2, "Glass 2", "Sklo!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                case "Iron Bars":
+                    mapBloky.Add((Block)new BlockWall(ironBars, "Iron Bars", "Møíže!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
                 default:

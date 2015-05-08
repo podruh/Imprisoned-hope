@@ -26,6 +26,15 @@ Content\Textury\Menu\musicon.xnb
 Content\Textury\Objects\floor1.xnb
 Content\Textury\Objects\floor2.xnb
 Content\Textury\Objects\floor3.xnb
+Content\Textury\Objects\bedFeet.xnb
+Content\Textury\Objects\bedHead.xnb
+Content\Textury\Objects\grayBrick.xnb
+Content\Textury\Objects\grayBrick2.xnb
+Content\Textury\Objects\JailDoors.xnb
+Content\Textury\Objects\JailDoors2.xnb
+Content\Textury\Objects\supplies.xnb
+Content\Textury\Objects\glass.xnb
+Content\Textury\Objects\ironBars.xnb
 Content\Fonty\courier_new.xnb
 Content\Fonty\times.xnb
 Content\Music\bensound-betterdays.xnb
@@ -37,15 +46,6 @@ Content\Music\bensound-pianomoment.xnb
 Content\Music\music_menuTheme.xnb
 Content\Music\Come Play with Me.xnb
 Content\Music\The Escalation.xnb
-Content\Textury\Objects\bedFeet.xnb
-Content\Textury\Objects\bedHead.xnb
-Content\Textury\Objects\grayBrick.xnb
-Content\Textury\Objects\grayBrick2.xnb
-Content\Textury\Objects\JailDoors.xnb
-Content\Textury\Objects\JailDoors2.xnb
-Content\Textury\Objects\glass.xnb
-Content\Textury\Objects\glass2.xnb
-Content\Textury\Objects\supplies.xnb
 Content\Music\bensound-betterdays.wma
 Content\Music\bensound-deepblue.wma
 Content\Music\bensound-epic.wma
