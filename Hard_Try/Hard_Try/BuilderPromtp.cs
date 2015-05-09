@@ -40,6 +40,8 @@ namespace Imprisoned_Hope
                 case "Container":
                     break;
                 case "Note":
+                    Note noteBlock = new Note(X, Y, BC);
+                    noteBlock.ShowDialog();
                     break;
 
                 default:

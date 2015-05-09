@@ -23,7 +23,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, ironBars;
+        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3, floor4, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, ironBars, note, newspapers, map;
         public MouseState mys,staraMys;
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
@@ -81,6 +81,7 @@ namespace Imprisoned_Hope
             floor1 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor1");
             floor2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor2");
             floor3 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor3");
+            floor4 = Hra.Content.Load<Texture2D>(@"Textury\Objects\floor4");
             grayBrick = Hra.Content.Load<Texture2D>(@"Textury\Objects\grayBrick");
             grayBrick2 = Hra.Content.Load<Texture2D>(@"Textury\Objects\grayBrick2");
             bedHead = Hra.Content.Load<Texture2D>(@"Textury\Objects\bedHead");
@@ -90,6 +91,9 @@ namespace Imprisoned_Hope
             glass = Hra.Content.Load<Texture2D>(@"Textury\Objects\glass");
             ironBars = Hra.Content.Load<Texture2D>(@"Textury\Objects\ironBars");
             supplies = Hra.Content.Load<Texture2D>(@"Textury\Objects\supplies");
+            map = Hra.Content.Load<Texture2D>(@"Textury\Objects\map");
+            note = Hra.Content.Load<Texture2D>(@"Textury\Objects\note");
+            newspapers = Hra.Content.Load<Texture2D>(@"Textury\Objects\newspapers");
             #endregion
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
@@ -252,6 +256,10 @@ namespace Imprisoned_Hope
                     mapBloky.Add((Block)new BlockFloor(floor3, "Floor 3", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
+                case "Floor 4":
+                    mapBloky.Add((Block)new BlockFloor(floor4, "Floor 4", "Podlaha!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
                 case "Gray Brick Wall":
                     mapBloky.Add((Block)new BlockWall(grayBrick, "Gray Brick Wall", "Zeï!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
@@ -290,7 +298,7 @@ namespace Imprisoned_Hope
             currentMap.Blocks = mapBloky;
         }
         /// <summary>
-        /// vytvoøí blok, který se poté dodá listu, který bude naèten do mapy k uložení
+        /// vytvoøí container, který se poté dodá listu, který bude naèten do mapy k uložení
         /// </summary>
         /// <param name="typ">Typ objektu</param>
         /// <param name="itemy">List obsahu containeru</param>
@@ -308,6 +316,33 @@ namespace Imprisoned_Hope
             }
            
             currentMap.Blocks = mapBloky;
+        }
+        /// <summary>
+        /// vytvoøí note, který se poté dodá listu, který bude naèten do mapy k uložení
+        /// </summary>
+        /// <param name="typ">Typ objektu</param>
+        /// <param name="itemy">Text Notu</param>
+        /// <param name="x">pozice x</param>
+        /// <param name="y">pozice y</param>
+        public void VytvorNote(string typ, string text, int x, int y)
+        {
+            switch (typ)
+            {
+                case "Note":
+                    mapBloky.Add((Block)new BlockNote(note, "Note", "Útržek papíru!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, text));
+                    break;
+
+                case "Newspapers":
+                    mapBloky.Add((Block)new BlockNote(newspapers, "Newspapers", "Noviny!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, text));
+                    break;
+
+                case "Map":
+                    mapBloky.Add((Block)new BlockNote(map, "Map", "Mapa!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, text));
+                    break;
+
+                default:
+                    break;
+            }
         }
         /// <summary>
         /// pøepne jestli má být prompt zapnutý/vypnutý

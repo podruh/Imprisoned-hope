@@ -24,6 +24,7 @@ namespace Imprisoned_Hope
             this.Direction = direction;
             this.Count = count;
             this.Lighted = false;
+            this.collide = true;
             this.desc = description;            
         }
 

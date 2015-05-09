@@ -51,6 +51,7 @@
             "Floor 1",
             "Floor 2",
             "Floor 3",
+            "Floor 4",
             "Glass",
             "Iron Bars",
             "Gray Brick Wall",
