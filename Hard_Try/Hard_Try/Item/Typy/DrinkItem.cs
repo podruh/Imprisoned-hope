@@ -8,5 +8,12 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class DrinkItem : Item
     {
+        public int HealthGain;
+        public int StaminaGain;
+
+        public DrinkItem()
+        { 
+        
+        }
     }
 }

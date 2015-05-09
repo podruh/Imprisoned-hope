@@ -23,7 +23,7 @@ namespace Imprisoned_Hope
         public string OnMap;
 
         //doplnit místo Object typ itemů v inventáři
-        public List<Object> Inventory;
+        public List<Item> Inventory;
 
         [XmlIgnore]
         List<Texture2D> textures;
@@ -67,7 +67,7 @@ namespace Imprisoned_Hope
 
         public void PlayerUpdate(MouseState mys, MouseState staraMys, KeyboardState keyboard, KeyboardState staraKeyboard, GameTime gameTime, Map map)
         {
-            
+            OnMap = map.Name;
             Movement(keyboard,gameTime,map);
         }
 
@@ -130,7 +130,7 @@ namespace Imprisoned_Hope
                     if (
                         key.IsKeyDown(Keys.Up)
                         && ((this.Rectangle.Left >= item.Rectangle.Left && this.Rectangle.Left <= item.Rectangle.Right) || (this.Rectangle.Right >= item.Rectangle.Left && this.Rectangle.Right <= item.Rectangle.Right))
-                        && (this.Position.Y >= item.Rectangle.Bottom && this.Position.Y <= item.Rectangle.Bottom + 3)
+                        && (this.Position.Y + this.Rectangle.Height >= item.Rectangle.Bottom && this.Position.Y + this.Rectangle.Height <= item.Rectangle.Bottom + 3)
                         )
                     {
                         return true;
@@ -138,7 +138,7 @@ namespace Imprisoned_Hope
                      if (
                         key.IsKeyDown(Keys.Right) 
                         && (this.Position.X+this.Texture.Width >= item.Rectangle.Left - 3 && this.Position.X+this.Texture.Width <= item.Rectangle.Left)
-                        && ((this.Rectangle.Top <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top) 
+                        && ((this.Rectangle.Bottom <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top) 
                         //|| (this.Rectangle.Bottom >= item.Rectangle.Top && this.Rectangle.Bottom <= item.Rectangle.Bottom)
                         )
                         )
@@ -156,8 +156,8 @@ namespace Imprisoned_Hope
                      if (
                         key.IsKeyDown(Keys.Left)
                         && (this.Position.X <= item.Rectangle.Right + 3 && this.Position.X >= item.Rectangle.Right)
-                        && ((this.Rectangle.Top <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top)
-                        //|| (this.Rectangle.Bottom >= item.Rectangle.Top && this.Rectangle.Bottom <= item.Rectangle.Bottom)
+                        && ((this.Rectangle.Bottom <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top)
+                        //|| (this.Rectangle.Top <= item.Rectangle.Bottom && this.Rectangle.Bottom >= item.Rectangle.Top)
                         )
                         )
                     {

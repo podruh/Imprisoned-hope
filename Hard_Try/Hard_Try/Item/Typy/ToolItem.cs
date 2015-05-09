@@ -8,5 +8,10 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class ToolItem :Item
     {
+        public int Damage;
+        public ToolItem()
+        { 
+        
+        }
     }
 }

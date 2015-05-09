@@ -19,7 +19,13 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        Texture2D iconMouse;
+        Sprite MenuButton;
+
+        Texture2D iconMouse, MenuButtonTexture, temp, tempMenu;
+
+        List<Texture2D> MenuTextury;
+
+        Menu GamePlayMenu;
 
         MapManager MapManager;
 
@@ -27,7 +33,7 @@ namespace Imprisoned_Hope
 
         KeyboardState keyboard, starKeyboard;
 
-        bool oldEnabled;
+        bool oldEnabled, Enabled;
 
         SaveManager SaveM;
 
@@ -44,23 +50,36 @@ namespace Imprisoned_Hope
         
         public override void Initialize()
         {
-
+            Enabled = true;
                        
             base.Initialize();
         }
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            MenuTextury = new List<Texture2D>();
 
             iconMouse = Hra.Content.Load<Texture2D>(@"Textury\iconMouse");
+            tempMenu = Hra.Content.Load<Texture2D>(@"Textury\Menu\Temporary");
+            temp = Hra.Content.Load<Texture2D>(@"Textury\temp");
+            MenuButtonTexture = temp;
 
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
-            CurrentMap = MapManager.GetMaps()[1];
+            CurrentMap = MapManager.GetMaps()[0];
             SaveM = new SaveManager(Hra);
 
             player = new Player(Hra, 300, 300, 100, "kokot");
 
+            MenuButton = new Sprite(MenuButtonTexture, new Rectangle(0, 0, MenuButtonTexture.Width, MenuButtonTexture.Height), Color.White);
+
+            MenuTextury.Add(tempMenu);
+            MenuTextury.Add(tempMenu);
+            MenuTextury.Add(tempMenu);
+
+
+            GamePlayMenu = new Menu(MenuTextury, new Rectangle((1280 / 2) - (tempMenu.Width / 2), -200, 0, 0), 1.5F, (1280 / 2) - tempMenu.Width / 2, (720 / 2) - tempMenu.Height / 2);
+            GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
             base.LoadContent();
         }
         
@@ -79,7 +98,8 @@ namespace Imprisoned_Hope
             starKeyboard = keyboard;
             keyboard = Keyboard.GetState();
             mys = Mouse.GetState();
-            player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime,CurrentMap);
+            if(Enabled)
+                player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime,CurrentMap);
             //vypnutá gameply pomocí ESC
 
             if (StisknutaKlavesa(Keys.Escape))
@@ -87,7 +107,26 @@ namespace Imprisoned_Hope
                 Hra.PrepniObrazovku(Hra.displayMenu);
             }
 
+            if (StisknuteTlacitko(MenuButton))  
+            {
+                Enabled = false;
+                GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
+                GamePlayMenu.changeMovement("down");
 
+            }
+            if (GamePlayMenu.MenuItems[2].isClicked(mys))
+            {
+                Enabled = true;
+                GamePlayMenu.DockY = -200;
+                GamePlayMenu.changeMovement("up");
+            }
+            if (GamePlayMenu.MenuItems[1].isClicked(mys))
+            {
+                Enabled = false;
+                Hra.PrepniObrazovku(Hra.displayMenu);
+            }
+
+            GamePlayMenu.moveMenu(gameTime);
             oldEnabled = Enabled;
             base.Update(gameTime);
         }
@@ -97,6 +136,18 @@ namespace Imprisoned_Hope
             if (keyboard.IsKeyDown(key)&& !starKeyboard.IsKeyDown(key))
             {
                 return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool StisknuteTlacitko(Sprite tlacitko)
+        {
+            if (tlacitko.Rectangle.Contains(mys.X,mys.Y)&& staraMys != mys && mys.LeftButton == ButtonState.Pressed)
+            {
+                return true; 
             }
             else
             {
@@ -116,6 +167,9 @@ namespace Imprisoned_Hope
             //vykreslení healthbaru
             player.DrawHealtBar(spriteBatch);
 
+
+            MenuButton.Draw(spriteBatch);
+            GamePlayMenu.DrawMenu(spriteBatch);
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
             spriteBatch.End();
 

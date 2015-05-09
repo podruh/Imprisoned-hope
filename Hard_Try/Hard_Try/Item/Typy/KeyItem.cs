@@ -8,5 +8,10 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class KeyItem : Item
     {
+        
+        public KeyItem()
+        { 
+        
+        }
     }
 }

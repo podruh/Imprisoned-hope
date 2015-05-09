@@ -6,7 +6,13 @@ using System.Text;
 namespace Imprisoned_Hope
 {
     [Serializable()]
-    public class PotionItem :Item
+    public class AidKitItem :Item
     {
+        public int HealthGain;
+
+        public AidKitItem()
+        { 
+        
+        }
     }
 }

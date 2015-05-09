@@ -96,6 +96,7 @@
       <DependentUpon>BuilderPromtp.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\BuilderComponent.cs" />
+    <Compile Include="Components\GameplayUIComponent.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Components\Gameplay.cs" />
     <Compile Include="Interfaces.cs" />
@@ -103,7 +104,7 @@
     <Compile Include="Item\Typy\DrinkItem.cs" />
     <Compile Include="Item\Typy\FoodItem.cs" />
     <Compile Include="Item\Typy\KeyItem.cs" />
-    <Compile Include="Item\Typy\PotionItem.cs" />
+    <Compile Include="Item\Typy\AidKitItem.cs" />
     <Compile Include="Item\Typy\ToolItem.cs" />
     <Compile Include="Item\Typy\WeaponItem.cs" />
     <Compile Include="Map\Map_D.cs" />

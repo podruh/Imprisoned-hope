@@ -131,9 +131,9 @@ namespace Imprisoned_Hope
             newGameMenu = new Menu(pozadiNG, newgameMenuTextury, new Rectangle(0 - pozadiNG.Width, ngmenuY, pozadiNG.Width, pozadiNG.Height), mainmenuSpeed, 0 - pozadiNG.Width, ngmenuY, 45, 50, 60);
             #endregion
 
-            MediaPlayer.Play(music_menuTheme);
-            MediaPlayer.IsRepeating = true;
-            music = MediaState.Playing;
+            //MediaPlayer.Play(music_menuTheme);
+            //MediaPlayer.IsRepeating = true;
+            //music = MediaState.Playing;
             base.LoadContent();
         }
         /// <summary>
