@@ -48,11 +48,11 @@ namespace Imprisoned_Hope
             MenuComponent menu = new MenuComponent(this);
             BuilderComponent builder = new BuilderComponent(this);
             Gameplay gameplay = new Gameplay(this);
-            GameplayUIComponent gameplayUI = new GameplayUIComponent(this);
+
             //pøidání displejù
             displayMenu = new Display(this, menu);
             displayLevelBuilder = new Display(this, builder);
-            displayGameplay = new Display(this, gameplay, gameplayUI);
+            displayGameplay = new Display(this, gameplay);
             //vypnutí komponent
             foreach (GameComponent item in Components)
             {

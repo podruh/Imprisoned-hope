@@ -131,9 +131,9 @@ namespace Imprisoned_Hope
             newGameMenu = new Menu(pozadiNG, newgameMenuTextury, new Rectangle(0 - pozadiNG.Width, ngmenuY, pozadiNG.Width, pozadiNG.Height), mainmenuSpeed, 0 - pozadiNG.Width, ngmenuY, 45, 50, 60);
             #endregion
 
-            //MediaPlayer.Play(music_menuTheme);
-            //MediaPlayer.IsRepeating = true;
-            //music = MediaState.Playing;
+            MediaPlayer.Play(music_menuTheme);
+            MediaPlayer.IsRepeating = true;
+            music = MediaState.Playing;
             base.LoadContent();
         }
         /// <summary>
@@ -146,11 +146,6 @@ namespace Imprisoned_Hope
             //naète myš
             mys = Mouse.GetState();
 
-            if (mainMenu.MenuItems[0].isClicked(mys))
-            {
-                Hra.PrepniObrazovku(Hra.displayGameplay);
-            }
-
             if (mainMenu.MenuItems[3].isClicked(mys))
             {
                 Hra.Exit();
@@ -162,6 +157,13 @@ namespace Imprisoned_Hope
                 newGameMenu.changeMovement("right");
                 mainMenu.DockX = sirka;
                 mainMenu.changeMovement("right");
+            }
+            if (mainMenu.MenuItems[1].isClicked(mys))
+            {
+                Gameplay GP = (Gameplay)Hra.displayGameplay.VratKomponenty()[0];
+                GP.LoadGame();
+                Hra.displayGameplay = new Display(Hra, GP);
+                Hra.PrepniObrazovku(Hra.displayGameplay);
             }
             if (mainMenu.MenuItems[2].isClicked(mys))
             {
@@ -178,13 +180,13 @@ namespace Imprisoned_Hope
                 optMenu.changeMovement("down");
             }
             if (newGameMenu.MenuItems[0].isClicked(mys))
-                classNews = "Mastermind";
+            { classNews = "Mastermind"; NameForm(classNews); }
             if (newGameMenu.MenuItems[1].isClicked(mys))
-                classNews = "Enforcer";
+            {classNews = "Enforcer"; NameForm(classNews);}
             if (newGameMenu.MenuItems[2].isClicked(mys))
-                classNews = "Beasttamer";
+            { classNews = "Beasttamer"; NameForm(classNews); }
             if (newGameMenu.MenuItems[3].isClicked(mys))
-                classNews = "Phasewalker";              
+            { classNews = "Phasewalker"; NameForm(classNews); }
             if (newGameMenu.MenuItems[4].isClicked(mys))
             {
                 newGameMenu.DockX = 0 - pozadiNG.Width;
@@ -247,6 +249,24 @@ namespace Imprisoned_Hope
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+        public void NewGame(string name, string trida)
+        {
+            
+            Gameplay GP = (Gameplay)Hra.displayGameplay.VratKomponenty()[0];
+            GP.NovaHra(name,trida);
+            Hra.displayGameplay = new Display(Hra, GP);
+            newGameMenu.DockX = 0 - pozadiNG.Width;
+            newGameMenu.changeMovement("left");
+            mainMenu.DockX = menuX;
+            mainMenu.changeMovement("left");
+            classNews = null;
+            Hra.PrepniObrazovku(Hra.displayGameplay);
+        }
+        public void NameForm(string trida)
+        {
+            NewGameForm NGF = new NewGameForm(this, trida);
+            NGF.Show();
         }
     }
 }
