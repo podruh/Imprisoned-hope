@@ -175,11 +175,9 @@ namespace Imprisoned_Hope
 
         public bool Collides(KeyboardState key, Map map)
         {
-            List<Block> bloky = map.GetBlocks();
+            List<Block> bloky = map.GetCollideBlocks();
             foreach (var item in bloky)
             {
-                if (item.collide)
-                {
                     if (
                         (key.IsKeyDown(Keys.Up) || key.IsKeyDown(Keys.W))
                         && ((this.Rectangle.Left >= item.Rectangle.Left && this.Rectangle.Left <= item.Rectangle.Right) || (this.Rectangle.Right >= item.Rectangle.Left && this.Rectangle.Right <= item.Rectangle.Right))
@@ -215,13 +213,7 @@ namespace Imprisoned_Hope
                         )
                     {
                         return true;
-                    }
-
-                }
-                else
-                {
-                    return false;
-                }
+                    }               
             } 
             
             return false;          

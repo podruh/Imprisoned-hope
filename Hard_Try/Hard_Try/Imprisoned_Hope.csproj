@@ -83,23 +83,42 @@
     <Compile Include="Block\Block.cs" />
     <Compile Include="Block\Block_F.cs" />
     <Compile Include="Block\Block_D.cs" />
-    <Compile Include="BuilderControler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuilderControler.Designer.cs">
-      <DependentUpon>BuilderControler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BuilderPromtp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuilderPromtp.Designer.cs">
-      <DependentUpon>BuilderPromtp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Components\BuilderComponent.cs" />
     <Compile Include="Components\NoteMessage.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Components\Gameplay.cs" />
+    <Compile Include="Forms\BuilderControler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuilderControler.Designer.cs">
+      <DependentUpon>BuilderControler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuilderPromtp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuilderPromtp.Designer.cs">
+      <DependentUpon>BuilderPromtp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadGameForm.Designer.cs">
+      <DependentUpon>LoadGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewGameForm.Designer.cs">
+      <DependentUpon>NewGameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces.cs" />
+    <Compile Include="Item\Item.cs" />
+    <Compile Include="Item\Typy\AidKitItem.cs" />
+    <Compile Include="Item\Typy\DrinkItem.cs" />
+    <Compile Include="Item\Typy\FoodItem.cs" />
+    <Compile Include="Item\Typy\KeyItem.cs" />
+    <Compile Include="Item\Typy\ToolItem.cs" />
+    <Compile Include="Item\Typy\WeaponItem.cs" />
     <Compile Include="Map\Map_D.cs" />
     <Compile Include="Map\Map_F.cs" />
     <Compile Include="Map\Map.cs" />
@@ -162,11 +181,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BuilderControler.resx">
+    <EmbeddedResource Include="Forms\BuilderControler.resx">
       <DependentUpon>BuilderControler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuilderPromtp.resx">
+    <EmbeddedResource Include="Forms\BuilderPromtp.resx">
       <DependentUpon>BuilderPromtp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadGameForm.resx">
+      <DependentUpon>LoadGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewGameForm.resx">
+      <DependentUpon>NewGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
