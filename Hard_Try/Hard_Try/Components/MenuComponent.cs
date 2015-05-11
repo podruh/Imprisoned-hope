@@ -146,19 +146,11 @@ namespace Imprisoned_Hope
             //naète myš
             mys = Mouse.GetState();
 
-<<<<<<< HEAD
             if(optMenu.MenuItems[0].isClicked(mys))
             {
                 
             }
 
-            if (mainMenu.MenuItems[0].isClicked(mys))
-            {
-                Hra.PrepniObrazovku(Hra.displayGameplay);
-            }
-
-=======
->>>>>>> origin/David
             if (mainMenu.MenuItems[3].isClicked(mys))
             {
                 Hra.Exit();
