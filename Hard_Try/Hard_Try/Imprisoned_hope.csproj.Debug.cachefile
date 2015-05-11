@@ -40,6 +40,7 @@ Content\Textury\Objects\note.xnb
 Content\Textury\Objects\floor4.xnb
 Content\Textury\Objects\map.xnb
 Content\Textury\Objects\newspapers.xnb
+Content\Textury\Objects\spawn.xnb
 Content\Fonty\courier_new.xnb
 Content\Fonty\times.xnb
 Content\Music\bensound-betterdays.xnb
@@ -51,6 +52,7 @@ Content\Music\bensound-pianomoment.xnb
 Content\Music\music_menuTheme.xnb
 Content\Music\Come Play with Me.xnb
 Content\Music\The Escalation.xnb
+Content\Textury\noteBck.xnb
 Content\Music\bensound-betterdays.wma
 Content\Music\bensound-deepblue.wma
 Content\Music\bensound-epic.wma

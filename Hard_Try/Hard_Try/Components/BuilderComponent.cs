@@ -23,7 +23,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, input, floor1, floor2, floor3, floor4, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, ironBars, note, newspapers, map;
+        public Texture2D mrizka,iconMouse, brickWall, OK, prompt, spawn, input, floor1, floor2, floor3, floor4, supplies, grayBrick, grayBrick2, bedHead, bedFeet, jailDoors, jailDoors2, glass, ironBars, note, newspapers, map;
         public MouseState mys,staraMys;
         public KeyboardState keyboard, staraKeyboard;
         public SpriteFont FontCourierNew;
@@ -94,6 +94,7 @@ namespace Imprisoned_Hope
             map = Hra.Content.Load<Texture2D>(@"Textury\Objects\map");
             note = Hra.Content.Load<Texture2D>(@"Textury\Objects\note");
             newspapers = Hra.Content.Load<Texture2D>(@"Textury\Objects\newspapers");
+            spawn = Hra.Content.Load<Texture2D>(@"Textury\Objects\spawn");
             #endregion
             OK = Hra.Content.Load<Texture2D>(@"Textury\OKbutton");
             input = Hra.Content.Load<Texture2D>(@"Textury\input");
@@ -277,11 +278,11 @@ namespace Imprisoned_Hope
                     break;
 
                 case "Jail Doors":
-                    mapBloky.Add((Block)new BlockDoor(jailDoors, "Jail Doors", "Dveøe!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add((Block)new BlockDoor(jailDoors, "Jail Doors", "Dveøe!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count, "none"));
                     break;
 
                 case "Jail Doors 2":
-                    mapBloky.Add((Block)new BlockDoor(jailDoors2, "Jail Doors 2", "Dveøe!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    mapBloky.Add((Block)new BlockDoor(jailDoors2, "Jail Doors 2", "Dveøe!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count, "none"));
                     break;
 
                 case "Glass":
@@ -290,6 +291,10 @@ namespace Imprisoned_Hope
 
                 case "Iron Bars":
                     mapBloky.Add((Block)new BlockWall(ironBars, "Iron Bars", "Møíže!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    break;
+
+                case "Spawn":
+                    mapBloky.Add((Block)new BlockWall(spawn, "Spawn", " ", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, 1, false));
                     break;
 
                 default:

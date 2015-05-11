@@ -80,9 +80,9 @@ namespace Imprisoned_Hope
             menuX = 760;
             menuY = 450;
             ngmenuX = 15;   
-            ngmenuY = 140;            
-
+            ngmenuY = 140;   
             Hra.Content.RootDirectory = "Content";
+            
             base.Initialize();
         }
 
@@ -145,6 +145,11 @@ namespace Imprisoned_Hope
             // TODO: Add your update code here
             //naète myš
             mys = Mouse.GetState();
+
+            if(optMenu.MenuItems[0].isClicked(mys))
+            {
+                
+            }
 
             if (mainMenu.MenuItems[0].isClicked(mys))
             {
@@ -225,7 +230,7 @@ namespace Imprisoned_Hope
             optMenu.DrawMenu(spriteBatch);
             newGameMenu.DrawMenu(spriteBatch);
 
-            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0035" + "  " + music, new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(FontCourierNew, "Verze alpha 0.0043" + "  " + music, new Vector2(0, 0), Color.White);
             switch (classNews)
             {
                 case "Mastermind":

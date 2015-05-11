@@ -96,6 +96,7 @@
       <DependentUpon>BuilderPromtp.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\BuilderComponent.cs" />
+    <Compile Include="Components\NoteMessage.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Components\Gameplay.cs" />
     <Compile Include="Interfaces.cs" />

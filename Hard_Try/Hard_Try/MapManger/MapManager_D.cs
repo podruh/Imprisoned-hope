@@ -22,6 +22,7 @@ namespace Imprisoned_Hope
 
         public void SetTypesAndTextures()
         {
+            TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\spawn"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\Brick Wall"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\floor1"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\floor2"));
@@ -38,6 +39,7 @@ namespace Imprisoned_Hope
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\note"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\newspapers"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\map"));
+            TypeList.Add("Spwan");
             TypeList.Add("wall");
             TypeList.Add("Floor 1");
             TypeList.Add("Floor 2");
