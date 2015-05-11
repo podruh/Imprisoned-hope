@@ -54,7 +54,10 @@ namespace Imprisoned_Hope
             SetPlayer(textures[0]);
             HealthTexture = game.Content.Load<Texture2D>(@"Textury\Health1");
             Class = klasa;
+            Inventory = new List<Item>();
+            SetItemTextures(game);
         }
+
         public Player(Game1 game, int posX, int posY, int health, string klasa, List<Item> items)
         {
             //doplnění listu textures
@@ -69,10 +72,39 @@ namespace Imprisoned_Hope
             SetPlayer(textures[0]);
             HealthTexture = game.Content.Load<Texture2D>(@"Textury\Health1");
             Class = klasa;
+            Inventory = items;
+            SetItemTextures(game);
         }
 
-
-        
+        public void SetItemTextures(Game1 game)
+        {
+            foreach (Item item in Inventory)
+            {
+                switch (item.Type)
+                {
+                    case "Food":
+                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\food");
+                        break;
+                    case "Drink":
+                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\Drink");
+                        break;
+                    case "Key":
+                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\key");
+                        break;
+                    case "AidKit":
+                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\FirstAidKit");
+                        break;
+                    case "Tool":
+                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\shovel");
+                        break;
+                    case "Weapon":
+                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\weapon");                        
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
 
         public void SetPlayer(Texture2D texture)
         {
