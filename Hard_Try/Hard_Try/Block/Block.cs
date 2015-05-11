@@ -13,13 +13,15 @@ namespace Imprisoned_Hope
     [XmlInclude(typeof(BlockWall))]
     [XmlInclude(typeof(BlockFloor))]
     [XmlInclude(typeof(BlockContainer))]
+    [XmlInclude(typeof(BlockNote))]
+    [XmlInclude(typeof(BlockDoor))]
     public partial class Block : Sprite
     {
         public string Type;
         public int X;
         public int Y;
         public int Count;
-        public string Direction, Description = "Neznámý block";
+        public string Direction;
         public bool collide = true;
         [XmlIgnore]
         public bool Lighted;

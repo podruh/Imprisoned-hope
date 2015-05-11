@@ -7,6 +7,6 @@ namespace Imprisoned_Hope
 {
     public partial class Block
     {
-        public string desc;
+        public string desc = "Neznámý Objekt";
     }
 }

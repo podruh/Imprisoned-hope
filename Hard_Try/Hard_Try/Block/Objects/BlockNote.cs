@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +30,7 @@ namespace Imprisoned_Hope
             this.Count = 1;
             this.Lighted = false;
             this.desc = Description;
+            this.collide = false;
             this.message = Message;
         }
 

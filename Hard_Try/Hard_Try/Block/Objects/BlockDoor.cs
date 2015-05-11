@@ -12,8 +12,9 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class BlockDoor : Block, IInteractive
     {
+        string Condition;
         public BlockDoor() { }
-        public BlockDoor(Texture2D texture, string type, string description, Rectangle rectangle, Color color, string direction, int count)
+        public BlockDoor(Texture2D texture, string type, string description, Rectangle rectangle, Color color, string direction, int count, string condition)
         {
             this.Texture = texture; ;
             this.Type = type;
@@ -24,13 +25,14 @@ namespace Imprisoned_Hope
             this.Direction = direction;
             this.Count = count;
             this.Lighted = false;
-            this.desc = description;            
+            this.collide = true;
+            this.desc = description;
+            this.Condition = condition;           
         }
 
-        public void Action()//Otevření/zavření dveří.
+        public void Action()
         {
-            this.collide = !collide;
-            //Dodělat: přehození textury
+            throw new NotImplementedException();
         }
 
         public void LightChange()
@@ -47,5 +49,13 @@ namespace Imprisoned_Hope
         {
             return collide;
         }
+
+        public void Interact(string key)//Otevření/zavření dveří.
+        {
+            if (key == this.Condition)
+                this.collide = !collide;
+            //Dodělat: přehození textury
+        }
+
     }
 }

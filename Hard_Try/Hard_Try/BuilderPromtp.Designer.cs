@@ -45,12 +45,14 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "Spawn",
             "Bed Feet",
             "Bed Head",
             "Brick Wall",
             "Floor 1",
             "Floor 2",
             "Floor 3",
+            "Floor 4",
             "Glass",
             "Iron Bars",
             "Gray Brick Wall",
