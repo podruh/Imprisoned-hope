@@ -17,14 +17,19 @@ namespace Imprisoned_Hope
             this.Position = new Vector2(rectangle.X, rectangle.Y);
             this.Color = color;
         }
+
+        private MouseState staraMys;
+
         public bool isClicked(MouseState mys)//zjištění jestli uživatel klikne na item
         {
-            if (this.Rectangle.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
+            if (this.Rectangle.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed&& staraMys!=mys)
             {
+                staraMys = mys;
                 return true;
             }
             else
             {
+                staraMys = mys;
                 return false;
             }
         }

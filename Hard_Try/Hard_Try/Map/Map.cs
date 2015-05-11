@@ -14,7 +14,7 @@ namespace Imprisoned_Hope
                
         public List<Block> Blocks;
 
-        private int PosunX,PosunY;
+        public int PosunX,PosunY;
 
         public Map() 
         {
@@ -42,6 +42,15 @@ namespace Imprisoned_Hope
             {
                 item.DrawBlockLine(spriteBatch, PosunX, PosunY);
             }
+        }
+
+        public int GetPosunX()
+        {
+            return PosunX;
+        }
+        public int GetPosunY()
+        {
+            return PosunY;
         }
     }
 }

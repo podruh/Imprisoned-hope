@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Map>
+<<<<<<< HEAD
     <Name>First</Name>
     <Blocks>
       <Block>
@@ -114,6 +115,8 @@
     </Blocks>
   </Map>
   <Map>
+=======
+>>>>>>> origin/David
     <Name>Test</Name>
     <Blocks>
       <Block xsi:type="BlockFloor">
@@ -122,8 +125,13 @@
         <Y>608</Y>
         <Count>5</Count>
         <Direction>right</Direction>
+<<<<<<< HEAD
         <collide>false</collide>
         <desc>Zeď!</desc>
+=======
+        <Description>Neznámý block</Description>
+        <collide>true</collide>
+>>>>>>> origin/David
       </Block>
       <Block xsi:type="BlockFloor">
         <Type>Gray Brick Wall</Type>
@@ -1702,5 +1710,142 @@ Co to bylo? Nějakej řev. Radši bych...
         <desc>Zeď!</desc>
       </Block>
     </Blocks>
+    <PosunX>0</PosunX>
+    <PosunY>0</PosunY>
+  </Map>
+  <Map>
+    <Name>First</Name>
+    <Blocks>
+      <Block>
+        <Type>wall</Type>
+        <X>352</X>
+        <Y>224</Y>
+        <Count>20</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>true</collide>
+      </Block>
+      <Block>
+        <Type>wall</Type>
+        <X>0</X>
+        <Y>0</Y>
+        <Count>20</Count>
+        <Direction>down</Direction>
+        <Description>Neznámý block</Description>
+        <collide>true</collide>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>32</X>
+        <Y>608</Y>
+        <Count>30</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>wall</Type>
+        <X>960</X>
+        <Y>576</Y>
+        <Count>20</Count>
+        <Direction>up</Direction>
+        <Description>Neznámý block</Description>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 1</Type>
+        <X>320</X>
+        <Y>224</Y>
+        <Count>4</Count>
+        <Direction>down</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>320</X>
+        <Y>352</Y>
+        <Count>10</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>352</X>
+        <Y>320</Y>
+        <Count>15</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>352</X>
+        <Y>288</Y>
+        <Count>15</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>352</X>
+        <Y>256</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>384</X>
+        <Y>256</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>320</X>
+        <Y>256</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockFloor">
+        <Type>Floor 3</Type>
+        <X>416</X>
+        <Y>256</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>false</collide>
+        <desc>Podlaha!</desc>
+      </Block>
+      <Block xsi:type="BlockWall">
+        <Type>Gray Brick Wall</Type>
+        <X>448</X>
+        <Y>256</Y>
+        <Count>5</Count>
+        <Direction>right</Direction>
+        <Description>Neznámý block</Description>
+        <collide>true</collide>
+        <desc>Zeď!</desc>
+      </Block>
+    </Blocks>
+    <PosunX>0</PosunX>
+    <PosunY>0</PosunY>
   </Map>
 </ArrayOfMap>

@@ -20,6 +20,16 @@ namespace Imprisoned_Hope
             
         }
 
+        public MapManager(Game1 game, List<Map> maps)
+        {
+            Hra = game;
+            MapList = maps;
+            BlockList = new List<Block>();
+            TypeList = new List<string>();
+            TextureList = new List<Texture2D>();
+            SetTypesAndTextures();
+        }
+
         public void SetTypesAndTextures()
         {
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\spawn"));
@@ -63,5 +73,15 @@ namespace Imprisoned_Hope
             return MapList;
         }
 
+        public void SetBlocksInAllMaps()
+        {
+            foreach (Map map in MapList)
+            {
+                foreach (Block item in map.Blocks)
+            {
+                item.SetTextures(GetTexture2DByType(item.Type));               
+            }
+            }
+        }
     }
 }
