@@ -150,8 +150,6 @@ namespace Imprisoned_Hope
 
             if(optMenu.MenuItems[0].isClicked(mys))
             {
-                Hra.message.Enabled = true;
-                Hra.message.Visible = true;
             }
 
             if (mainMenu.MenuItems[3].isClicked(mys))

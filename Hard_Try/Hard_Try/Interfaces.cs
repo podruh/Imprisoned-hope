@@ -19,7 +19,7 @@ namespace Imprisoned_Hope
 
     interface IContainer : IInteractive
     {
-        List<Object> GetContent();
+        Item[,] GetContent();
     }
     interface IInformational : IInteractive
     {

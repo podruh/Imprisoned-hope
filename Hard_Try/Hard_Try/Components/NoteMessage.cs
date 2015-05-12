@@ -72,8 +72,6 @@ namespace Imprisoned_Hope
 
             if (back.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
             {
-                Hra.message.Enabled = false;
-                Hra.message.Visible = false;
             }
 
             base.Update(gameTime);
@@ -98,7 +96,7 @@ namespace Imprisoned_Hope
         }
         public string NahrajText(string text)
         {
-                 
+            return text;   
         }
     }
 }

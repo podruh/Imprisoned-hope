@@ -12,10 +12,10 @@ namespace Imprisoned_Hope
     [Serializable()]
     public class BlockContainer : Block, IContainer
     {
-        public List<Object> content;
+        public Item[,] content;
 
         public BlockContainer() { }
-        public BlockContainer(Texture2D texture, string type, string description, List<Object> Content, Rectangle rectangle, Color color)
+        public BlockContainer(Texture2D texture, string type, string description, Item[,] Content, Rectangle rectangle, Color color)
         {
             this.Texture = texture; ;
             this.Type = type;
@@ -31,7 +31,7 @@ namespace Imprisoned_Hope
             this.content = Content;
         }
 
-        public BlockContainer(Texture2D texture, string type, string description, List<Object> Content, Rectangle rectangle, Color color, bool collision)
+        public BlockContainer(Texture2D texture, string type, string description, Item[,] Content, Rectangle rectangle, Color color, bool collision)
         {
             this.Texture = texture; ;
             this.Type = type;
@@ -62,14 +62,14 @@ namespace Imprisoned_Hope
             return this.collide;
         }
 
-        public List<Object> GetContent()
-        {
-            return content;
-        }
-
         public void Action()
         {
             throw new NotImplementedException();
+        }
+
+        public Item[,] GetContent()
+        {
+            return this.content;
         }
     }
 }
