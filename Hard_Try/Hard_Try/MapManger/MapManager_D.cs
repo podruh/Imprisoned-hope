@@ -49,7 +49,7 @@ namespace Imprisoned_Hope
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\note"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\newspapers"));
             TextureList.Add(Hra.Content.Load<Texture2D>(@"Textury\Objects\map"));
-            TypeList.Add("Spwan");
+            TypeList.Add("Spawn");
             TypeList.Add("wall");
             TypeList.Add("Floor 1");
             TypeList.Add("Floor 2");

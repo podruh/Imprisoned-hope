@@ -406,6 +406,15 @@
       <Map>
         <Name>TestMap</Name>
         <Blocks>
+		<Block xsi:type="BlockWall">
+        	<Type>Spawn</Type>
+        <X>864</X>
+        <Y>192</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <collide>false</collide>
+        <desc> </desc>
+      </Block>
           <Block xsi:type="BlockWall">
             <Type>Gray Brick Wall</Type>
             <X>832</X>

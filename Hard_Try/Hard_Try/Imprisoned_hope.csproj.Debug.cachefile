@@ -42,17 +42,6 @@ Content\Textury\Objects\map.xnb
 Content\Textury\Objects\newspapers.xnb
 Content\Textury\Objects\spawn.xnb
 Content\Textury\noteBck.xnb
-Content\Fonty\courier_new.xnb
-Content\Fonty\times.xnb
-Content\Music\bensound-betterdays.xnb
-Content\Music\bensound-deepblue.xnb
-Content\Music\bensound-epic.xnb
-Content\Music\bensound-november.xnb
-Content\Music\bensound-ofeliasdream.xnb
-Content\Music\bensound-pianomoment.xnb
-Content\Music\music_menuTheme.xnb
-Content\Music\Come Play with Me.xnb
-Content\Music\The Escalation.xnb
 Content\Textury\In-Game Menu\Back.xnb
 Content\Textury\In-Game Menu\Load Game.xnb
 Content\Textury\In-Game Menu\Main Menu.xnb
@@ -65,6 +54,17 @@ Content\Textury\Items\shovel.xnb
 Content\Textury\Items\weapon.xnb
 Content\Textury\UI.xnb
 Content\Textury\Health1.xnb
+Content\Fonty\courier_new.xnb
+Content\Fonty\times.xnb
+Content\Music\bensound-betterdays.xnb
+Content\Music\bensound-deepblue.xnb
+Content\Music\bensound-epic.xnb
+Content\Music\bensound-november.xnb
+Content\Music\bensound-ofeliasdream.xnb
+Content\Music\bensound-pianomoment.xnb
+Content\Music\music_menuTheme.xnb
+Content\Music\Come Play with Me.xnb
+Content\Music\The Escalation.xnb
 Content\Music\bensound-betterdays.wma
 Content\Music\bensound-deepblue.wma
 Content\Music\bensound-epic.wma
