@@ -1,8 +1,0 @@
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.csprojResolveAssemblyReference.cache
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.BuilderControler.resources
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.BuilderPromtp.resources
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.LoadGameForm.resources
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.NewGameForm.resources
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.Note.resources
-E:\Projekty\Imprisoned-hope\Hard_Try\Hard_Try\obj\x86\Debug\Imprisoned_Hope.csproj.GenerateResource.Cache
