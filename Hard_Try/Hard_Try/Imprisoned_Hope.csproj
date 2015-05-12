@@ -143,6 +143,9 @@
     <Compile Include="Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Note\uvod.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Documents\ChangeLog.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
