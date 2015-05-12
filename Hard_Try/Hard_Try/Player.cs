@@ -22,7 +22,7 @@ namespace Imprisoned_Hope
 
         public string OnMap;
 
-        public List<Item> Inventory;
+        public Item[] Inventory;
 
         [XmlIgnore]
         List<Texture2D> textures;
@@ -54,11 +54,11 @@ namespace Imprisoned_Hope
             SetPlayer(textures[0]);
             HealthTexture = game.Content.Load<Texture2D>(@"Textury\Health1");
             Class = klasa;
-            Inventory = new List<Item>();
+            Inventory = new Item[32];
             SetItemTextures(game);
         }
 
-        public Player(Game1 game, int posX, int posY, int health, string klasa, List<Item> items)
+        public Player(Game1 game, int posX, int posY, int health, string klasa, Item[] items)
         {
             //doplnění listu textures
             textures = new List<Texture2D>();
@@ -80,28 +80,31 @@ namespace Imprisoned_Hope
         {
             foreach (Item item in Inventory)
             {
-                switch (item.Type)
+                if (item != null)
                 {
-                    case "Food":
-                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\food");
-                        break;
-                    case "Drink":
-                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\Drink");
-                        break;
-                    case "Key":
-                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\key");
-                        break;
-                    case "AidKit":
-                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\FirstAidKit");
-                        break;
-                    case "Tool":
-                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\shovel");
-                        break;
-                    case "Weapon":
-                        item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\weapon");                        
-                        break;
-                    default:
-                        break;
+                    switch (item.Type)
+                    {
+                        case "Food":
+                            item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\food");
+                            break;
+                        case "Drink":
+                            item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\Drink");
+                            break;
+                        case "Key":
+                            item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\key");
+                            break;
+                        case "AidKit":
+                            item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\FirstAidKit");
+                            break;
+                        case "Tool":
+                            item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\shovel");
+                            break;
+                        case "Weapon":
+                            item.Texture = game.Content.Load<Texture2D>(@"Textury\Items\weapon");
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }

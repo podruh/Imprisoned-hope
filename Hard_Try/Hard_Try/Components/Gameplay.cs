@@ -19,7 +19,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        Sprite MenuButton;
+        Sprite MenuButton, Inventory;
 
         Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI;
 
@@ -33,7 +33,7 @@ namespace Imprisoned_Hope
 
         KeyboardState keyboard, starKeyboard;
 
-        bool oldEnabled, EnabledMove;
+        bool oldEnabled, EnabledMove, itemsDraw;
 
         SaveManager SaveM;
 
@@ -69,6 +69,7 @@ namespace Imprisoned_Hope
             tempMenu = Hra.Content.Load<Texture2D>(@"Textury\Menu\Temporary");
             temp = Hra.Content.Load<Texture2D>(@"Textury\temp");
             UI = Hra.Content.Load<Texture2D>(@"Textury\UI");
+            Inventory = new Sprite(Hra.Content.Load<Texture2D>(@"Textury\Items\inventory"),new Rectangle(464,672,32,32),Color.White);
             MenuButtonTexture = temp;
 
             MapManager = new MapManager(Hra);
@@ -79,8 +80,9 @@ namespace Imprisoned_Hope
             PosunY = (int)Posun.Y;
 
             SaveM = new SaveManager(Hra);
-
-            player = new Player(Hra, 300, 300, 100, "kokot");
+            Item[] items = new Item[] {new Item(),new Item() };
+            player = new Player(Hra, 300, 300, 100, "kokot",items);
+            player.OnMap = CurrentMap.Name;
 
             MenuButton = new Sprite(MenuButtonTexture, new Rectangle(0, 0, MenuButtonTexture.Width, MenuButtonTexture.Height), Color.White);
 
@@ -126,7 +128,7 @@ namespace Imprisoned_Hope
                 Posun.X -= (float)(speed * elapsed);
                 PosunX = (int)Posun.X;                             
             }
-            if (player.Rectangle.Bottom + PosunY >= 656)
+            if (player.Rectangle.Bottom + PosunY >= 640)
             {
                 double elapsed = gameTime.ElapsedGameTime.Milliseconds;
                 Posun.Y -= (float)(speed * elapsed);
@@ -178,6 +180,10 @@ namespace Imprisoned_Hope
                 GamePlayMenu.changeMovement("up");
             }
 
+            if (Inventory.Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released)
+            {
+                itemsDraw = true;
+            }
             #endregion           
 
             GamePlayMenu.moveMenu(gameTime);
@@ -222,8 +228,15 @@ namespace Imprisoned_Hope
             spriteBatch.Draw(UI,new Rectangle(0,656,1280,64),Color.White);            
             //vykreslení healthbaru
             player.DrawHealtBar(spriteBatch);
-            
-            
+            //vykreslení itemù jestliže itemsDraw == true
+            if (itemsDraw)
+            {
+                DrawItems(player.Inventory);
+            }
+            //vykreslení inventory tlaèítka
+            Inventory.Draw(spriteBatch);
+
+
             GamePlayMenu.DrawMenu(spriteBatch);
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
             spriteBatch.End();
@@ -280,6 +293,28 @@ namespace Imprisoned_Hope
             EnabledMove = true;
             GamePlayMenu.DockY = -200;
             GamePlayMenu.changeMovement("up");
+        }
+
+        private void DrawItems(Item[] items)
+        {
+            int x = 200;
+            int y = 100;
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i] == null)
+                {
+                    items[i].Texture = Hra.Content.Load<Texture2D>(@"Textury\Items\food");
+                    items[i].Color = Color.White;
+                    items[i].Rectangle = new Rectangle(x, y, 32, 32);
+                }
+                items[i].SetCoordinates(x, y);
+                items[i].Draw(spriteBatch);
+                x += 40;
+                if (i%5 == 0)
+                {
+                    y += 40;
+                }
+            }
         }
     }
 }
