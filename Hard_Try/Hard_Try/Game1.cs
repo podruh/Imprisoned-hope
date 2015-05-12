@@ -23,6 +23,7 @@ namespace Imprisoned_Hope
         public int vyska = 720;
         public MouseState mys;
         public Display displayMenu, displayLevelBuilder,displayGameplay;
+        public NoteMessage message;
 
         public KeyboardState klavesy, klavesyMinule;
 
@@ -48,9 +49,9 @@ namespace Imprisoned_Hope
             MenuComponent menu = new MenuComponent(this);
             BuilderComponent builder = new BuilderComponent(this);
             Gameplay gameplay = new Gameplay(this);
-            NoteMessage message = new NoteMessage(this);
+            message = new NoteMessage(this);
             //pøidání displejù
-            displayMenu = new Display(this, menu/*, message*/);
+            displayMenu = new Display(this, menu, message);
             displayLevelBuilder = new Display(this, builder/*, message*/);
             displayGameplay = new Display(this, gameplay/*, message*/);
             //vypnutí komponent
@@ -99,6 +100,8 @@ namespace Imprisoned_Hope
 
             //MediaPlayer.Play(music_menuTheme);
             PrepniObrazovku(displayMenu);
+            this.message.Enabled = false;
+            this.message.Visible = false;
         }
 
         /// <summary>
