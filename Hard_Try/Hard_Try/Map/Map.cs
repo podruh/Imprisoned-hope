@@ -11,10 +11,10 @@ namespace Imprisoned_Hope
     public partial class Map
     {
         public string Name;
-               
-        public List<Block> Blocks;
 
-        public int PosunX,PosunY;
+        public int PosunX, PosunY;
+        
+        public List<Block> Blocks;
 
         public Map() 
         {

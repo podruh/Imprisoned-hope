@@ -19,7 +19,7 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        Sprite MenuButton, Inventory;
+        Sprite MenuButton, InventoryButton;
 
         Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI;
 
@@ -47,6 +47,8 @@ namespace Imprisoned_Hope
 
         string SaveName;
 
+        Item[] Toolbar;
+
         public Gameplay(Game1 game)
             : base(game)
         {
@@ -69,20 +71,18 @@ namespace Imprisoned_Hope
             tempMenu = Hra.Content.Load<Texture2D>(@"Textury\Menu\Temporary");
             temp = Hra.Content.Load<Texture2D>(@"Textury\temp");
             UI = Hra.Content.Load<Texture2D>(@"Textury\UI");
-            Inventory = new Sprite(Hra.Content.Load<Texture2D>(@"Textury\Items\inventory"),new Rectangle(464,672,32,32),Color.White);
+            InventoryButton = new Sprite(Hra.Content.Load<Texture2D>(@"Textury\Items\inventory"),new Rectangle(392,672-8,32+16,32+16),Color.White);
             MenuButtonTexture = temp;
 
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
-            CurrentMap = MapManager.GetMaps()[1];
+            CurrentMap = MapManager.GetMaps()[0];
             Posun = new Vector2(CurrentMap.GetPosunX(), CurrentMap.GetPosunY());
             PosunX = (int)Posun.X;
             PosunY = (int)Posun.Y;
+            Toolbar = new Item[6];
 
-            SaveM = new SaveManager(Hra);
-            Item[] items = new Item[] {new Item(),new Item() };
-            player = new Player(Hra, 300, 300, 100, "kokot",items);
-            player.OnMap = CurrentMap.Name;
+            SaveM = new SaveManager(Hra);                       
 
             MenuButton = new Sprite(MenuButtonTexture, new Rectangle(0, 0, MenuButtonTexture.Width, MenuButtonTexture.Height), Color.White);
 
@@ -90,7 +90,6 @@ namespace Imprisoned_Hope
             MenuTextury.Add(Hra.Content.Load<Texture2D>(@"Textury/In-Game Menu/Load Game"));
             MenuTextury.Add(Hra.Content.Load<Texture2D>(@"Textury/In-Game Menu/Main Menu"));
             MenuTextury.Add(Hra.Content.Load<Texture2D>(@"Textury/In-Game Menu/Back"));
-
 
             GamePlayMenu = new Menu(MenuTextury, new Rectangle((1280 / 2) - (tempMenu.Width / 2), -300, 0, 0), 1.5F, (1280 / 2) - tempMenu.Width / 2, (720 / 2) - tempMenu.Height / 2);
             GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
@@ -146,7 +145,7 @@ namespace Imprisoned_Hope
             #region tlaèítka
             if (StisknutaKlavesa(Keys.Escape))
             {
-                if (EnabledMove)
+                if (EnabledMove&&!itemsDraw)
                 {
                     EnabledMove = false;
                     GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
@@ -158,6 +157,11 @@ namespace Imprisoned_Hope
                     GamePlayMenu.DockY = -200;
                     GamePlayMenu.changeMovement("up");
                 }
+                if (itemsDraw)
+                {
+                    itemsDraw = false;
+                }
+                
                 
             }
             if (GamePlayMenu.MenuItems[0].isClicked(mys))
@@ -180,14 +184,25 @@ namespace Imprisoned_Hope
                 GamePlayMenu.changeMovement("up");
             }
 
-            if (Inventory.Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released)
+            if (InventoryButton.Rectangle.Contains(mys.X,mys.Y) && mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released)
             {
-                itemsDraw = true;
+                 if (itemsDraw)
+                {
+                    itemsDraw = false;
+                }
+                 else if (EnabledMove)
+                {
+                    itemsDraw = true;
+                }
+                
+                
+                
             }
             #endregion           
 
             GamePlayMenu.moveMenu(gameTime);
             oldEnabled = Enabled;
+            UpdateToolBar();
             base.Update(gameTime);
         }
 
@@ -227,15 +242,15 @@ namespace Imprisoned_Hope
             //vykreslení UI
             spriteBatch.Draw(UI,new Rectangle(0,656,1280,64),Color.White);            
             //vykreslení healthbaru
-            player.DrawHealtBar(spriteBatch);
+            player.DrawHealtAndStamina(spriteBatch);
             //vykreslení itemù jestliže itemsDraw == true
             if (itemsDraw)
-            {
                 DrawItems(player.Inventory);
-            }
             //vykreslení inventory tlaèítka
-            Inventory.Draw(spriteBatch);
+            InventoryButton.Draw(spriteBatch);
 
+            //vykreslí itemy v toolbaru
+            DrawToolBar();
 
             GamePlayMenu.DrawMenu(spriteBatch);
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
@@ -260,13 +275,15 @@ namespace Imprisoned_Hope
             PosunX = CurrentMap.GetPosunX();
             PosunY = CurrentMap.GetPosunY();
             Posun = new Vector2(PosunX, PosunY);
-            player = new Player(Hra,200,200,100,klasa);
+            List<int> list = new List<int>() {2,3,1,4,1,1,3,1,1,1,1};
+            player = new Player(Hra,100,100,klasa, list,CurrentMap);            
             SaveName = jmeno;
         }
 
         public void SaveGame()
         {
             SaveM.LoadSaves();
+            MapManager.UpdateMap(CurrentMap);
             SaveM.AddSave(new Save(player, MapManager, SaveName));
             SaveM.SaveSaves();
         }
@@ -283,38 +300,78 @@ namespace Imprisoned_Hope
             Save save = SaveM.GetSaveByName(name);
             MapManager = new MapManager(Hra, save.Maplist);
             MapManager.SetBlocksInAllMaps();
-            Player p = save.Player;
-            player = new Player(Hra,p.PosX,p.PosY,p.Health,p.Class,p.Inventory);
+            Player p = save.Player;            
             CurrentMap = MapManager.GetMapByName(p.OnMap);
+            player = new Player(Hra, p.Health, p.Stamina, p.Class, p.Inventory_ID, CurrentMap);
             PosunX = CurrentMap.GetPosunX();
             PosunY = CurrentMap.GetPosunY();
             Posun = new Vector2(PosunX, PosunY);
-
+            UpdateToolBar();
             EnabledMove = true;
             GamePlayMenu.DockY = -200;
             GamePlayMenu.changeMovement("up");
         }
 
-        private void DrawItems(Item[] items)
+        private void DrawItems(List<Item> items)
         {
-            int x = 200;
-            int y = 100;
-            for (int i = 0; i < items.Length; i++)
+            int x = 540;
+            int y = 200;
+            for (int i = 0; i < items.Count; i++)
             {
-                if (items[i] == null)
-                {
-                    items[i].Texture = Hra.Content.Load<Texture2D>(@"Textury\Items\food");
-                    items[i].Color = Color.White;
-                    items[i].Rectangle = new Rectangle(x, y, 32, 32);
-                }
-                items[i].SetCoordinates(x, y);
+                items[i].Rectangle = new Rectangle(x, y, items[i].Texture.Width, items[i].Texture.Height);
                 items[i].Draw(spriteBatch);
                 x += 40;
-                if (i%5 == 0)
+                if ((i+1)%5 == 0)
                 {
                     y += 40;
+                    x -= 200;
                 }
             }
+        }
+
+        private void UpdateToolBar()
+        {
+            int i = 0;
+            foreach (Item item in player.Inventory)
+            {
+                if (item.OnToolbar && i < 6)
+                {
+                    Toolbar[i] = item;
+                    i++;                    
+                }
+                else if(item.OnToolbar)
+                {
+                    item.OnToolbar = false;
+                }
+            }
+        }
+
+        private void DrawToolBar()
+        {
+            int x = 8;
+            int y = 664;
+            foreach (Item item in Toolbar)
+            {
+                item.Rectangle = new Rectangle(x, y, 48, 48);
+                item.Draw(spriteBatch);
+                x += 64;
+
+            }
+        }
+
+        private void UpdateInventory()
+        {
+            if (itemsDraw)
+            {
+                foreach (Item item in player.Inventory)
+                {
+                    if (true)
+                    {
+                        
+                    }
+                }    
+            }
+            
         }
     }
 }

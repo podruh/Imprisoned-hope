@@ -134,6 +134,7 @@ namespace Imprisoned_Hope
             MediaPlayer.Play(music_menuTheme);
             MediaPlayer.IsRepeating = true;
             music = MediaState.Playing;
+            MediaPlayer.Stop();
             base.LoadContent();
         }
         /// <summary>
