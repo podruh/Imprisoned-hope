@@ -22,7 +22,8 @@ namespace Imprisoned_Hope
         private Game1 Hra;
 
         SpriteBatch spriteBatch;
-        private string message = "Ticho, svìtlo.Už dlouho usedlý prach se línì zvedl ve skøíni, když kolem probìhl šváb, jeden z mála tvorù, co tu ještì žije. Marnì se snažil otevøít pytlík cerálií, který už odolával horším vìcem a nehodlal se jen tak vzdát.Zatímco prach volnì usedal zpìt na své místo, šváb se rozhodl udìlat si malou pochùzku po komplexu. Slezl ze skøínì a vydal se kolem stolu, rovnì pode dveømi a skrz møíže na chodbu. Colby uslyšel nìjaký šramot. Nenamáhal se pohnout jediným svalem. V této pozici byl už tøi roky a nechtìlo se mu hýbat. Pomyslel si, jestli už nenastal èas, ale hned to zavrhl. Už dávno se pøestal o cokoliv pokoušet. Proè taky? Je to zbyteèné.Chabé svìtlo na chodbì protínalo zvednutý prach a oznaèovalo chaotickou trasu jednoho ze dvou žijících tvorù. Tvor úpìnlivì hledající jakoukoli potravu se ocitl v cele, a co bylo ještì pøekvapivìjší, s jiným tvorem! Na chvilku se zastavil, ale pak zaèal energicky šplhat po stìnì nahoru a blíže k té svítivé vìci na stropì.Druhý tvor vìdìl o pøítomnosti tvora prvního, ale nechtìlo se mu nic dìlat. Zhaslo svìtlo.Druhý tvor nic neudìlal. Už dávno se pøestal  o cokoliv pokoušet. Proè taky? Je to zbyteèné.Ticho, tma.";
+        //private string message = "Ticho, svìtlo.Už dlouho usedlý prach se línì zvedl ve skøíni, když kolem probìhl šváb, jeden z mála tvorù, co tu ještì žije. Marnì se snažil otevøít pytlík cerálií, který už odolával horším vìcem a nehodlal se jen tak vzdát.Zatímco prach volnì usedal zpìt na své místo, šváb se rozhodl udìlat si malou pochùzku po komplexu. Slezl ze skøínì a vydal se kolem stolu, rovnì pode dveømi a skrz møíže na chodbu. Colby uslyšel nìjaký šramot. Nenamáhal se pohnout jediným svalem. V této pozici byl už tøi roky a nechtìlo se mu hýbat. Pomyslel si, jestli už nenastal èas, ale hned to zavrhl. Už dávno se pøestal o cokoliv pokoušet. Proè taky? Je to zbyteèné.Chabé svìtlo na chodbì protínalo zvednutý prach a oznaèovalo chaotickou trasu jednoho ze dvou žijících tvorù. Tvor úpìnlivì hledající jakoukoli potravu se ocitl v cele, a co bylo ještì pøekvapivìjší, s jiným tvorem! Na chvilku se zastavil, ale pak zaèal energicky šplhat po stìnì nahoru a blíže k té svítivé vìci na stropì.Druhý tvor vìdìl o pøítomnosti tvora prvního, ale nechtìlo se mu nic dìlat. Zhaslo svìtlo.Druhý tvor nic neudìlal. Už dávno se pøestal  o cokoliv pokoušet. Proè taky? Je to zbyteèné.Ticho, tma.";
+        private string message;
         private Texture2D iconBack64, iconMouse, okBtn, noteBck;
         public SpriteFont FontTimes;
         public MouseState mys, staraMys;
@@ -72,6 +73,7 @@ namespace Imprisoned_Hope
 
             if (back.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)
             {
+                Hra.PrepniNoteMessage(false, "");
             }
 
             base.Update(gameTime);
@@ -97,6 +99,10 @@ namespace Imprisoned_Hope
         public string NahrajText(string text)
         {
             return text;   
+        }
+        public void NastavText(string text)
+        {
+            message = text;
         }
     }
 }

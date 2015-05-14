@@ -49,12 +49,12 @@ namespace Imprisoned_Hope
             MenuComponent menu = new MenuComponent(this);
             BuilderComponent builder = new BuilderComponent(this);
             Gameplay gameplay = new Gameplay(this);
-            //NoteMessage message = new NoteMessage(this);
+            NoteMessage message = new NoteMessage(this);
 
             //pøidání displejù
             displayMenu = new Display(this, menu);
             displayLevelBuilder = new Display(this, builder);
-            displayGameplay = new Display(this, gameplay);
+            displayGameplay = new Display(this, gameplay, message);
             //vypnutí komponent
             foreach (GameComponent item in Components)
             {
@@ -89,6 +89,25 @@ namespace Imprisoned_Hope
                 PrepniKomponentu(komponenta, povolena);
             }            
         }
+
+        public void PrepniNoteMessage(bool zapnout, string Message)
+        {
+            NoteMessage note = new NoteMessage(this);
+            foreach (GameComponent item in Components)
+            {
+                if (item.GetType() == typeof(NoteMessage))
+                {
+                    note = (NoteMessage)item;
+                }
+            }
+            if (zapnout)
+            {
+                note.NastavText(Message);
+            }
+            note.Enabled = zapnout;
+            note.Visible = zapnout;
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.

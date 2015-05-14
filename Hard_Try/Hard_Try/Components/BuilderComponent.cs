@@ -67,7 +67,7 @@ namespace Imprisoned_Hope
             posunX = 0;
             posunY = 0;
 
-            message = "";
+            message = "";            
 
             base.Initialize();
         }
@@ -243,6 +243,7 @@ namespace Imprisoned_Hope
             {
                 case "Brick Wall":
                     mapBloky.Add((Block)new BlockWall(brickWall, "wall", "Zeï!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    Hra.PrepniNoteMessage(true, "Bjá torickWall");
                     break;
 
                 case "Floor 1":

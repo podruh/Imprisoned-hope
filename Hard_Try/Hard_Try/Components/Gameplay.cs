@@ -57,7 +57,7 @@ namespace Imprisoned_Hope
         public override void Initialize()
         {
             EnabledMove = true;
-                       
+            Hra.PrepniNoteMessage(false, "");
             base.Initialize();
         }
         protected override void LoadContent()
@@ -254,6 +254,7 @@ namespace Imprisoned_Hope
         public void SaveGame()
         {
             SaveM.LoadSaves();
+            Hra.PrepniNoteMessage(true, "ahoj");
             SaveM.AddSave(new Save(player, MapManager, SaveName));
             SaveM.SaveSaves();
         }
@@ -281,5 +282,7 @@ namespace Imprisoned_Hope
             GamePlayMenu.DockY = -200;
             GamePlayMenu.changeMovement("up");
         }
+
+
     }
 }
