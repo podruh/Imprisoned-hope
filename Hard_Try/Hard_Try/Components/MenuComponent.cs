@@ -82,6 +82,7 @@ namespace Imprisoned_Hope
             ngmenuX = 15;   
             ngmenuY = 140;   
             Hra.Content.RootDirectory = "Content";
+
             
             base.Initialize();
         }
@@ -90,6 +91,7 @@ namespace Imprisoned_Hope
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
 
             // TODO: use this.Content to load your game content here
             menuBackground = Hra.Content.Load<Texture2D>(@"Textury\Menu\back_menu");
@@ -148,7 +150,10 @@ namespace Imprisoned_Hope
 
             if(optMenu.MenuItems[0].isClicked(mys))
             {
+<<<<<<< HEAD
                 
+=======
+>>>>>>> origin/Filip
             }
 
             if (mainMenu.MenuItems[3].isClicked(mys))

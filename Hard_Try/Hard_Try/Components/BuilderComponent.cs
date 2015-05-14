@@ -67,7 +67,7 @@ namespace Imprisoned_Hope
             posunX = 0;
             posunY = 0;
 
-            message = "";
+            message = "";            
 
             base.Initialize();
         }
@@ -243,6 +243,7 @@ namespace Imprisoned_Hope
             {
                 case "Brick Wall":
                     mapBloky.Add((Block)new BlockWall(brickWall, "wall", "Zeï!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
+                    Hra.PrepniNoteMessage(true, "Bjá torickWall");
                     break;
 
                 case "Floor 1":
@@ -293,9 +294,9 @@ namespace Imprisoned_Hope
                     mapBloky.Add((Block)new BlockWall(ironBars, "Iron Bars", "Møíže!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
-                case "Spawn":
-                    mapBloky.Add((Block)new BlockWall(spawn, "Spawn", " ", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, 1, false));
-                    break;
+                //case "Spawn":
+                  //  mapBloky.Add((Block)new BlockWall(spawn, "Spawn", " ", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, 1, false));
+                    //break;
 
                 default:
                     break;
@@ -309,13 +310,13 @@ namespace Imprisoned_Hope
         /// <param name="itemy">List obsahu containeru</param>
         /// <param name="x">pozice x</param>
         /// <param name="y">pozice y</param>
-        public void VytvorContainer(string typ,List<Object> itemy , int x, int y)
+        public void VytvorContainer(string typ,Item[,] itemy , int x, int y)
         {
             switch (typ)
             {
-                case "Supplies":
-                    mapBloky.Add((Block)new BlockContainer(supplies, "Supplies", "Bedna!", itemy, new Rectangle(x - posunX, y - posunY, 32, 32),Color.White));
-                    break;
+                //case "Supplies":
+                  //  mapBloky.Add((Block)new BlockContainer(supplies, "Supplies", "Bedna!", itemy, new Rectangle(x - posunX, y - posunY, 32, 32),Color.White));
+                    //break;
                 default:
                     break;
             }
