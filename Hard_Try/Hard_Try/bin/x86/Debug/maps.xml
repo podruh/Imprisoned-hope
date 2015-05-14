@@ -140,6 +140,33 @@
         <collide>true</collide>
         <desc>Zeď!</desc>
       </Block>
+      <Block xsi:type="BlockNote">
+        <Type>Note</Type>
+        <X>288</X>
+        <Y>416</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <collide>false</collide>
+        <desc>Útržek papíru!</desc>
+        <message>*lo
+lol
+lol
+lolt*</message>
+      </Block>
+      <Block xsi:type="BlockNote">
+        <Type>Newspapers</Type>
+        <X>768</X>
+        <Y>416</Y>
+        <Count>1</Count>
+        <Direction>right</Direction>
+        <collide>false</collide>
+        <desc>Noviny!</desc>
+        <message>fuck
+fuckyou
+fuckme
+fuckthem
+fuckit</message>
+      </Block>
     </Blocks>
   </Map>
 </ArrayOfMap>

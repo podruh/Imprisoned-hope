@@ -153,7 +153,7 @@ namespace Imprisoned_Hope
             this.Color = Color.White;
         }
 
-        public void PlayerUpdate(MouseState mys, MouseState staraMys, KeyboardState keyboard, KeyboardState staraKeyboard, GameTime gameTime, Map map)
+        public void PlayerUpdate(MouseState mys, MouseState staraMys, KeyboardState keyboard, KeyboardState staraKeyboard, GameTime gameTime, Map map, Game1 game)
         {
             OnMap = map.Name;
             this.PX = map.GetPosunX();
@@ -161,6 +161,7 @@ namespace Imprisoned_Hope
             PosX = Rectangle.X;
             PosY = Rectangle.Y;
             Movement(keyboard, gameTime, map);
+            BlockUpdate(map, keyboard, game);
         }
 
         public void DrawPlayer(SpriteBatch sb)
@@ -282,6 +283,18 @@ namespace Imprisoned_Hope
                     PosX = item.Rectangle.X;
                     PosY = item.Rectangle.Y;
                     break;
+                }
+            }
+        }
+
+        private void BlockUpdate(Map map, KeyboardState key, Game1 hra)
+        {
+            foreach (Block item in map.Blocks)
+            {
+                if (((item.Type == "Note" || item.Type == "Newspapers") && item.Rectangle.Intersects(this.Rectangle)) && key.IsKeyDown(Keys.E))
+                {
+                    BlockNote note = (BlockNote)item;
+                    hra.PrepniNoteMessage(true, note.message);
                 }
             }
         }

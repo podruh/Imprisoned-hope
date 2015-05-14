@@ -108,6 +108,18 @@ namespace Imprisoned_Hope
             note.Visible = zapnout;
         }
 
+        public NoteMessage GetNoteMessage()
+        {
+            foreach (GameComponent item in Components)
+            {
+                if (item.GetType() == typeof(NoteMessage))
+                {
+                    return (NoteMessage)item;
+                }
+            }
+            return null;
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.

@@ -150,10 +150,6 @@ namespace Imprisoned_Hope
 
             if(optMenu.MenuItems[0].isClicked(mys))
             {
-<<<<<<< HEAD
-                
-=======
->>>>>>> origin/Filip
             }
 
             if (mainMenu.MenuItems[3].isClicked(mys))

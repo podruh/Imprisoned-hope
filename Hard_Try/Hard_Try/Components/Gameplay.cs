@@ -113,7 +113,17 @@ namespace Imprisoned_Hope
             float speed = 0.1999F;
 
             if (EnabledMove)
-                player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime, CurrentMap);
+                player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime, CurrentMap, Hra);
+
+            if (Hra.GetNoteMessage().Enabled)
+            {
+                EnabledMove = false;
+            }
+            else
+            {
+                EnabledMove = true;
+            }
+
             #region posun mapy
             if (player.Rectangle.Top + PosunY <= 64)
             {
@@ -199,7 +209,7 @@ namespace Imprisoned_Hope
                 
             }
             #endregion           
-
+            
             GamePlayMenu.moveMenu(gameTime);
             oldEnabled = Enabled;
             UpdateToolBar();
@@ -283,11 +293,7 @@ namespace Imprisoned_Hope
         public void SaveGame()
         {
             SaveM.LoadSaves();
-<<<<<<< HEAD
             MapManager.UpdateMap(CurrentMap);
-=======
-            Hra.PrepniNoteMessage(true, "ahoj");
->>>>>>> origin/Filip
             SaveM.AddSave(new Save(player, MapManager, SaveName));
             SaveM.SaveSaves();
         }
@@ -316,7 +322,6 @@ namespace Imprisoned_Hope
             GamePlayMenu.changeMovement("up");
         }
 
-<<<<<<< HEAD
         private void DrawItems(List<Item> items)
         {
             int x = 540;
@@ -378,8 +383,5 @@ namespace Imprisoned_Hope
             }
             
         }
-=======
-
->>>>>>> origin/Filip
     }
 }
