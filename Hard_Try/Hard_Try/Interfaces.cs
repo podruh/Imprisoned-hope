@@ -29,4 +29,12 @@ namespace Imprisoned_Hope
     {
         void EnvChange();
     }
+
+
+    interface IItem
+    {
+        string SetProperties(int id);
+    }
+
+
 }
