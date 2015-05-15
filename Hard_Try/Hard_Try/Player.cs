@@ -26,21 +26,30 @@ namespace Imprisoned_Hope
 
         public List<int> Inventory_ID;
 
-        [XmlIgnore]
-        public List<Item> Inventory;
+        public List<int> Toolbar_ID;
 
         [XmlIgnore]
-        List<Texture2D> textures;
+        public List<Item> Inventory;
+        [XmlIgnore]
+        private Item[] Toolbar = new Item[6];
+
+        [XmlIgnore]
+        private List<Texture2D> textures;
 
         [XmlIgnore]
         float Speed;
 
         [XmlIgnore]
-        Texture2D HealthTexture;
-        [XmlIgnore]
-        Texture2D StaminaTexture;
+        private Texture2D HealthTexture;
 
-        private int PX,PY;
+        [XmlIgnore]
+        private Texture2D StaminaTexture;
+
+        [XmlIgnore]
+        private int PX,PY,ItemOnMove;
+
+        [XmlIgnore]
+        private bool InventoryIsShown, itemDragged;
 
         public Player()
         { 
@@ -65,7 +74,7 @@ namespace Imprisoned_Hope
             SetItemTextures(game);
         }
 
-        public Player(Game1 game, int health,int stamina, string klasa, List<int> items, Map map)
+        public Player(Game1 game, int health, int stamina, string klasa, List<int> items, List<int> tool, Map map)
         {
             //doplnění listu textures
             textures = new List<Texture2D>();
@@ -79,8 +88,10 @@ namespace Imprisoned_Hope
             HealthTexture = game.Content.Load<Texture2D>(@"Textury\Health1");
             Class = klasa;
             Inventory_ID = items;
+            Toolbar_ID = tool;
             SetPlayer(textures[0], map);
             SetItems(game);
+            SetToolbar(game);
         }
 
         public void SetItemTextures(Game1 game)
@@ -121,27 +132,40 @@ namespace Imprisoned_Hope
             Inventory = new List<Item>();
             foreach (int id in Inventory_ID)
             {
-                switch (id)
-                {
-                    case 0:
-                        Inventory.Add(new Item(game.Content.Load<Texture2D>(@"Textury\Objects\spawn"), new Rectangle(0, 0, 32, 32), Color.White,false));
-                        break;
-                    case 1:
-                        Inventory.Add(new Item(game.Content.Load<Texture2D>(@"Textury\Items\food"), new Rectangle(0, 0, 32, 32), Color.White,true));
-                        break;
-                    case 2:
-                        Inventory.Add(new Item(game.Content.Load<Texture2D>(@"Textury\Items\food"), new Rectangle(0, 0, 32, 32), Color.White, false));
-                        break;
-                    case 3:
-                        Inventory.Add(new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, true));
-                        break;
-                    case 4:
-                        Inventory.Add(new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, false));
-                        break;
-                    default:
-                        break;
-                }
+                Inventory.Add(GetItemByID(game, id));
             }
+            for (int i = 0; i < Toolbar_ID.Count; i++)
+            {
+                if (i < 6)
+                {
+                    Toolbar[i] = GetItemByID(game, Toolbar_ID[i]);    
+                }
+                
+            }
+            
+        }
+
+        private Item GetItemByID(Game1 game,int id)
+        {
+            switch (id)
+            {
+                case 0:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Objects\spawn"), new Rectangle(0, 0, 32, 32), Color.White, false, "empty","empty");
+
+                case 1:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\food"), new Rectangle(0, 0, 32, 32), Color.White, true, "Food", "food");
+
+                case 2:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\food"), new Rectangle(0, 0, 32, 32), Color.White, false, "Food", "food");
+
+                case 3:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, true, "Drink", "drink");
+
+                case 4:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, false, "Drink","drink"); ;
+                default:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Objects\spawn"), new Rectangle(0, 0, 32, 32), Color.White, false, "empty", "empty");
+            }                
         }
 
         public void SetPlayer(Texture2D texture,Map map)
@@ -162,6 +186,12 @@ namespace Imprisoned_Hope
             PosY = Rectangle.Y;
             Movement(keyboard, gameTime, map);
             BlockUpdate(map, keyboard, game);
+
+        }
+
+        public void InventoryUpdate(MouseState mys, MouseState staraMys, Game1 game)
+        {
+            ToolBarAndInventoryUpdate(staraMys, mys, game);
         }
 
         public void DrawPlayer(SpriteBatch sb)
@@ -257,16 +287,16 @@ namespace Imprisoned_Hope
 
         public void DrawHealtAndStamina(SpriteBatch spriteBatch)
         {
-            int x = 1268;
-            int y = 693;
+            int x = 1273;
+            int y = 688;
             for (int i = 1; i <= Health; i++)
             {
                 spriteBatch.Draw(HealthTexture, new Rectangle(x, y, HealthTexture.Width, HealthTexture.Height), Color.White);
                 x -= 2;
             }
 
-            x = 1268;
-            y = 663;
+            x = 1273;
+            y = 658;
             for (int i = 1; i <= Health; i++)
             {
                 spriteBatch.Draw(StaminaTexture, new Rectangle(x, y, StaminaTexture.Width, StaminaTexture.Height), Color.White);
@@ -297,6 +327,114 @@ namespace Imprisoned_Hope
                     hra.PrepniNoteMessage(true, note.message);
                 }
             }
+        }
+
+        private void ToolBarAndInventoryUpdate(MouseState staraMys, MouseState mys, Game1 game)
+        { 
+
+            SetToolbar(game);
+            //nastavenní inventáře
+            int x = (1280 / 2) - (228 / 2) + 18;
+            int y = 118;
+            for (int i = 0; i < Inventory.Count; i++)
+            {
+                if (!Inventory[i].OnToolbar)
+                {
+                    Inventory[i].Rectangle = new Rectangle(x, y, Inventory[i].Texture.Width, Inventory[i].Texture.Height);
+                    x += 40;
+
+                }
+                else if (Inventory[i].OnToolbar)
+                {
+                    Inventory[i].OnToolbar = false;
+                    Inventory[i].Rectangle = new Rectangle(x, y, Inventory[i].Texture.Width, Inventory[i].Texture.Height);
+                    x += 40;
+                }
+                if ((i + 1) % 5 == 0)
+                {
+                    y += 40;
+                    x -= 200;
+                }                
+            }
+            for (int i = 0; i < Inventory.Count; i++)
+            {
+                //drag and drop systém
+                if (ItemClicked(Inventory[i], staraMys,mys) && i != ItemOnMove)
+                {
+                    ItemOnMove = i;
+                    itemDragged = true; 
+                }
+                if (i == ItemOnMove && itemDragged)
+                {
+                    Inventory[i].Rectangle = new Rectangle(mys.X, mys.Y, Inventory[i].Texture.Width, Inventory[i].Texture.Height);
+                }
+                for (int j = 0; j < Toolbar.Length; j++)
+                {
+                    if ((i == ItemOnMove && itemDragged) && Toolbar[j].Rectangle.Contains(mys.X, mys.Y) && (mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released))
+                    {
+                        Item temp = Inventory[i];
+                        Inventory[i] = Toolbar[j];
+                        Toolbar[j] = temp;
+                        itemDragged = false;
+                    }
+                }
+                SetToolbar(game);
+            }
+
+        }
+
+        private void SetToolbar(Game1 game)
+        {
+            //nastavení toolbaru
+            int x = 13;
+            int y = 659;
+            for (int i = 0; i < Toolbar.Length; i++)
+            {                
+                //for (int j = 0; j < Inventory.Count; j++)
+                //{
+                //    if (Inventory[j].OnToolbar)
+                //    {
+                //        Toolbar[i] = Inventory[j];
+                //        Inventory[j] = GetItemByID(game, 0);
+                //        break;
+                //    }
+                //    else
+                //    {
+                //        Toolbar[i].OnToolbar = true;
+                //    }
+                //}
+                if (!Toolbar[i].OnToolbar)
+                {
+                    Toolbar[i].OnToolbar = true;
+                }
+                Toolbar[i].Rectangle = new Rectangle(x, y, 48, 48);
+                x += 64;
+            }
+        }
+
+        private bool ItemClicked(Item item,MouseState staraMys, MouseState mys )
+        {
+            return item.Rectangle.Contains(mys.X, mys.Y) && staraMys != mys && mys.LeftButton == ButtonState.Pressed;
+        }
+
+        public void DrawItems(SpriteBatch spriteBatch)
+        {
+            if (InventoryIsShown)
+            {
+                foreach (Item item in Inventory)
+                {
+                    item.Draw(spriteBatch);
+                }
+            }
+            foreach (Item item in Toolbar)
+            {
+                item.Draw(spriteBatch);
+            }
+        }
+
+        public void ShowInventory(bool show)
+        {
+            InventoryIsShown = show;
         }
     }
 }

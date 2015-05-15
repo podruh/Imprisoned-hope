@@ -30,13 +30,15 @@ namespace Imprisoned_Hope
             
         }
 
-        public Item(Texture2D texture, Rectangle rectangle, Color color, bool toolbar)
+        public Item(Texture2D texture, Rectangle rectangle, Color color, bool toolbar,string type, string name)
         {
             this.Texture = texture;
             this.Rectangle = rectangle;
             this.Position = new Vector2(rectangle.X, rectangle.Y);
             this.Color = color;
             OnToolbar = toolbar;
+            this.Type = type;
+            this.Name = name;
         }
 
         public void SetCoordinates(int x, int y)
