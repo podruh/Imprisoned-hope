@@ -32,6 +32,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbNote = new System.Windows.Forms.ComboBox();
+            this.showBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbNote
@@ -39,13 +40,13 @@
             this.txbNote.Location = new System.Drawing.Point(13, 40);
             this.txbNote.Multiline = true;
             this.txbNote.Name = "txbNote";
-            this.txbNote.Size = new System.Drawing.Size(265, 181);
+            this.txbNote.Size = new System.Drawing.Size(859, 381);
             this.txbNote.TabIndex = 0;
             this.txbNote.Text = "*Note content*";
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(203, 227);
+            this.btnOK.Location = new System.Drawing.Point(797, 427);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -75,11 +76,22 @@
             this.cmbNote.TabIndex = 3;
             this.cmbNote.Text = "Note";
             // 
+            // showBtn
+            // 
+            this.showBtn.Location = new System.Drawing.Point(16, 427);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(75, 23);
+            this.showBtn.TabIndex = 4;
+            this.showBtn.Text = "Show";
+            this.showBtn.UseVisualStyleBackColor = true;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
+            // 
             // Note
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 262);
+            this.ClientSize = new System.Drawing.Size(884, 462);
+            this.Controls.Add(this.showBtn);
             this.Controls.Add(this.cmbNote);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbNote;
+        private System.Windows.Forms.Button showBtn;
     }
 }

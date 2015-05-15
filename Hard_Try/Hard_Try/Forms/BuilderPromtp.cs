@@ -41,7 +41,7 @@ namespace Imprisoned_Hope
                     break;
                 case "Note":
                     Note noteBlock = new Note(X, Y, BC);
-                    noteBlock.ShowDialog();
+                    noteBlock.Show();
                     break;
 
                 default:
