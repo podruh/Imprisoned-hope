@@ -162,7 +162,14 @@ namespace Imprisoned_Hope
                     return new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, true, "Drink", "drink");
 
                 case 4:
-                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, false, "Drink","drink"); ;
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\Drink"), new Rectangle(0, 0, 32, 32), Color.White, false, "Drink","drink");
+
+                case 5:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\weapon"), new Rectangle(0, 0, 32, 32), Color.White, true, "Weapon", "weapon");
+
+                case 6:
+                    return new Item(game.Content.Load<Texture2D>(@"Textury\Items\weapon"), new Rectangle(0, 0, 32, 32), Color.White, false, "Weapon", "weapon");
+
                 default:
                     return new Item(game.Content.Load<Texture2D>(@"Textury\Objects\spawn"), new Rectangle(0, 0, 32, 32), Color.White, false, "empty", "empty");
             }                
@@ -356,9 +363,11 @@ namespace Imprisoned_Hope
                     x -= 200;
                 }                
             }
+
+            //drag and drop systém
             for (int i = 0; i < Inventory.Count; i++)
             {
-                //drag and drop systém
+                
                 if (ItemClicked(Inventory[i], staraMys,mys) && i != ItemOnMove)
                 {
                     ItemOnMove = i;

@@ -27,7 +27,7 @@ namespace Imprisoned_Hope
         private Texture2D iconBack64, iconMouse, okBtn, noteBck;
         public SpriteFont FontTimes;
         public MouseState mys, staraMys;
-        public KeyboardState keyboard;
+        public KeyboardState keyboard, oldKeyboard;
         public Rectangle back;
 
         public NoteMessage(Game1 game)
@@ -70,10 +70,11 @@ namespace Imprisoned_Hope
         {
             // TODO: Add your update code here
             staraMys = mys;
+            oldKeyboard = keyboard;
             keyboard = Keyboard.GetState();
             mys = Mouse.GetState();
 
-            if ((back.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed)|| keyboard.IsKeyDown(Keys.Escape))
+            if ((back.Contains(mys.X, mys.Y) && mys.LeftButton == ButtonState.Pressed) || keyboard.IsKeyDown(Keys.Escape))
             {
                 Hra.PrepniNoteMessage(false, "");
             }

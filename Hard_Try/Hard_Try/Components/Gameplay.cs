@@ -23,6 +23,8 @@ namespace Imprisoned_Hope
 
         Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI, InventoryMenu;
 
+        SpriteFont FontTimes;
+
         List<Texture2D> MenuTextury;
 
         Menu GamePlayMenu;
@@ -45,7 +47,7 @@ namespace Imprisoned_Hope
 
         Vector2 Posun;
 
-        string SaveName;
+        string SaveName, message;
 
 
         public Gameplay(Game1 game)
@@ -74,6 +76,7 @@ namespace Imprisoned_Hope
             InventoryButton = new Sprite(Hra.Content.Load<Texture2D>(@"Textury\Items\inventory"),new Rectangle(397,659,48,48),Color.White);
             MenuButtonTexture = temp;
             InventoryMenu = Hra.Content.Load<Texture2D>(@"Textury\Inventory");
+            FontTimes = Hra.Content.Load<SpriteFont>(@"Fonty\times");
 
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
@@ -93,11 +96,13 @@ namespace Imprisoned_Hope
 
             GamePlayMenu = new Menu(MenuTextury, new Rectangle((1280 / 2) - (tempMenu.Width / 2), -300, 0, 0), 1.5F, (1280 / 2) - tempMenu.Width / 2, (720 / 2) - tempMenu.Height / 2);
             GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
+            message = "";
             base.LoadContent();
         }
         
         public override void Update(GameTime gameTime)
         {
+            message = "";
             //jestli se zmìní enabled na tru, tak naète znova mapList
             if (Enabled != oldEnabled && Enabled == true)
             {
@@ -210,12 +215,23 @@ namespace Imprisoned_Hope
                 
             }
             #endregion     
+
             //pohyb hráèe
             if (EnabledMove)
                 player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime, CurrentMap, Hra);
+
             //správa inventáøe
             if(itemsDraw)
             { player.InventoryUpdate(mys, staraMys, Hra); }
+
+            foreach (Block item in CurrentMap.Blocks)
+            {
+                if (((item.Type == "Note" || item.Type == "Newspapers") && item.Rectangle.Intersects(player.Rectangle)))
+                {
+                    this.message = "Pro zobrazení poznámky stisknìnte E";
+                }
+            }
+
             GamePlayMenu.moveMenu(gameTime);
             oldEnabled = Enabled;
             base.Update(gameTime);
@@ -272,6 +288,7 @@ namespace Imprisoned_Hope
             
             
             GamePlayMenu.DrawMenu(spriteBatch);
+            spriteBatch.DrawString(FontTimes, message, new Vector2(0, 0), Color.Yellow);
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
             spriteBatch.End();
 
