@@ -21,7 +21,7 @@ namespace Imprisoned_Hope
 
         Sprite MenuButton, InventoryButton;
 
-        Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI, InventoryMenu;
+        Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI, InventoryMenu, Selected;
 
         SpriteFont FontTimes;
 
@@ -35,7 +35,7 @@ namespace Imprisoned_Hope
 
         KeyboardState keyboard, starKeyboard;
 
-        bool oldEnabled, EnabledMove, itemsDraw,ItemDragged;
+        bool oldEnabled, EnabledMove, itemsDraw;
 
         SaveManager SaveM;
 
@@ -60,7 +60,6 @@ namespace Imprisoned_Hope
         public override void Initialize()
         {
             EnabledMove = true;
-            ItemDragged = false;
             Hra.PrepniNoteMessage(false, "");
             base.Initialize();
         }
@@ -76,6 +75,8 @@ namespace Imprisoned_Hope
             InventoryButton = new Sprite(Hra.Content.Load<Texture2D>(@"Textury\Items\inventory"),new Rectangle(397,659,48,48),Color.White);
             MenuButtonTexture = temp;
             InventoryMenu = Hra.Content.Load<Texture2D>(@"Textury\Inventory");
+            Selected = Hra.Content.Load<Texture2D>(@"Textury\selected");
+
             FontTimes = Hra.Content.Load<SpriteFont>(@"Fonty\times");
 
             MapManager = new MapManager(Hra);

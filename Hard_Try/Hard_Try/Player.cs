@@ -40,13 +40,13 @@ namespace Imprisoned_Hope
         float Speed;
 
         [XmlIgnore]
-        private Texture2D HealthTexture;
+        private Texture2D HealthTexture, StaminaTexture;
 
         [XmlIgnore]
-        private Texture2D StaminaTexture;
+        private Sprite Selected;
 
         [XmlIgnore]
-        private int PX,PY,ItemOnMove;
+        private int PX,PY,ItemOnMove,SelectedItem;
 
         [XmlIgnore]
         private bool InventoryIsShown, itemDragged;
@@ -86,9 +86,11 @@ namespace Imprisoned_Hope
             Speed = 0.2F;            
             StaminaTexture = game.Content.Load<Texture2D>(@"Textury\Stamina1");
             HealthTexture = game.Content.Load<Texture2D>(@"Textury\Health1");
+            Selected = new Sprite(game.Content.Load<Texture2D>(@"Textury\selected"),new Rectangle(5,651,64,64),Color.White);
             Class = klasa;
             Inventory_ID = items;
             Toolbar_ID = tool;
+            SelectedItem = 0; 
             SetPlayer(textures[0], map);
             SetItems(game);
             SetToolbar(game);
@@ -193,6 +195,8 @@ namespace Imprisoned_Hope
             PosY = Rectangle.Y;
             Movement(keyboard, gameTime, map);
             BlockUpdate(map, keyboard, game);
+            ToolBarAndInventoryUpdate(staraMys,mys,game);
+            SelectedItemUpdate(mys, staraMys, keyboard, staraKeyboard, game);
 
         }
 
@@ -388,7 +392,7 @@ namespace Imprisoned_Hope
                     }
                 }
                 SetToolbar(game);
-            }
+            }            
 
         }
 
@@ -397,21 +401,9 @@ namespace Imprisoned_Hope
             //nastavení toolbaru
             int x = 13;
             int y = 659;
+            
             for (int i = 0; i < Toolbar.Length; i++)
             {                
-                //for (int j = 0; j < Inventory.Count; j++)
-                //{
-                //    if (Inventory[j].OnToolbar)
-                //    {
-                //        Toolbar[i] = Inventory[j];
-                //        Inventory[j] = GetItemByID(game, 0);
-                //        break;
-                //    }
-                //    else
-                //    {
-                //        Toolbar[i].OnToolbar = true;
-                //    }
-                //}
                 if (!Toolbar[i].OnToolbar)
                 {
                     Toolbar[i].OnToolbar = true;
@@ -419,6 +411,8 @@ namespace Imprisoned_Hope
                 Toolbar[i].Rectangle = new Rectangle(x, y, 48, 48);
                 x += 64;
             }
+
+            
         }
 
         private bool ItemClicked(Item item,MouseState staraMys, MouseState mys )
@@ -439,11 +433,33 @@ namespace Imprisoned_Hope
             {
                 item.Draw(spriteBatch);
             }
+            Selected.Draw(spriteBatch);
         }
 
         public void ShowInventory(bool show)
         {
             InventoryIsShown = show;
+        }
+
+        private void SelectedItemUpdate(MouseState mys,MouseState staraMys, KeyboardState key, KeyboardState oldKey,Game1 game)
+        {
+            //nastavení zvoleného itemu v toolbaru, index zvoleného itemu se uloží do intu SelectedItem
+            int x1 = 5;
+            int y1 = 651;
+            for (int i = 0; i < Toolbar.Length; i++)
+            {
+                if (ItemClicked(Toolbar[i], staraMys, mys))
+                {
+                    SelectedItem = i;
+                    Selected.Rectangle.X = x1;
+                    Selected.Rectangle.Y = y1;                    
+                }
+                if (SelectedItem == i)
+                {
+                    Toolbar[i].ItemUpdate(game, key, mys);
+                }
+                x1 += 64;
+            }
         }
     }
 }
