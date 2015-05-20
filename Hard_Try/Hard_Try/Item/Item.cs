@@ -21,6 +21,8 @@ namespace Imprisoned_Hope
     {
         public string Type;
 
+        public int ID;
+
         public string Name;
 
         public bool OnToolbar;
@@ -29,7 +31,6 @@ namespace Imprisoned_Hope
         { 
             
         }
-
         public Item(Texture2D texture, Rectangle rectangle, Color color, bool toolbar,string type, string name)
         {
             this.Texture = texture;

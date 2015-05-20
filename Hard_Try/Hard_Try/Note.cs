@@ -31,5 +31,10 @@ namespace Imprisoned_Hope
         {
             this.Location = new Point(1000, 500);
         }
+
+        private void showBtn_Click(object sender, EventArgs e)
+        {
+            BC.Hra.PrepniNoteMessage(true, txbNote.Text);
+        }
     }
 }

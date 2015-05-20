@@ -24,7 +24,8 @@ namespace Imprisoned_Hope
         SpriteBatch spriteBatch;
         //private string message = "Ticho, svìtlo.Už dlouho usedlý prach se línì zvedl ve skøíni, když kolem probìhl šváb, jeden z mála tvorù, co tu ještì žije. Marnì se snažil otevøít pytlík cerálií, který už odolával horším vìcem a nehodlal se jen tak vzdát.Zatímco prach volnì usedal zpìt na své místo, šváb se rozhodl udìlat si malou pochùzku po komplexu. Slezl ze skøínì a vydal se kolem stolu, rovnì pode dveømi a skrz møíže na chodbu. Colby uslyšel nìjaký šramot. Nenamáhal se pohnout jediným svalem. V této pozici byl už tøi roky a nechtìlo se mu hýbat. Pomyslel si, jestli už nenastal èas, ale hned to zavrhl. Už dávno se pøestal o cokoliv pokoušet. Proè taky? Je to zbyteèné.Chabé svìtlo na chodbì protínalo zvednutý prach a oznaèovalo chaotickou trasu jednoho ze dvou žijících tvorù. Tvor úpìnlivì hledající jakoukoli potravu se ocitl v cele, a co bylo ještì pøekvapivìjší, s jiným tvorem! Na chvilku se zastavil, ale pak zaèal energicky šplhat po stìnì nahoru a blíže k té svítivé vìci na stropì.Druhý tvor vìdìl o pøítomnosti tvora prvního, ale nechtìlo se mu nic dìlat. Zhaslo svìtlo.Druhý tvor nic neudìlal. Už dávno se pøestal  o cokoliv pokoušet. Proè taky? Je to zbyteèné.Ticho, tma.";
         private string message;
-        private Texture2D iconBack64, iconMouse, okBtn, noteBck;
+        private Texture2D iconBack64, iconMouse, okBtn, backTexture;
+        public Texture2D noteBck, newsBck, mapBck;
         public SpriteFont FontTimes;
         public MouseState mys, staraMys;
         public KeyboardState keyboard, oldKeyboard;
@@ -93,19 +94,19 @@ namespace Imprisoned_Hope
             spriteBatch.Draw(noteBck, new Rectangle(125, 0, noteBck.Width, noteBck.Height), Color.White);
             spriteBatch.Draw(iconBack64, back, Color.White);
 
-            spriteBatch.DrawString(FontTimes, NahrajText(message), new Vector2(175, 50), Color.Black);
+            spriteBatch.DrawString(FontTimes, message, new Vector2(175, 50), Color.Black);
 
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White); //Vykreslení myši (musí být poslední)
             spriteBatch.End();
             base.Draw(gameTime);
         }
-        public string NahrajText(string text)
-        {
-            return text;   
-        }
         public void NastavText(string text)
         {
             message = text;
+        }
+        public void Nastavtexturu(Texture2D textura)
+        {
+            this.backTexture = textura;
         }
     }
 }

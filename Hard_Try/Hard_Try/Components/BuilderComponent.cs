@@ -19,7 +19,7 @@ namespace Imprisoned_Hope
     /// </summary>
     public class BuilderComponent : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        private Game1 Hra;
+        public Game1 Hra;
 
         SpriteBatch spriteBatch;
 
