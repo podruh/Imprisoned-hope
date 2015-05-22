@@ -11,7 +11,7 @@ namespace Imprisoned_Hope
     public class ToolItem :Item, IItem
     {
         public int Damage;
-        public string Type;
+
         public ToolItem()
         { 
         }

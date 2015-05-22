@@ -308,7 +308,7 @@ namespace Imprisoned_Hope
 
             x = 1273;
             y = 658;
-            for (int i = 1; i <= Health; i++)
+            for (int i = 1; i <= Stamina; i++)
             {
                 spriteBatch.Draw(StaminaTexture, new Rectangle(x, y, StaminaTexture.Width, StaminaTexture.Height), Color.White);
                 x -= 2;

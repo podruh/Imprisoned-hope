@@ -294,9 +294,9 @@ namespace Imprisoned_Hope
                     mapBloky.Add((Block)new BlockWall(ironBars, "Iron Bars", "Møíže!", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, count));
                     break;
 
-                //case "Spawn":
-                  //  mapBloky.Add((Block)new BlockWall(spawn, "Spawn", " ", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, 1, false));
-                    //break;
+                case "Spawn":
+                    mapBloky.Add((Block)new BlockWall(spawn, "Spawn", " ", new Rectangle(x - posunX, y - posunY, 32, 32), Color.White, dir, 1, false));
+                    break;
 
                 default:
                     break;

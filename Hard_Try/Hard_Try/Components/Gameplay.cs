@@ -314,7 +314,7 @@ namespace Imprisoned_Hope
             Posun = new Vector2(PosunX, PosunY);
             List<int> invent = new List<int>() {1,1,1,1};
             List<int> tool = new List<int>() { 3, 1, 3, 1, 3, 1 };
-            player = new Player(Hra, 100, 100, klasa, invent,tool, CurrentMap);            
+            player = new Player(Hra, 50, 10, klasa, invent,tool, CurrentMap);            
             SaveName = jmeno;
         }
 
