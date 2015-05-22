@@ -19,7 +19,7 @@ namespace Imprisoned_Hope
 
     interface IContainer : IInteractive
     {
-        List<Object> GetContent();
+        Item[] GetContent();
     }
     interface IInformational : IInteractive
     {
@@ -29,4 +29,12 @@ namespace Imprisoned_Hope
     {
         void EnvChange();
     }
+
+
+    interface IItem
+    {
+        string SetProperties(int id);
+    }
+
+
 }

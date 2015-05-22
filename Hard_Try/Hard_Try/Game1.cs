@@ -23,6 +23,7 @@ namespace Imprisoned_Hope
         public int vyska = 720;
         public MouseState mys;
         public Display displayMenu, displayLevelBuilder,displayGameplay;
+        //public NoteMessage message;
 
         public KeyboardState klavesy, klavesyMinule;
 
@@ -51,9 +52,9 @@ namespace Imprisoned_Hope
             NoteMessage message = new NoteMessage(this);
 
             //pøidání displejù
-            displayMenu = new Display(this, menu/*, message*/);
-            displayLevelBuilder = new Display(this, builder/*, message*/);
-            displayGameplay = new Display(this, gameplay/*, message*/);
+            displayMenu = new Display(this, menu);
+            displayLevelBuilder = new Display(this, builder);
+            displayGameplay = new Display(this, gameplay, message);
             //vypnutí komponent
             foreach (GameComponent item in Components)
             {
@@ -88,6 +89,37 @@ namespace Imprisoned_Hope
                 PrepniKomponentu(komponenta, povolena);
             }            
         }
+
+        public void PrepniNoteMessage(bool zapnout, string Message)
+        {
+            NoteMessage note = new NoteMessage(this);
+            foreach (GameComponent item in Components)
+            {
+                if (item.GetType() == typeof(NoteMessage))
+                {
+                    note = (NoteMessage)item;
+                }
+            }
+            if (zapnout)
+            {
+                note.NastavText(Message);
+            }
+            note.Enabled = zapnout;
+            note.Visible = zapnout;
+        }
+
+        public NoteMessage GetNoteMessage()
+        {
+            foreach (GameComponent item in Components)
+            {
+                if (item.GetType() == typeof(NoteMessage))
+                {
+                    return (NoteMessage)item;
+                }
+            }
+            return null;
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.

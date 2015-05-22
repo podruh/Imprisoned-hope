@@ -46,7 +46,7 @@ namespace Imprisoned_Hope
 				ser.Serialize(sw, Saves);
 				sw.Close();
 			}
-			catch (Exception ex)
+			catch (Exception )
 			{
 				throw;
 
@@ -61,17 +61,26 @@ namespace Imprisoned_Hope
 
 		public void AddSave(Save save)
 		{
-			if (Saves.Contains(save))
-			{
-				UpdateSave(save);
-			}
-			else
-			{
-				SetPlayer(save);
-				Saves.Add(save);
+            //if (Saves.Contains(save))
+            //{
+            //    UpdateSave(save);
+            //}
+            //else
+            //{
+            //    SetPlayer(save);
+            //    Saves.Add(save);
 				
-			}
-			
+            //}
+            foreach (Save item in Saves)
+            {
+                if (item.Name == save.Name)
+                {
+                    Saves.Remove(item);
+                    break;
+                }                
+            }
+            Saves.Add(save);
+
 		}
 
 		public void UpdateSave(Save save)

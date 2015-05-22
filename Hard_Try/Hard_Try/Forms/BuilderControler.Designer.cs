@@ -141,7 +141,6 @@
             this.MaximizeBox = false;
             this.Name = "BuilderControler";
             this.Text = "BuilderControler";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BuilderControler_FormClosing);
             this.Load += new System.EventHandler(this.BuilderControler_Load);
             this.MouseEnter += new System.EventHandler(this.BuilderControler_MouseEnter);

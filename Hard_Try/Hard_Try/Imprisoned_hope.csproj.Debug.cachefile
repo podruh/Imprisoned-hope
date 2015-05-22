@@ -42,6 +42,7 @@ Content\Textury\Objects\map.xnb
 Content\Textury\Objects\newspapers.xnb
 Content\Textury\Objects\spawn.xnb
 Content\Textury\noteBck.xnb
+Content\Textury\Health1.xnb
 Content\Textury\In-Game Menu\Back.xnb
 Content\Textury\In-Game Menu\Load Game.xnb
 Content\Textury\In-Game Menu\Main Menu.xnb
@@ -53,7 +54,10 @@ Content\Textury\Items\key.xnb
 Content\Textury\Items\shovel.xnb
 Content\Textury\Items\weapon.xnb
 Content\Textury\UI.xnb
-Content\Textury\Health1.xnb
+Content\Textury\Items\inventory.xnb
+Content\Textury\Stamina1.xnb
+Content\Textury\Inventory.xnb
+Content\Textury\selected.xnb
 Content\Fonty\courier_new.xnb
 Content\Fonty\times.xnb
 Content\Music\bensound-betterdays.xnb

@@ -13,6 +13,8 @@ namespace Imprisoned_Hope
     {
         public Player Player;
 
+        public List<int> Toolbar;
+
         public List<Map> Maplist;
 
         public string Name;
@@ -35,7 +37,7 @@ namespace Imprisoned_Hope
 
         public void SetPlayer(Texture2D texture)
         {
-            Player.SetPlayer(texture);
+            //Player.SetPlayer(texture);
         }
         public void SetMapManager(MapManager manager)
         {

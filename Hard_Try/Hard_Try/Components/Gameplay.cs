@@ -19,9 +19,11 @@ namespace Imprisoned_Hope
 
         SpriteBatch spriteBatch;
 
-        Sprite MenuButton;
+        Sprite MenuButton, InventoryButton;
 
-        Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI;
+        Texture2D iconMouse, MenuButtonTexture, temp, tempMenu, UI, InventoryMenu, Selected;
+
+        SpriteFont FontTimes;
 
         List<Texture2D> MenuTextury;
 
@@ -33,7 +35,7 @@ namespace Imprisoned_Hope
 
         KeyboardState keyboard, starKeyboard;
 
-        bool oldEnabled, EnabledMove;
+        bool oldEnabled, EnabledMove, itemsDraw;
 
         SaveManager SaveM;
 
@@ -45,7 +47,8 @@ namespace Imprisoned_Hope
 
         Vector2 Posun;
 
-        string SaveName;
+        string SaveName, message;
+
 
         public Gameplay(Game1 game)
             : base(game)
@@ -57,7 +60,7 @@ namespace Imprisoned_Hope
         public override void Initialize()
         {
             EnabledMove = true;
-                       
+            Hra.PrepniNoteMessage(false, "");
             base.Initialize();
         }
         protected override void LoadContent()
@@ -69,18 +72,21 @@ namespace Imprisoned_Hope
             tempMenu = Hra.Content.Load<Texture2D>(@"Textury\Menu\Temporary");
             temp = Hra.Content.Load<Texture2D>(@"Textury\temp");
             UI = Hra.Content.Load<Texture2D>(@"Textury\UI");
+            InventoryButton = new Sprite(Hra.Content.Load<Texture2D>(@"Textury\Items\inventory"),new Rectangle(397,659,48,48),Color.White);
             MenuButtonTexture = temp;
+            InventoryMenu = Hra.Content.Load<Texture2D>(@"Textury\Inventory");
+            Selected = Hra.Content.Load<Texture2D>(@"Textury\selected");
+
+            FontTimes = Hra.Content.Load<SpriteFont>(@"Fonty\times");
 
             MapManager = new MapManager(Hra);
             MapManager.Nahrat();
-            CurrentMap = MapManager.GetMaps()[1];
+            CurrentMap = MapManager.GetMaps()[0];
             Posun = new Vector2(CurrentMap.GetPosunX(), CurrentMap.GetPosunY());
             PosunX = (int)Posun.X;
             PosunY = (int)Posun.Y;
 
-            SaveM = new SaveManager(Hra);
-
-            player = new Player(Hra, 300, 300, 100, "kokot");
+            SaveM = new SaveManager(Hra);                       
 
             MenuButton = new Sprite(MenuButtonTexture, new Rectangle(0, 0, MenuButtonTexture.Width, MenuButtonTexture.Height), Color.White);
 
@@ -89,14 +95,15 @@ namespace Imprisoned_Hope
             MenuTextury.Add(Hra.Content.Load<Texture2D>(@"Textury/In-Game Menu/Main Menu"));
             MenuTextury.Add(Hra.Content.Load<Texture2D>(@"Textury/In-Game Menu/Back"));
 
-
             GamePlayMenu = new Menu(MenuTextury, new Rectangle((1280 / 2) - (tempMenu.Width / 2), -300, 0, 0), 1.5F, (1280 / 2) - tempMenu.Width / 2, (720 / 2) - tempMenu.Height / 2);
             GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
+            message = "";
             base.LoadContent();
         }
         
         public override void Update(GameTime gameTime)
         {
+            message = "";
             //jestli se zmìní enabled na tru, tak naète znova mapList
             if (Enabled != oldEnabled && Enabled == true)
             {
@@ -111,8 +118,13 @@ namespace Imprisoned_Hope
             mys = Mouse.GetState();
             float speed = 0.1999F;
 
-            if (EnabledMove)
-                player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime, CurrentMap);
+
+
+            if (Hra.GetNoteMessage().Enabled)
+            {
+                EnabledMove = false;
+            }
+
             #region posun mapy
             if (player.Rectangle.Top + PosunY <= 64)
             {
@@ -126,7 +138,7 @@ namespace Imprisoned_Hope
                 Posun.X -= (float)(speed * elapsed);
                 PosunX = (int)Posun.X;                             
             }
-            if (player.Rectangle.Bottom + PosunY >= 656)
+            if (player.Rectangle.Bottom + PosunY >= 640)
             {
                 double elapsed = gameTime.ElapsedGameTime.Milliseconds;
                 Posun.Y -= (float)(speed * elapsed);
@@ -144,18 +156,25 @@ namespace Imprisoned_Hope
             #region tlaèítka
             if (StisknutaKlavesa(Keys.Escape))
             {
-                if (EnabledMove)
+                if (EnabledMove&&!itemsDraw)
                 {
                     EnabledMove = false;
                     GamePlayMenu.DockY = (720 / 2) - (GamePlayMenu.Rectangle.Height / 2);
                     GamePlayMenu.changeMovement("down");
                 }
-                else
+                else if(!EnabledMove)
                 {
+           
                     EnabledMove = true;
                     GamePlayMenu.DockY = -200;
                     GamePlayMenu.changeMovement("up");
                 }
+                if (itemsDraw)
+                {
+                    itemsDraw = false;
+                    player.ShowInventory(false);
+                }
+                
                 
             }
             if (GamePlayMenu.MenuItems[0].isClicked(mys))
@@ -178,7 +197,41 @@ namespace Imprisoned_Hope
                 GamePlayMenu.changeMovement("up");
             }
 
-            #endregion           
+            if (StisknuteTlacitko(InventoryButton)||StisknutaKlavesa(Keys.I))
+            {
+                 if (itemsDraw)
+                {
+                    itemsDraw = false;
+                    player.ShowInventory(false);
+                    EnabledMove = true;
+                }
+                 else if (!itemsDraw)
+                {
+                    itemsDraw = true;
+                    player.ShowInventory(true);
+                    EnabledMove = false;
+                }
+                
+                
+                
+            }
+            #endregion     
+
+            //pohyb hráèe
+            if (EnabledMove)
+                player.PlayerUpdate(mys, staraMys, keyboard, starKeyboard, gameTime, CurrentMap, Hra);
+
+            //správa inventáøe
+            if(itemsDraw)
+            { player.InventoryUpdate(mys, staraMys, Hra); }
+
+            foreach (Block item in CurrentMap.Blocks)
+            {
+                if (((item.Type == "Note" || item.Type == "Newspapers") && item.Rectangle.Intersects(player.Rectangle)))
+                {
+                    this.message = "Pro zobrazení poznámky stisknìnte E";
+                }
+            }
 
             GamePlayMenu.moveMenu(gameTime);
             oldEnabled = Enabled;
@@ -219,12 +272,24 @@ namespace Imprisoned_Hope
             //vykreslování hráèe
             player.DrawPlayer(spriteBatch);
             //vykreslení UI
-            spriteBatch.Draw(UI,new Rectangle(0,656,1280,64),Color.White);            
+            spriteBatch.Draw(UI,new Rectangle(5,651,1280,64),Color.White);            
             //vykreslení healthbaru
-            player.DrawHealtBar(spriteBatch);
+            player.DrawHealtAndStamina(spriteBatch);
+
+            if (itemsDraw)
+                spriteBatch.Draw(InventoryMenu, new Rectangle((1280 / 2) - (InventoryMenu.Width / 2), 100, InventoryMenu.Width, InventoryMenu.Height), Color.White);
+
+            //vykreslení inventory tlaèítka
+            InventoryButton.Draw(spriteBatch);
+            //vykreslí itemy v toolbaru a inventáø
+            player.DrawItems(spriteBatch);
+            
+
+            
             
             
             GamePlayMenu.DrawMenu(spriteBatch);
+            spriteBatch.DrawString(FontTimes, message, new Vector2(0, 0), Color.Yellow);
             spriteBatch.Draw(iconMouse, new Rectangle(mys.X - 15, mys.Y - 10, iconMouse.Width, iconMouse.Height), Color.White);
             spriteBatch.End();
 
@@ -247,13 +312,16 @@ namespace Imprisoned_Hope
             PosunX = CurrentMap.GetPosunX();
             PosunY = CurrentMap.GetPosunY();
             Posun = new Vector2(PosunX, PosunY);
-            player = new Player(Hra,200,200,100,klasa);
+            List<int> invent = new List<int>() {1,1,1,1};
+            List<int> tool = new List<int>() { 3, 1, 3, 1, 3, 1 };
+            player = new Player(Hra, 50, 10, klasa, invent,tool, CurrentMap);            
             SaveName = jmeno;
         }
 
         public void SaveGame()
         {
             SaveM.LoadSaves();
+            MapManager.UpdateMap(CurrentMap);
             SaveM.AddSave(new Save(player, MapManager, SaveName));
             SaveM.SaveSaves();
         }
@@ -270,16 +338,120 @@ namespace Imprisoned_Hope
             Save save = SaveM.GetSaveByName(name);
             MapManager = new MapManager(Hra, save.Maplist);
             MapManager.SetBlocksInAllMaps();
-            Player p = save.Player;
-            player = new Player(Hra,p.PosX,p.PosY,p.Health,p.Class,p.Inventory);
+            Player p = save.Player;            
             CurrentMap = MapManager.GetMapByName(p.OnMap);
+            player = new Player(Hra, p.Health, p.Stamina, p.Class, p.Inventory_ID,p.Toolbar_ID, CurrentMap);
             PosunX = CurrentMap.GetPosunX();
             PosunY = CurrentMap.GetPosunY();
             Posun = new Vector2(PosunX, PosunY);
-
             EnabledMove = true;
             GamePlayMenu.DockY = -200;
             GamePlayMenu.changeMovement("up");
         }
+
+        //private void DrawItems()
+        //{
+        //    if (itemsDraw)
+        //    {
+        //        int x = (1280 / 2) - (InventoryMenu.Width / 2);
+        //        int y = 100;
+        //        spriteBatch.Draw(InventoryMenu, new Rectangle((1280 / 2) - (InventoryMenu.Width / 2), 100, InventoryMenu.Width, InventoryMenu.Height), Color.White);
+        //        foreach (Item item in player.Inventory)
+        //        {
+        //            if(!item.OnToolbar)
+        //                item.Draw(spriteBatch);
+        //        }
+        //    }
+        //}
+
+        //private void UpdateToolBar()
+        //{
+        //    int i = 0;
+        //    foreach (Item item in player.Inventory)
+        //    {
+        //        if (item.OnToolbar && i < 6)
+        //        {
+        //            Toolbar[i] = item;
+        //            i++;
+        //        }
+        //        else if (item.OnToolbar)
+        //        {
+        //            item.OnToolbar = false;
+        //        }
+        //    }
+        //    int x = 13;
+        //    int y = 659;
+        //    foreach (Item item in Toolbar)
+        //    {
+        //        item.Rectangle = new Rectangle(x, y, 48, 48);
+        //        x += 64;
+
+        //    }
+        //}
+
+        //private void DrawToolBar()
+        //{
+        //    foreach (Item item in Toolbar)
+        //    {
+        //        item.Draw(spriteBatch);
+        //    }
+        //}
+
+        //private void UpdateInventory()
+        //{
+        //    //List<Item> items = player.Inventory;
+        //    //int x = (1280 / 2) - (InventoryMenu.Width / 2)+18;
+        //    //int y = 118;                        
+        //    //for (int i = 0; i < items.Count; i++)
+        //    //{
+        //    //    if (!items[i].OnToolbar)
+        //    //    {
+        //    //        items[i].Rectangle = new Rectangle(x, y, items[i].Texture.Width, items[i].Texture.Height);
+        //    //        x += 40;
+                    
+        //    //    }
+        //    //    else
+        //    //    {
+                       
+        //    //    }
+        //    //    if ((i + 1) % 5 == 0)
+        //    //    {
+        //    //        y += 40;
+        //    //        x -= 200;
+        //    //    }
+
+                
+        //    //}
+
+        //    for (int j = 0; j < items.Count;j++)
+        //    {
+        //        if (StisknuteTlacitko((Sprite)items[j]) && j != ItemOnMove)
+        //        {
+        //            ItemOnMove = j;
+        //            ItemDragged = true;
+        //        }
+        //        if (j == ItemOnMove && ItemDragged)
+        //        {
+        //            items[j].Rectangle = new Rectangle(mys.X, mys.Y, items[j].Texture.Width, items[j].Texture.Height);
+        //        }
+        //        UpdateToolBar();
+        //        for (int i = 0; i < Toolbar.Length; i++)
+        //        {
+        //            if (Toolbar[i].Rectangle.Contains(mys.X, mys.Y) && ItemDragged && mys.LeftButton == ButtonState.Pressed && staraMys.LeftButton == ButtonState.Released)
+        //            {
+        //                Toolbar[i].OnToolbar = false;
+        //                Item temp = Toolbar[i];
+        //                items[j].OnToolbar = true;
+        //                Toolbar[i] = items[j];
+        //                items[j] = temp;
+        //                ItemDragged = false;
+        //                UpdateToolBar();
+        //            }
+        //        }
+        //        UpdateToolBar();
+        //        player.Inventory = items;
+        //    }                
+            
+        //}
     }
 }
