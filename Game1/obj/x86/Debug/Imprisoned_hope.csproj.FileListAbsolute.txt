@@ -1,0 +1,240 @@
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_hope.csprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_Hope.BuilderControler.resources
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_Hope.BuilderPromtp.resources
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_Hope.LoadGameForm.resources
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_Hope.NewGameForm.resources
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_hope.csproj.GenerateResource.Cache
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\MonoGame.Framework.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.XAudio2.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.Direct3D11.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.DXGI.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.Direct2D1.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.XInput.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.RawInput.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.Direct3D9.dll
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\MonoGame.Framework.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.XAudio2.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.Direct3D11.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.DXGI.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.Direct2D1.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.XInput.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.RawInput.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\SharpDX.Direct3D9.xml
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-betterdays.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-deepblue.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-epic.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-november.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-ofeliasdream.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-pianomoment.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-tomorrow.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\Come Play with Me.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\The Escalation.mp3
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\font_courier_new.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\font_times.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\enforcer_class.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Health1.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Hero.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\icon_mouse.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Back.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Load Game.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Main Menu.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Save Game.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\input.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Inventory.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\Drink.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\FirstAidKit.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\food.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\inventory.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\key.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\shovel.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Items\weapon.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\mainVelkyUp.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\mastermind_class.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Back.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\back32.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\back64.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\back_menu.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Exit.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Fullscreen.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Load Game.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\musicoff.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\musicon.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\New Game.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Options.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Temporary.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Menu\Window.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\mrizka.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\noteBck.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\bed_feet_top.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\bed_head_top.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\brick_wall_nicked.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\floor1.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\floor2.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\floor3.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\floor4.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\glass.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\grayBrick wall.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\grayBrick2 wall.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\ironBars.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\JailDoors.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\JailDoors2.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\map.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\newspapers.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\note.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\spawn.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Objects\supplies.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\OKbutton.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\phasewalker_class.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\pozadiNG.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\prompt.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\selected.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\Stamina1.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\temp.xnb
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Textury\UI.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-betterdays.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-betterdays.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-deepblue.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-deepblue.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-epic.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-epic.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-november.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-november.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-ofeliasdream.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-ofeliasdream.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-pianomoment.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-pianomoment.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-tomorrow.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\bensound-tomorrow.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\Come Play with Me.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\Come Play with Me.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\The Escalation.wma
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Content\Music\The Escalation.xnb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Imprisoned Hope.exe
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\bin\Windows\Debug\Imprisoned Hope.pdb
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned_Hope.Note.resources
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned Hope.exe
+C:\Users\David\Documents\Visual Studio 2013\Projects\Game1\Game1\obj\x86\Debug\Imprisoned Hope.pdb
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned Hope.exe
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned Hope.pdb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-betterdays.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-deepblue.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-epic.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-november.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-ofeliasdream.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-pianomoment.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-tomorrow.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\Come Play with Me.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\The Escalation.mp3
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\font_courier_new.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\font_times.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-betterdays.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-betterdays.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-deepblue.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-deepblue.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-epic.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-epic.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-november.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-november.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-ofeliasdream.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-ofeliasdream.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-pianomoment.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-pianomoment.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-tomorrow.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\bensound-tomorrow.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\Come Play with Me.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\Come Play with Me.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\The Escalation.wma
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Music\The Escalation.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\enforcer_class.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Health1.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Hero.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\icon_mouse.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Back.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Load Game.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Main Menu.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\In-Game Menu\Save Game.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\input.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Inventory.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\Drink.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\FirstAidKit.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\food.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\inventory.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\key.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\shovel.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Items\weapon.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\mainVelkyUp.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\mastermind_class.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Back.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\back32.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\back64.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\back_menu.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Exit.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Fullscreen.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Load Game.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\musicoff.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\musicon.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\New Game.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Options.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Temporary.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Menu\Window.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\mrizka.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\noteBck.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\bed_feet_top.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\bed_head_top.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\brick_wall_nicked.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\floor1.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\floor2.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\floor3.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\floor4.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\glass.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\grayBrick wall.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\grayBrick2 wall.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\ironBars.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\JailDoors.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\JailDoors2.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\map.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\newspapers.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\note.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\spawn.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Objects\supplies.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\OKbutton.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\phasewalker_class.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\pozadiNG.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\prompt.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\selected.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\Stamina1.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\temp.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Content\Textury\UI.xnb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Imprisoned Hope.exe
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\Imprisoned Hope.pdb
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Projekty\Imprisoned-hope\Game1\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.csprojResolveAssemblyReference.cache
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.BuilderControler.resources
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.BuilderPromtp.resources
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.LoadGameForm.resources
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.NewGameForm.resources
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.Note.resources
+C:\Projekty\Imprisoned-hope\Game1\obj\x86\Debug\Imprisoned_Hope.csproj.GenerateResource.Cache

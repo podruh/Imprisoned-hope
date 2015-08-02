@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprisoned_Hope", "Hard_Try\Hard_Try\Imprisoned_Hope.csproj", "{7AFC3527-D223-4E9E-B931-43EAC405C6F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprisoned_HopeContent", "Hard_Try\Hard_TryContent\Imprisoned_HopeContent.contentproj", "{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprisoned_Hope", "Game1\Imprisoned_Hope.csproj", "{CBC41C63-FEAC-4FFC-BA2A-6708CCB14A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,12 +11,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Debug|x86.ActiveCfg = Debug|x86
-		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Debug|x86.Build.0 = Debug|x86
-		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Release|x86.ActiveCfg = Release|x86
-		{7AFC3527-D223-4E9E-B931-43EAC405C6F3}.Release|x86.Build.0 = Release|x86
-		{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}.Debug|x86.ActiveCfg = Debug|x86
-		{D9A0AD0D-EFEF-4DE7-92A3-3598FB1F5D89}.Release|x86.ActiveCfg = Release|x86
+		{CBC41C63-FEAC-4FFC-BA2A-6708CCB14A75}.Debug|x86.ActiveCfg = Debug|x86
+		{CBC41C63-FEAC-4FFC-BA2A-6708CCB14A75}.Debug|x86.Build.0 = Debug|x86
+		{CBC41C63-FEAC-4FFC-BA2A-6708CCB14A75}.Release|x86.ActiveCfg = Release|x86
+		{CBC41C63-FEAC-4FFC-BA2A-6708CCB14A75}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

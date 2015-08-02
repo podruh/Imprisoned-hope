@@ -1,0 +1,3 @@
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Game1.Note.resources
+c:\users\david\documents\visual studio 2013\Projects\Game1\Game1\obj\x86\Debug\Game1.csproj.GenerateResource.Cache
