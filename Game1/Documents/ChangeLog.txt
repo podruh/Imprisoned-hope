@@ -1,0 +1,90 @@
+0.002
+  +úprava názvù promìnných
+    -textury (podly výskytu)
+    -listy (podle subMenu)
+  +zpøehlednìní pomocí regionù
+  +tlaèítko Exit v mainMenu funguje
+  +ikona myši pasuje na reálnou polohu
+  +optimalizace velikosti tlaèítka "Temporary"
+  +pøidání tlaèítka "Back"
+  +pøidání nìkolika popiskù
+  +funkèní tlaèítko "Back" u optMenu
+  fix
+    - kreslení myši posunuto na konec aby nebyl pøekrytej kursor
+
+0.0021 - podruh
+	+oprava menu
+	+promìnná menuOdsazeni urèuje vertikální odsazení nabídek
+
+0.0023 - w00d3nl3g
+  + "Music" složka jak v contentu tak v základní složce(+ CC txt)
+  + pøi spuštìní hry se spustí music_menuTheme(bensound-tomorrow)
+0.0024 - podruh
+	+ objektové øešení menu, zatím jen pøidány tøídy
+		- Menu - obsahuje list s MenuItem
+		- MenuItem
+	+ upravený namespace aby odpovídal názvu projektu
+0.0025 - podruh
+	+dodìlané menu, zatim se položky automaticky pøidávají pod sebe
+	+naètené dvì menu - Main a Options, do NG jsem nechtìl sahat
+	+pøidáno pøetížení, teï je k dispozici nahrát textutru menu nebo ne
+	+pohyb menu vyøesen
+		-musí se pokaždé zmìnit promìnná, která obsahuje souøadnice míste ukonèení pohybu, DockX, DockY
+0.0028 - podruh
+	+menu pøevedeno na samostatnou komponentu pro lepší budoucí práci na gameplayi
+	+základy level Builderu
+		+Tøída Block
+		+Tøída Map
+		-zatím nic neumí
+	+soubor TODO.txt
+		-"úkolníèek" - vše v souboru
+	+upraven Sprite
+
+0.0029 - w00d3nl3g
+	+ Funkce UpdatePosition vyžaduje mezeru (int) a odsazení (int).
+	+ V classe Menu je nový string "osa", podle které se urèí pozice prvkù v menu.
+	+ Optimalizace optMenu textur, aby vypadaly jako ostatní menu textury.
+	+ Pøidání "Fullscreen" a "Window" optMenu itemy.
+	+ NG menu po stisknutí "New Game" vyjede a po stisknutí "Back" zase zajede.
+	+ -> Nový Item - tlaèítko zpìt.
+
+0.0030 - podruh
+	+pøepínání obrazovek
+
+0.0031 - podruh
+	+nová komponenta Builder
+	+kliknutí na panáèka zapne pre-alphu builderu
+
+0.0032 - podruh
+	+pøidány textury do ng menu back32 a back64
+	+levelBuilder in progress
+
+0.0033 - podruh
+	+lehce fungující level builder
+	+tlaèítko hrdiny...
+
+0.0034 - podruh
+	+funkèní posouvání editoru
+		-posouvání šipkama, pokaždý se posune v danám smìru o 32 pixelù
+	+rozšíøení hranic mapy(2 mil. blokù do všech stran)
+	+tøíde Block pøidána promìná Type, bude urèovat typ bloku, podle toho se bude rozpoznávat akce atd.
+	+tøída map dostala dva inty, posunX, posunY - oèekávané použití až v gameplayi
+
+0.0035 - w00d3nl3g
+	+ opt menu obsahuje nastavení Music ON/OFF
+	+ textury
+
+0.0036 - podruh
+	+pøidána tøída mapmanager
+		-bude obsluhovat jakékoliv ukláddání nahrání map
+	+form builder controler
+		-bude vybírat mapy k úpravì, celkovì obsluhovat editor map
+
+0.0037 - podruh
+	+editor dokonèen
+	+veškeré dìní se ovládá pomocí builder controleru
+	+menší okomentování mapManageru a Blocku
+
+0.0038 - podruh
+	+projekt je pøipraven k vìtvení
+	+bloku je pøidán special text

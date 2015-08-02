@@ -1,0 +1,31 @@
+=======================================
+===============ÚKOLNÍÈEK===============
+=======================================
+Každý úkol se bude znaèit èíslem,
+za èíslem bude stav úkolu, napø. hotovo,
+v procesu, neaktivní. Pøed èíslem úkolu
+bude písmenu komu je úkol pøiøazen.
+Úkol si mùžeš udìlat nastavit sobì sám
+nebo ho nepøiøadíš nikomu. Další úkoly
+si budeme pøiøazovat podle domluvy.
+---------------------------------------
+-------------SEZNAM ZKRATEK------------
+///////////////////////////////////////
+D - DONE;
+A - Aktivní, in progress
+N/neoznaèený - neaktivní
+W - úkol pøiøazený w00d3nl3g
+P - pøiøazení podruh
+///////////////////////////////////////
+Pøíklad:
+=========
+p999999A
+=========
+	-popis úkolu
+	-v bodech
+----------------------------------------
+======
+p1A
+======
+	-Základní tøída pro blok
+	-základní tøída pro mapu
