@@ -4,76 +4,76 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/font_courier_new.spritefont</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/font_times.spritefont</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Back.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Load Game.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Main Menu.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Save Game.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/Drink.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/FirstAidKit.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/food.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/inventory.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/key.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/shovel.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/weapon.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Back.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/back32.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/back64.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/back_menu.jpg</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Exit.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Fullscreen.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Load Game.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/musicoff.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/musicon.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/New Game.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Options.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Temporary.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Window.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/bed_feet_top.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/bed_head_top.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/brick_wall_nicked.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor1.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor2.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor3.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor4.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/glass.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/grayBrick wall.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/grayBrick2 wall.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/ironBars.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/JailDoors.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/JailDoors2.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/map.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/newspapers.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/note.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/spawn.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/supplies.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/enforcer_class.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Health1.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Hero.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/icon_mouse.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/input.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Inventory.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/mainVelkyUp.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/mastermind_class.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/mrizka.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/noteBck.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/OKbutton.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/phasewalker_class.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/pozadiNG.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/prompt.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/selected.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Stamina1.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/temp.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/UI.png</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-betterdays.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-deepblue.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-epic.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-november.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-ofeliasdream.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-pianomoment.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-tomorrow.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/Come Play with Me.mp3</File>
-    <File>C:/Projekty/Imprisoned-hope/Game1/Content/Music/The Escalation.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/font_courier_new.spritefont</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/font_times.spritefont</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Back.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Load Game.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Main Menu.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/In-Game Menu/Save Game.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/Drink.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/FirstAidKit.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/food.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/inventory.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/key.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/shovel.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Items/weapon.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Back.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/back32.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/back64.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/back_menu.jpg</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Exit.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Fullscreen.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Load Game.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/musicoff.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/musicon.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/New Game.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Options.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Temporary.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Menu/Window.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/bed_feet_top.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/bed_head_top.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/brick_wall_nicked.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor1.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor2.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor3.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/floor4.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/glass.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/grayBrick wall.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/grayBrick2 wall.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/ironBars.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/JailDoors.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/JailDoors2.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/map.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/newspapers.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/note.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/spawn.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/supplies.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/enforcer_class.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Health1.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Hero.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/icon_mouse.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/input.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Inventory.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/mainVelkyUp.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/mastermind_class.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/mrizka.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/noteBck.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/OKbutton.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/phasewalker_class.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/pozadiNG.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/prompt.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/selected.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/Stamina1.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/temp.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Textury/UI.png</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-betterdays.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-deepblue.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-epic.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-november.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-ofeliasdream.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-pianomoment.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-tomorrow.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/Come Play with Me.mp3</File>
+    <File>c:/Projekty/Imprisoned-hope/Game1/Content/Music/The Escalation.mp3</File>
   </SourceFiles>
 </SourceFileCollection>
