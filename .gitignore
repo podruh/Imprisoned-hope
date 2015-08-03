@@ -42,4 +42,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.suo
+*.gmcontent
 Game1/bin/
+Game1/obj/
