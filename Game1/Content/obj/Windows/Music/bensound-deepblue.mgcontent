@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>c:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-deepblue.mp3</SourceFile>
-  <SourceTime>2015-08-03T00:56:56.3451807+02:00</SourceTime>
-  <DestFile>c:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/Music/bensound-deepblue.xnb</DestFile>
-  <DestTime>2015-08-03T02:26:37.1305008+02:00</DestTime>
+  <SourceFile>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-deepblue.mp3</SourceFile>
+  <SourceTime>2015-08-02T21:28:53.4724375+02:00</SourceTime>
+  <DestFile>C:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/Music/bensound-deepblue.xnb</DestFile>
+  <DestTime>2015-08-03T00:31:25.3982678+02:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>c:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/Music/bensound-deepblue.wma</string>
+    <string>C:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/Music/bensound-deepblue.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

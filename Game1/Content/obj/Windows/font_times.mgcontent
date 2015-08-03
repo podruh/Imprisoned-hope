@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>c:/Projekty/Imprisoned-hope/Game1/Content/font_times.spritefont</SourceFile>
-  <SourceTime>2015-08-03T00:56:57.2442322+02:00</SourceTime>
-  <DestFile>c:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/font_times.xnb</DestFile>
-  <DestTime>2015-08-03T02:26:31.4941784+02:00</DestTime>
+  <SourceFile>C:/Projekty/Imprisoned-hope/Game1/Content/font_times.spritefont</SourceFile>
+  <SourceTime>2015-08-02T21:28:55.3735463+02:00</SourceTime>
+  <DestFile>C:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/font_times.xnb</DestFile>
+  <DestTime>2015-08-03T00:31:20.787254+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
