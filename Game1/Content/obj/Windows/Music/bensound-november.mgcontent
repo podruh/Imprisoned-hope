@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Projekty/Imprisoned-hope/Game1/Content/Music/bensound-november.mp3</SourceFile>
-  <SourceTime>2015-08-02T21:28:53.6284464+02:00</SourceTime>
+  <SourceTime>2015-08-03T00:56:56.3971837+02:00</SourceTime>
   <DestFile>C:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/Music/bensound-november.xnb</DestFile>
-  <DestTime>2015-08-03T00:31:29.5453443+02:00</DestTime>
+  <DestTime>2015-08-03T02:40:03.4152341+02:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>

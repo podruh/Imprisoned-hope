@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Projekty/Imprisoned-hope/Game1/Content/Textury/Objects/spawn.png</SourceFile>
-  <SourceTime>2015-07-16T17:28:37.5226488+02:00</SourceTime>
+  <SourceTime>2015-08-03T00:56:56.50719+02:00</SourceTime>
   <DestFile>C:/Projekty/Imprisoned-hope/Game1/Content/bin/Windows/Textury/Objects/spawn.xnb</DestFile>
-  <DestTime>2015-08-03T00:31:20.9672543+02:00</DestTime>
+  <DestTime>2015-08-03T02:39:53.8866891+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T19:14:44+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -45,6 +45,10 @@ Temporary Items
 
 *.mgcontent
 
+*.xnb
+
+*.wma
+
 bin/
 
 obj/

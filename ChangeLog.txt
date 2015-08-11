@@ -30,3 +30,240 @@
 	+pøidáno pøetížení, teï je k dispozici nahrát textutru menu nebo ne
 	+pohyb menu vyøesen
 		-musí se pokaždé zmìnit promìnná, která obsahuje souøadnice míste ukonèení pohybu, DockX, DockY 
+0.0026 - w00d3nl3g
+--------------------------------------------------------------------------------------------------
+   + Nový konstruktor tøídy Menu pro NG menu s odsazením a mezerami        øešen po ose X.
+  + Novinové popisky ke classám.
+  + BUG - Textura NG má špatné parametry.
+  + Nový font Times
+  + Fix - Prozatím se neloaduje hudba v menu.
+
+0.0027
+--------------------------------------------------------------------------------------------------
+  + NG menu ikony vykreslí text o classe.
+  + Dva druhy rychlostí menu (mainMenu a optMenu), aby se menu pøi 
+pohybu nepøekrývaly.
+
+0.0028 - podruh
+--------------------------------------------------------------------------------------------------
+  + menu pøevedeno na samostatnou komponentu pro lepší budoucí práci na gameplayi
+  + základy level Builderu
+      + Tøída Block
+      + Tøída Map
+          - zatím nic neumí
+  + soubor TODO.txt
+       - "úkolníèek" - vše v souboru
+  + upraven Sprite
+
+0.0029
+--------------------------------------------------------------------------------------------------
+  + Funkce UpdatePosition vyžaduje mezeru (int) a odsazení (int).
+  + V classe Menu je nový string "osa", podle které se urèí pozice prvkù v 
+menu.
+  + Optimalizace optMenu textur, aby vypadaly jako ostatní menu textury.
+  + Pøidání "Fullscreen" a "Window" optMenu itemy.
+  + NG menu po stisknutí "New Game" vyjede a po stisknutí "Back" zase zajede.
+  + -> Nový Item - tlaèítko zpìt.
+
+
+
+0.003
+=============================================================
+
+0.0030 - podruh
+--------------------------------------------------------------------------------------------------
+- pøepínání obrazovek
+
+0.0031 - podruh
+--------------------
+- nová komponenta Builder
+- kliknutí na panáèka zapne pre-alphu builderu
+
+0.0032 - podruh
+---------------------
+- pøidány textury do ng menu back32 a back64
+- levelBuilder in progress
+
+0.0033 - podruh
+-------------------------
+- lehce fungující level builder
+
+0.0034 - podruh
+----------------------
+- funkèní posouvání editoru
+- posouvání šipkama, pokaždý se posune v danám smìru o 32 pixelù
+- rozšíøení hranic mapy(2 mil. blokù do všech stran)
+- tøíde Block pøidána promìná Type, bude urèovat typ bloku, podle toho se bude rozpoznávat akce atd.
+- tøída map dostala dva inty, posunX, posunY - oèekávané použití až v gameplayi
+
+0.0035 - w00d3nl3g
+--------
+- opt menu obsahuje nastavení Music ON/OFF
+- textury
+
+0.0036 - podruh
+----------
+- pøidána tøída mapmanager
+- bude obsluhovat jakékoliv ukláddání nahrání map
+- form builder controler
+- bude vybírat mapy k úpravì, celkovì obsluhovat editor map
+
+0.0037 - podruh
+---------
+- editor dokonèen
+- veškeré dìní se ovládá pomocí builder controleru
+- menší okomentování mapManageru a Blocku
+
+0.0038 - podruh
+--------------------
+- projekt je pøipraven k vìtvení
+- bloku je pøidán special text
+
+0.039
+-------
+*w00d3nl3g*
+
+- Nové blocky: 3 druhy podlahy, dva druhy zdi a postel
+- Classy: Wall, Floor, Container, BlockDoor, BlockNote
+- Nové blocky: 
+   - dveøe - hor/ver
+   - sklo - hor/ver (Velice neprofesionální textura) EDIT: sklo, sklo zamøížované
+   - supplies - bedna (zatím neimplementováno do editoru - nejsou itemy)
+   - Floor 4: podlaha s odtokovým kanálkem
+   - newspapers
+   - map
+   - note
+- Builder Component - nová funkce VytvorContainer, VytvorNote;
+- Builder Prompt obsahuje combobox "Type" :
+   - Block
+   - Door
+   - Container
+   - Note
+- nový WF: Note
+
+
+*podruh*
+
+- upraven block&BlockWall k ukládání
+- zaèátky Gameplaye
+- základy pohybu
+- BUG - hráè mùže procházet zdí, která má výšku jednoho bloku, zestrany
+- dokonèen pohyb hráèe
+- vykreslování primitivního healthbaru
+- zaèátky itemù, zatím jsou jen vytvoøeny tøídy ale nedoplnìny
+
+
+
+0.004
+=============================================================
+
+0.0041
+--------------------------------------------------------------------------------------------------
+*w00d3l3g*
+
+- Nové blocky: 
+   - dveøe - hor/ver
+   - sklo - hor/ver (Velice neprofesionální textura) EDIT: sklo, sklo zamøížované
+   - supplies - bedna (zatím neimplementováno do editoru - nejsou itemy)
+- Nová classa BlockDoor
+- Nová classa BlockNote
+- Builder Component - nová funkce VytvorContainer();
+
+*podruh*
+
+- úpravy Gameplaye
+- základy pohybu
+- BUG - hráè mùže procházet zdí, která má výšku jednoho bloku, zestrany
+
+0.0042
+---------
+*w00d3l3g*
+
+- Builder Prompt obsahuje combobox "Type" :
+   - Block
+   - Door
+   - Container
+   - Note
+
+*podruh*
+
+- dokonèen pohyb hráèe
+
+0.0043
+--------
+*w00d3l3g*
+
+- nový WF Note
+- nová funkce BC - VtvorNote
+- nové textury 
+   - Floor 4: podlaha s odtokovým kanálkem
+   - newspapers
+   - map
+   - note
+   - Spawn
+- nová komponenta noteMessage
+   - !Work In Progress!
+- Nová mapa TestMap
+   - zatím není Spawn (nefunguje)
+
+*podruh*
+
+- vykreslování primitivního healthbaru
+
+0.0044
+----------
+*podruh*
+
+- zaèátky itemù, zatím jsou jen vytvoøeny tøídy ale nedoplnìny
+
+0.0045
+----------
+*podruh*
+
+- nahrávání / uložení hry 
+- plnohodnotný start nové hry
+- in-game menu
+- zaèátek UI v gameplay
+
+0.0046
+----------------
+*podruh*
+
+- základy zonrazování itemù po stisku tlaèítka inventáøe
+
+0.0047
+-------------
+*podruh*
+
+- no life edition
+- dodìlání vykreslování itemù v inventáøi
+- nový zpùsob ukládání itemù => podle uloženého ID se naète daný item
+- pøidán šestimístný toolbar a vykreslovaní V nìm první 6 itemù v inventáøi, které jsou oznaèeny OnToolbar, ostatní takto oznaèené se pøepnou na false
+- zfunkènìní bloku Spawn a následné opravy pohybu a kolizí
+- pøidána tolerance 2 pixely na každou stranu pøi kolizích, hráè jinak nebyl schopen projít vertikálnì mezerou širokou 1 blok
+- hráèovi pøidána vlastnost stamina a její vykreslování v UI
+
+
+
+0.005
+============
+*podruh*
+I did it
+
+
+0.0050
+---------
+- zobrazení inventáøe
+- pøesouvání itemù z inventáøe do toolbaru
+- BTW: jsem na dnì, pls halp
+
+
+0.0051
+---------
+-zapomnìl jsem sry
+
+0.0052
+---------
+ - vybrání aktivního itemu v toolbaru
+ - pøípravy na debug vìtvi
+
